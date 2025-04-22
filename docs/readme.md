@@ -11,9 +11,7 @@
 
 ## TEAM
 
-* Aurora (Corbeau217)
-    - [github](https://github.com/corbeau217)
-    - [itch.io](https://corbeau217.itch.io/)
+* Aurora (Corbeau217) - (*[github](https://github.com/corbeau217)*)(*[itch.io](https://corbeau217.itch.io/)*)
 
 ## TO-DO / PLANNING
 
@@ -82,5 +80,10 @@
 
 </details>
 
+## PROJECT ENVIRONMENT
 
-
+| **item** | **details** |
+| --- | --- |
+| `development OS` | *MacOS* |
+| `code editor` | *VS Code* |
+| `unity editor` | *2021.2.9f1* |
