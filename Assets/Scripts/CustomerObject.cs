@@ -49,6 +49,9 @@ public class CustomerObject : MonoBehaviour
     // ================================================
 
     private float sleepLeftSinceLastOrder = 0.0f;
+
+    private CoffeeOrder order = new CoffeeOrder(0,0);
+    private bool announcedOrder = false;
     
     // ================================================
 
@@ -74,6 +77,7 @@ public class CustomerObject : MonoBehaviour
 
     // when not in store we want to enter the store
     public void startOrdering(){
+        this.order.randomiseCoffeeOrder();
         this.target = TargetLocation.Ordering;
         this.isMoving = true;
     }
@@ -96,6 +100,14 @@ public class CustomerObject : MonoBehaviour
         }
     }
 
+    void resetCustomer(){
+        this.isMoving = false;
+        this.announcedOrder = false;
+        this.CustomerInstance.transform.position = this.StoreEntrance.transform.position;
+        this.target = TargetLocation.Ordering;
+        this.sleepLeftSinceLastOrder = 0.0f;
+    }
+
     // check for near the exit and mark us as being able to teleport to entrance
     void testExitProximity(){
         float distance_to_exit = Vector3.Distance(this.CustomerInstance.transform.position, this.StoreExit.transform.position);
@@ -106,17 +118,9 @@ public class CustomerObject : MonoBehaviour
             return;
         }
         
-        this.teleportToEntrance();
-
-        this.target = TargetLocation.Ordering;
-        this.isMoving = false;
-        this.sleepLeftSinceLastOrder = Random.Range(MAXIMUM_HONKSHOO, MINIMUM_HONKSHOO);
+        this.resetCustomer();
     }
 
-    // for use when we're meant to be at the entrance / starting to order
-    void teleportToEntrance(){
-        this.CustomerInstance.transform.position = this.StoreEntrance.transform.position;
-    }
 
     // for handling the movement
     void approachTarget(GameObject targetObj, GameObject obstacleObj){
@@ -156,6 +160,20 @@ public class CustomerObject : MonoBehaviour
         else {
             this.isMoving = true;
         }
+
+        this.testNearOrderWindow();
+    }
+
+    // shouts our order
+    void testNearOrderWindow(){
+        
+        float distanceToOrderWindow = Vector3.Distance(this.CustomerInstance.transform.position, this.OrderingLocation.transform.position);
+        // when near the window and not sleepy
+        if( distanceToOrderWindow < 2.0f && !announcedOrder){
+            print("i want a "+this.order.toString()+" please!\n");
+            this.sleepLeftSinceLastOrder = Random.Range(MINIMUM_HONKSHOO, MAXIMUM_HONKSHOO);
+            this.announcedOrder = true;
+        }
     }
 
     // ========================================================
@@ -164,12 +182,14 @@ public class CustomerObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(this.sleepLeftSinceLastOrder==0.0f){ this.announcedOrder = false; }
+
         this.updatePosition();
     }
 
