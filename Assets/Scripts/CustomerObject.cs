@@ -25,7 +25,7 @@ public class CustomerObject : MonoBehaviour
     public TargetLocation target = TargetLocation.Entry;
 
     // how fast to move
-    public float baseMovementSpeed = 5.0f;
+    public float baseMovementSpeed;
     
     // for detecting if we need to update anything
     public bool isMoving = false;
@@ -46,6 +46,7 @@ public class CustomerObject : MonoBehaviour
         this.StoreEntrance = entry;
         this.OrderingLocation = ordering;
         this.StoreExit = exit;
+        this.target = TargetLocation.Entry;
     }
 
     // ================================================
@@ -54,13 +55,14 @@ public class CustomerObject : MonoBehaviour
         this.target = TargetLocation.Exit;
         // this.inStore = true;
         this.isMoving = true;
+        // print("leaving store");
     }
 
     // when not in store we want to enter the store
     public void startOrdering(){
         this.teleportToEntrance();
-        this.isMoving = true;
         this.target = TargetLocation.Ordering;
+        this.isMoving = true;
     }
 
     
@@ -87,6 +89,7 @@ public class CustomerObject : MonoBehaviour
 
         // check for too far
         if(distance_to_exit > exitProximityToTeleport){
+            // print("too far");
             return;
         }
         
@@ -94,8 +97,6 @@ public class CustomerObject : MonoBehaviour
         this.target = TargetLocation.Entry;
         // we're not moving anymore
         this.isMoving = false;
-        // teleporting is legal too
-        this.teleportToEntrance();
     }
 
     // for use when we're meant to be at the entrance / starting to order

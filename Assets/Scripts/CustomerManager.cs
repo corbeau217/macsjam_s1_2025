@@ -117,8 +117,8 @@ public class CustomerManager : MonoBehaviour
         }
         // check for when we need to have our current customer's order completed
         else if(this.currentOrderComplete){
-            CustomerObject current = this.getCurrentCustomer();
-            current.leaveStore();
+            this.currentOrderComplete = false;
+            this.getCurrentCustomer().leaveStore();
             this.callNextCustomer();
         }
     }
