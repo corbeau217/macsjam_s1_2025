@@ -17,9 +17,15 @@ public class CustomerObject : MonoBehaviour
     private GameObject StoreExit;
 
     // ================================================
+    
+    public CustomerObject customer_behind;
+    public CustomerObject customer_inFront;
+
+    // ================================================
 
     // the customer instance to make sure we can access it
     public GameObject CustomerInstance;
+    public SpriteRenderer CustomerSprite;
     
     // enum for our customer movement state
     public TargetLocation target = TargetLocation.Entry;
@@ -30,12 +36,20 @@ public class CustomerObject : MonoBehaviour
     // for detecting if we need to update anything
     public bool isMoving = false;
 
-    // public bool inStore = false;
+    // how much space they want to leave to the next person
+    public float desiredPersonalSpace = 3.5f;
 
     // ================================================
 
     public float exitProximityToTeleport = 1.0f; 
 
+    public float MINIMUM_HONKSHOO = 2.0f;
+    public float MAXIMUM_HONKSHOO = 6.0f;
+
+    // ================================================
+
+    private float sleepLeftSinceLastOrder = 0.0f;
+    
     // ================================================
 
     // ========================================================
@@ -60,7 +74,6 @@ public class CustomerObject : MonoBehaviour
 
     // when not in store we want to enter the store
     public void startOrdering(){
-        this.teleportToEntrance();
         this.target = TargetLocation.Ordering;
         this.isMoving = true;
     }
@@ -93,10 +106,11 @@ public class CustomerObject : MonoBehaviour
             return;
         }
         
-        // our target is the entrance now
-        this.target = TargetLocation.Entry;
-        // we're not moving anymore
+        this.teleportToEntrance();
+
+        this.target = TargetLocation.Ordering;
         this.isMoving = false;
+        this.sleepLeftSinceLastOrder = Random.Range(MAXIMUM_HONKSHOO, MINIMUM_HONKSHOO);
     }
 
     // for use when we're meant to be at the entrance / starting to order
@@ -104,20 +118,44 @@ public class CustomerObject : MonoBehaviour
         this.CustomerInstance.transform.position = this.StoreEntrance.transform.position;
     }
 
+    // for handling the movement
+    void approachTarget(GameObject targetObj, GameObject obstacleObj){
+        // how to obstacle
+        float distance_to_obstacle = Vector3.Distance(this.CustomerInstance.transform.position, obstacleObj.transform.position);
+        // check we want to move forward
+        if(distance_to_obstacle > this.desiredPersonalSpace){
+            // move towards the destination
+            this.CustomerInstance.transform.position = Vector3.MoveTowards(this.CustomerInstance.transform.position, targetObj.transform.position, this.baseMovementSpeed * Time.deltaTime);
+        }
+        else {
+            Vector3 movement = new Vector3(-(this.baseMovementSpeed * Time.deltaTime), 0, 0);
+            // move towards the destination
+            this.CustomerInstance.transform.position = this.CustomerInstance.transform.position + movement;
+        }
+    }
+
     void updatePosition(){
         // prepare our target object
         GameObject targetObj = this.getTargetObject();
 
         if(this.isMoving){
-            // otherwise move towards the destination
-            this.CustomerInstance.transform.position = Vector3.MoveTowards(this.CustomerInstance.transform.position, targetObj.transform.position, this.baseMovementSpeed * Time.deltaTime);
+            // try to move there
+            this.approachTarget(targetObj, this.customer_inFront.CustomerInstance);
 
             // check for near exit
             if(this.target == TargetLocation.Exit){
                 this.testExitProximity();
             }
         }
-        
+        // when sleep left
+        else if(this.sleepLeftSinceLastOrder > 0.0f){
+            // snore
+            this.sleepLeftSinceLastOrder = Mathf.Max( this.sleepLeftSinceLastOrder - Time.deltaTime, 0.0f );
+        }
+        // when otherwise
+        else {
+            this.isMoving = true;
+        }
     }
 
     // ========================================================

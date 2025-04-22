@@ -26,55 +26,24 @@ public class CustomerManager : MonoBehaviour
     public CustomerObject Customer3;
     public CustomerObject Customer4;
 
-
-    // the current customer number, starts as 0, changes throughout game
-    public int currentCustomerID = 0;
-
     public bool currentOrderComplete = false;
 
     // ===========================
 
-    private const int CUSTOMER_COUNT = 4;
-
+    private CustomerObject currentCustomer;
+    
     // ===========================
 
     // ========================================================
     // ========================================================
 
-    /**
-     * get CustomerObject or get null
-     */
-    CustomerObject getCustomer(int customerID){
-        switch (customerID)
-        {
-            case 1:
-                return Customer1;
-            case 2:
-                return Customer2;
-            case 3:
-                return Customer3;
-            case 4:
-                return Customer4;
-            default:
-                return null;
-        }
-    }
-    // fetch the current customer using the current customer ID
-    CustomerObject getCurrentCustomer(){
-        return this.getCustomer(this.currentCustomerID);
-    }
 
     // goes to the next customer ID and starts their ordering
     void callNextCustomer(){
-        // increase the customer ID
-        this.currentCustomerID += 1;
-        // check for spooky ID
-        if(this.currentCustomerID == CUSTOMER_COUNT){
-            this.currentCustomerID = 1;
-        }
+
         // then start the next order if we can
-        CustomerObject currentCustomer = this.getCurrentCustomer();
-        currentCustomer.startOrdering();
+        this.currentCustomer = this.currentCustomer.customer_behind;
+        this.currentCustomer.startOrdering();
     }
 
     // ===========================
@@ -86,15 +55,6 @@ public class CustomerManager : MonoBehaviour
 
     // ===========================
 
-
-    // ========================================================
-    // ========================================================
-
-    void firstUpdate(){
-        // start having customers
-        this.callNextCustomer();
-    }
-
     // ========================================================
     // ========================================================
 
@@ -105,20 +65,21 @@ public class CustomerManager : MonoBehaviour
         this.Customer2.provideLocations( this.StoreEntrance, this.OrderingLocation, this.StoreExit);
         this.Customer3.provideLocations( this.StoreEntrance, this.OrderingLocation, this.StoreExit);
         this.Customer4.provideLocations( this.StoreEntrance, this.OrderingLocation, this.StoreExit);
+        this.currentCustomer = this.Customer1;
+        this.Customer1.startOrdering();
+        this.Customer2.startOrdering();
+        this.Customer3.startOrdering();
+        this.Customer4.startOrdering();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        // check if we're the first frame
-        if(this.currentCustomerID == 0){
-            // very first frame, deal with it
-            this.firstUpdate();
-        }
         // check for when we need to have our current customer's order completed
-        else if(this.currentOrderComplete){
+        if(this.currentOrderComplete){
             this.currentOrderComplete = false;
-            this.getCurrentCustomer().leaveStore();
+            this.currentCustomer.leaveStore();
             this.callNextCustomer();
         }
     }
