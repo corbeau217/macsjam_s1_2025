@@ -43,17 +43,19 @@
     - [x] customer manager script delegates the state of customers
     - [x] customer object script handles moving around the scene
     - [x] customer object knows when they leave the scene
-- [ ] `STAGE 006` - ***INPUT KNOWABLES***
-    - [ ] experiment with keyboard input
-    - [ ] player object can detect input
-    - [ ] player object can tell the customer their order is done
+- [x] `STAGE 006` - ***INPUT KNOWABLES***
+    - [x] experiment with keyboard input
+    - [x] player object can detect input
+    - [x] player object can tell the customer their order is done
+    - [x] input timeout script
 - [ ] `STAGE 007` - ***SPRITE WORK***
     - [ ] ordering marker sprite 
     - [ ] draw customer sprites
     - [ ] draw more counter clutter sprites
     - [ ] draw background sprites
 - [ ] `STAGE 008` - ***PROGRESS UPDATE***
-    - [ ] screenshots of current game scene
+    - [x] screenshot of not working scene
+    - [x] recording showing input/customer state/input timeout working
     - [ ] create slide for presentation
     - [ ] attempt to build to webgl
 ---
@@ -67,29 +69,26 @@
 <details><summary><i>show/hide checklist</i></summary>
 
 ---
-- [ ] `STAGE 101` - ***CUSTOMERS BETTER***
+- [ ] `STAGE 102` - ***CUSTOMERS BETTER***
     - [ ] experiment with animations
     - [ ] customer detects proximity to ordering marker 
-- [ ] `STAGE 102` - ***SPEECH BUBBLES***
+- [ ] `STAGE 103` - ***SPEECH BUBBLES***
     - [ ] draw speech bubbles
     - [ ] add customer speech bubbles
     - [ ] put text in them
     - [ ] animate speech bubbles
-- [ ] `STAGE 103` - ***PRE-ALPHA GAME DEVELOPMENT***
+- [ ] `STAGE 104` - ***PRE-ALPHA GAME DEVELOPMENT***
     - [ ] show / hide speech bubbles randomly
     - [ ] wrap up primitive game MVP in a bow
-- [ ] `STAGE 104` - ***PRE-ALPHA GAME BUILD***
+    - [ ] screenshot/recording of mvp game systems
+- [ ] `STAGE 105` - ***PRE-ALPHA GAME BUILD***
     - [ ] make the building repository
     - [ ] add this repository as submodule
     - [ ] first draft of itch submission page
     - [ ] initial submit on itch.io
-- [ ] `STAGE 105` - ***ALPHA PLANNING***
+- [ ] `STAGE 106` - ***ALPHA PLANNING***
     - [ ] outline further development plan
     - [ ] plan out what skeleton to include more core features
-- [ ] `STAGE 106` - ***SOUND EFFECTS***
-    - [ ] source sound effects
-    - [ ] add sound effects to the game
-    - [ ] build with sound effects
 ---
 
 </details>
@@ -100,8 +99,11 @@
 <details><summary><i>show/hide checklist</i></summary>
 
 ---
-- [ ] `STAGE 201` - ***PA SOUND EFFECTS***
-    - [ ] dolor sit amet
+- [ ] `STAGE 201` - ***SOUND EFFECTS***
+    - [ ] source sound effects
+    - [ ] add sound effects to the game
+    - [ ] build with sound effects
+- [ ] `STAGE 202` - ***PA SOUND EFFECTS***
     - [ ] source PA system announcements sound bytes
 ---
 
