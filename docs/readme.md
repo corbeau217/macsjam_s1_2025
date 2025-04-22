@@ -30,9 +30,9 @@
     - [x] add elements to the to-do section
     - [x] first draft of game development roadmap
     - [x] add team contacts and project references
-- [ ] `STAGE 003` - ***MORE EARLY GAME RESEARCH***
-    - [ ] experiment with unity to identify which features to use or move to later
-    - [ ] create/source primitive game objects
+- [x] `STAGE 003` - ***MORE EARLY GAME RESEARCH***
+    - [x] experiment with unity to identify which features to use or move to later
+    - [x] create/source primitive game objects
 - [ ] `STAGE 004` - ***MORE EARLY GAME DOCUMENTATION***
     - [ ] sketch primitive interface
     - [ ] write up game ideas in documentation
@@ -79,6 +79,10 @@
 ---
 
 </details>
+
+
+## USEFUL RESOURCES
+* [key events (unity docs)](https://docs.unity3d.com/ScriptReference/Event-keyCode.html)
 
 ## PROJECT ENVIRONMENT
 
