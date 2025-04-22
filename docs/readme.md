@@ -91,3 +91,16 @@
 | `development OS` | *MacOS* |
 | `code editor` | *VS Code* |
 | `unity editor` | *2021.2.9f1* |
+
+
+## PLOTTING AND SCHEMING
+
+<ul>
+    <li>first layout scribble
+<details><summary>(<i>show / hide</i>)</summary>
+        
+![scribble](/docs/planning_scribbles/first_layout_scribble.jpg)
+
+</details>
+    </li>
+</ul>
