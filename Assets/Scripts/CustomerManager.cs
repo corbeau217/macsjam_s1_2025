@@ -64,14 +64,6 @@ public class CustomerManager : MonoBehaviour
         return this.getCustomer(this.currentCustomerID);
     }
 
-    /**
-     * marks the current customer as complete and moves on to next customer
-     */
-    void completedOrder(){
-        CustomerObject current = this.getCurrentCustomer();
-        current.leaveStore();
-        this.callNextCustomer();
-    }
     // goes to the next customer ID and starts their ordering
     void callNextCustomer(){
         // increase the customer ID
@@ -84,6 +76,13 @@ public class CustomerManager : MonoBehaviour
         CustomerObject currentCustomer = this.getCurrentCustomer();
         currentCustomer.startOrdering();
     }
+
+    // ===========================
+
+    // this is the light-weight way for other systems to say the order was completed
+    public void notifyOrderComplete(){
+        this.currentOrderComplete = true;
+    } 
 
     // ===========================
 
@@ -118,7 +117,9 @@ public class CustomerManager : MonoBehaviour
         }
         // check for when we need to have our current customer's order completed
         else if(this.currentOrderComplete){
-            this.completedOrder();
+            CustomerObject current = this.getCurrentCustomer();
+            current.leaveStore();
+            this.callNextCustomer();
         }
     }
 
