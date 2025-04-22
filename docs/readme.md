@@ -48,11 +48,12 @@
     - [x] player object can detect input
     - [x] player object can tell the customer their order is done
     - [x] input timeout script
-- [ ] `STAGE 007` - ***SPRITE WORK***
-    - [ ] ordering marker sprite 
-    - [ ] draw customer sprites
-    - [ ] draw more counter clutter sprites
-    - [ ] draw background sprites
+- [x] `STAGE 007` - ***SPEECH BUBBLES***
+    - [x] draw speech bubbles
+    - [x] add customer speech bubbles
+    - [x] put text in them
+    - [x] speech bubbles show / hide
+    - [x] customer detects proximity to ordering marker 
 - [ ] `STAGE 008` - ***PROGRESS UPDATE***
     - [x] screenshot of not working scene
     - [x] recording showing input/customer state/input timeout working
@@ -69,16 +70,17 @@
 <details><summary><i>show/hide checklist</i></summary>
 
 ---
+- [ ] `STAGE 101` - ***ORDERS INITIAL***
+    - [ ] setup order input detection
+    - [ ] create menu for behind customers
 - [ ] `STAGE 102` - ***CUSTOMERS BETTER***
     - [ ] experiment with animations
-    - [ ] customer detects proximity to ordering marker 
-- [ ] `STAGE 103` - ***SPEECH BUBBLES***
-    - [ ] draw speech bubbles
-    - [ ] add customer speech bubbles
-    - [ ] put text in them
-    - [ ] animate speech bubbles
+    - [ ] add customer jiggling
+- [ ] `STAGE 103` - ***ORDERS MORE***
+    - [ ] order timeframes
 - [ ] `STAGE 104` - ***PRE-ALPHA GAME DEVELOPMENT***
-    - [ ] show / hide speech bubbles randomly
+    - [ ] more speech bubble options
+    - [ ] speech bubbles jiggle
     - [ ] wrap up primitive game MVP in a bow
     - [ ] screenshot/recording of mvp game systems
 - [ ] `STAGE 105` - ***PRE-ALPHA GAME BUILD***
@@ -105,6 +107,8 @@
     - [ ] build with sound effects
 - [ ] `STAGE 202` - ***PA SOUND EFFECTS***
     - [ ] source PA system announcements sound bytes
+- [ ] `STAGE 203` - ***ORDERS FURTHER***
+    - [ ] order currency / profits / tips
 ---
 
 </details>
