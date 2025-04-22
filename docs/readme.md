@@ -34,20 +34,24 @@
     - [x] experiment with unity to identify which features to use or move to later
     - [x] create/source primitive game objects
 - [ ] `STAGE 004` - ***MORE EARLY GAME DOCUMENTATION***
-    - [ ] sketch primitive interface
-    - [ ] write up game ideas in documentation
-    - [ ] first draft of itch submission page
-- [ ] `STAGE 005` - ***PRE-ALPHA GAME DEVELOPMENT***
-    - [ ] add primitive game mechanics
-    - [ ] wrap up primitive game MVP in a bow
-- [ ] `STAGE 006` - ***PRE-ALPHA GAME BUILD***
-    - [ ] make the building repository
-    - [ ] add this repository as submodule
-    - [ ] build game to webgl/web
-    - [ ] submit on itch.io
-- [ ] `STAGE 007` - ***ALPHA PLANNING***
-    - [ ] outline further development plan
-    - [ ] plan out what skeleton to include more core features
+    - [x] sketch primitive interface
+    - [x] draw coffee machine
+    - [ ] write up game ideas in documentation?
+- [x] `STAGE 005` - ***PRE-ALPHA GAME DEVELOPMENT***
+    - [x] add coffee machine object
+    - [x] add placeholder customer sprites
+- [ ] `STAGE 006` - ***EXPERIMENTAL DEVELOPMENT***
+    - [ ] experiment with keyboard input
+    - [ ] experiment with animations
+    - [ ] experiment with combining keyboard input to states and animations
+- [ ] `STAGE 007` - ***SPRITE WORK***
+    - [ ] draw customer sprites
+    - [ ] draw more counter sprites
+    - [ ] draw background sprites
+- [ ] `STAGE 008` - ***PROGRESS UPDATE***
+    - [ ] screenshots of current game scene
+    - [ ] create slide for presentation
+    - [ ] attempt to build to webgl
 ---
 
 </details>
@@ -59,7 +63,23 @@
 <details><summary><i>show/hide checklist</i></summary>
 
 ---
-- [ ] `STAGE 101` - ***SOUND EFFECTS***
+- [ ] `STAGE 101` - ***SPEECH BUBBLES***
+    - [ ] draw speech bubbles
+    - [ ] add customer speech bubbles
+    - [ ] put text in them
+    - [ ] animate speech bubbles
+- [ ] `STAGE 102` - ***PRE-ALPHA GAME DEVELOPMENT***
+    - [ ] show / hide speech bubbles randomly
+    - [ ] wrap up primitive game MVP in a bow
+- [ ] `STAGE 103` - ***PRE-ALPHA GAME BUILD***
+    - [ ] make the building repository
+    - [ ] add this repository as submodule
+    - [ ] first draft of itch submission page
+    - [ ] initial submit on itch.io
+- [ ] `STAGE 104` - ***ALPHA PLANNING***
+    - [ ] outline further development plan
+    - [ ] plan out what skeleton to include more core features
+- [ ] `STAGE 105` - ***SOUND EFFECTS***
     - [ ] source sound effects
     - [ ] add sound effects to the game
     - [ ] build with sound effects
