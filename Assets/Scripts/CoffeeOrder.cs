@@ -22,6 +22,10 @@ public class CoffeeOrder {
 
     // CONSTRUCTOR
     public CoffeeOrder(int milkID, int sweetenerID){
+        // use defaults
+        this.drinkSize = (DrinkSize)0;
+        this.drinkType = (DrinkType)0;
+
         // modulo the number of items to take care of the spookers
 
         this.milk = (Milk)(milkID%MILK_COUNT);

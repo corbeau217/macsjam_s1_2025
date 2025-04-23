@@ -167,9 +167,9 @@ public class SpeechController : MonoBehaviour
         // set the sprites
 
         this.SizeElement.sprite = this.SizeSpriteList[sizeIndex];
-        this.TypeElement.sprite = this.SizeSpriteList[typeIndex];
-        this.MilkElement.sprite = this.SizeSpriteList[milkIndex];
-        this.SweetenerElement.sprite = this.SizeSpriteList[sweetenerIndex];
+        this.TypeElement.sprite = this.TypeSpriteList[typeIndex];
+        this.MilkElement.sprite = this.MilkSpriteList[milkIndex];
+        this.SweetenerElement.sprite = this.SweetenerSpriteList[sweetenerIndex];
 
         // clear the old order data
         

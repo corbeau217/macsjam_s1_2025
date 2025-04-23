@@ -263,3 +263,25 @@ There are a couple of requirements for ZIP files in place to prevent abuse and t
     The size any single extracted file should not be greater than 200MB.
     The filenames are case sensitive and should be encoded as UTF-8
 ```
+
+## COLOUR REFERENCE
+
+```
+size
+140D5B
+
+type
+571313
+
+milk
+433A07
+
+sweetener
+0F3321
+
+bindings
+25466F
+
+pricing
+9C3F00
+```
