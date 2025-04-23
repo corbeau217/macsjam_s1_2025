@@ -63,7 +63,7 @@ public class CustomerObject : MonoBehaviour
     // ================================================
 
 
-    private CoffeeOrder order = new CoffeeOrder(0,0);
+    public CoffeeOrder order = new CoffeeOrder(0,0);
     
     // ================================================
 

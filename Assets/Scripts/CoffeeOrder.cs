@@ -54,6 +54,16 @@ public class CoffeeOrder {
 
     // ================================================
 
+    // index error if we got a short array
+    public bool MatchWithGroupSelectionIDs( int[] GroupIDs ){
+        int milkID = (int)this.milk;
+        int sweetenerID = (int)this.sweetener;
+        // 0 - sizes, 1 - types, 2 - milks, 3 - sweeteners, 4 - payments
+        return (GroupIDs[2] == milkID) && (GroupIDs[3] == sweetenerID);
+    }
+
+    // ================================================
+
     private string milkString(){
         switch (this.milk){
             case Milk.Dairy: return "Dairy";

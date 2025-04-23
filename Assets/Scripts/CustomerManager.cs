@@ -31,6 +31,8 @@ public class CustomerManager : MonoBehaviour
     // ===========================
 
     public CustomerObject currentCustomer;
+
+
     
     // ===========================
 
@@ -47,11 +49,18 @@ public class CustomerManager : MonoBehaviour
     // ===========================
 
     // this is the light-weight way for other systems to say the order was completed
-    public void notifyOrderComplete(){
+    public void notifyOrderComplete( bool isMatching ){
+        if(!isMatching){
+            // TODO: make them angry
+            print("EW THAT WAS YUCK!\n");
+        }
         this.currentOrderComplete = true;
     } 
 
     // ===========================
+
+    public Milk GetCurrentOrderMilk(){ return this.currentCustomer.order.milk; }
+    public Sweetener GetCurrentOrderSweetener(){ return this.currentCustomer.order.sweetener; }
 
     // ========================================================
     // ========================================================
