@@ -23,7 +23,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - LocationMarkers
   - 
   - 
   - 
@@ -40,4 +40,25 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3853064151
+    locked: 0
+  - name: OrderMenu
+    uniqueID: 80557363
+    locked: 0
+  - name: BackgroundClutter
+    uniqueID: 1352373491
+    locked: 0
+  - name: Customers
+    uniqueID: 3058988203
+    locked: 0
+  - name: Counter
+    uniqueID: 1062417607
+    locked: 0
+  - name: CounterClutter
+    uniqueID: 886111937
+    locked: 0
+  - name: SpeechBubbles
+    uniqueID: 1165449165
     locked: 0

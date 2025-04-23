@@ -79,7 +79,10 @@
     - [x] add missing tasks in TODO section
     - [x] move unecessary features to stretch goals
 - [ ] `STAGE 102` - ***LIGHT TASK - USING MORE SPRITES***
-    - [ ] add order menu sprites to scene
+    - [x] add order menu sprites to scene
+    - [x] add location marker layer
+    - [x] location marker layer culled from camera
+    - [x] using sprite layers for draw ordering
     - [ ] add customer sprites to scene
 - [ ] `STAGE 103` - ***CORE MECHANIC - INPUT USAGE***
     - [ ] setup order input detection
