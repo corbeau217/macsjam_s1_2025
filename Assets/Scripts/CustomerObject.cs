@@ -48,12 +48,16 @@ public class CustomerObject : MonoBehaviour
 
     public float exitProximityToTeleport = 1.0f; 
 
-    public float MINIMUM_HONKSHOO = 5.0f;
-    public float MAXIMUM_HONKSHOO = 15.0f;
+    public float MINIMUM_SPEAKING_HONKSHOO = 5.0f;
+    public float MAXIMUM_SPEAKING_HONKSHOO = 15.0f;
+
+    public float MINIMUM_ORDERING_HONKSHOO = 4.0f;
+    public float MAXIMUM_ORDERING_HONKSHOO = 12.0f;
 
     public float orderingSpeechProximity = 1.0f;
 
-    public float sleepLeftSinceLastOrder = 0.0f;
+    public float SleepLeftSinceLastSpeaking = 0.0f;
+    public float SleepLeftSinceLastOrdering = 0.0f;
 
     private bool announcedOrder = false;
     // ================================================
@@ -80,9 +84,11 @@ public class CustomerObject : MonoBehaviour
 
     void rerollSprite(){
         // deeply cursed that length is capitalised in c#
-        int newSpriteID = Random.Range(0,this.sprite_options.Length);
+        int newSpriteID = Random.Range( 0, this.sprite_options.Length );
+        // this.CustomerSprite.sprite = this.sprite_options[newSpriteID];
         this.CustomerSprite.sprite = this.sprite_options[newSpriteID];
-        // laziness, just remove this later
+
+        // laziness, just remove this later when sprite is fixed
         if(newSpriteID == 1){
             this.CustomerSprite.flipX = true;
         }
@@ -90,14 +96,26 @@ public class CustomerObject : MonoBehaviour
             this.CustomerSprite.flipX = false;
         }
     }
+    
+    public bool wantsToOrder(){
+        return this.target == TargetLocation.Ordering;
+    }
 
     void resetCustomer(){
         this.isMoving = false;
         this.announcedOrder = false;
         this.CustomerInstance.transform.position = this.StoreEntrance.transform.position;
         this.target = TargetLocation.Ordering;
-        this.sleepLeftSinceLastOrder = 0.0f;
+        this.SleepLeftSinceLastSpeaking = 0.0f;
+        this.snoozeOrdering();
         this.rerollSprite();
+        this.order.randomiseCoffeeOrder();
+        this.speechBubble.setCoffeeOrder(this.order);
+        
+    }
+
+    void snoozeOrdering(){
+        this.SleepLeftSinceLastOrdering = Random.Range(MINIMUM_ORDERING_HONKSHOO, MAXIMUM_ORDERING_HONKSHOO);
     }
 
     // ========================================================
@@ -129,8 +147,6 @@ public class CustomerObject : MonoBehaviour
 
     // when not in store we want to enter the store
     public void startOrdering(){
-        this.order.randomiseCoffeeOrder();
-        this.speechBubble.setCoffeeOrder(this.order);
         this.target = TargetLocation.Ordering;
         this.isMoving = true;
     }
@@ -142,13 +158,10 @@ public class CustomerObject : MonoBehaviour
     void testExitProximity(){
         float distance_to_exit = Vector3.Distance(this.CustomerInstance.transform.position, this.StoreExit.transform.position);
 
-        // check for too far
-        if(distance_to_exit > exitProximityToTeleport){
-            // print("too far");
-            return;
+        // close
+        if(distance_to_exit <= exitProximityToTeleport){
+            this.resetCustomer();
         }
-        
-        this.resetCustomer();
     }
 
     // shouts our order
@@ -205,7 +218,7 @@ public class CustomerObject : MonoBehaviour
     void announceOrder(){
         print("i want a "+this.order.toString()+" please!\n");
         this.speechBubble.showBubble();
-        this.sleepLeftSinceLastOrder = Random.Range(MINIMUM_HONKSHOO, MAXIMUM_HONKSHOO);
+        this.SleepLeftSinceLastSpeaking = Random.Range(MINIMUM_SPEAKING_HONKSHOO, MAXIMUM_SPEAKING_HONKSHOO);
         this.announcedOrder = true;
     }
 
@@ -218,6 +231,12 @@ public class CustomerObject : MonoBehaviour
 
     }
 
+    // handle the time outs
+    void snore(){
+        this.SleepLeftSinceLastSpeaking = Mathf.Max( this.SleepLeftSinceLastSpeaking - Time.deltaTime, 0.0f );
+        this.SleepLeftSinceLastOrdering = Mathf.Max( this.SleepLeftSinceLastOrdering - Time.deltaTime, 0.0f );
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -227,6 +246,8 @@ public class CustomerObject : MonoBehaviour
                 break;
             case TargetLocation.Ordering:
                 // heading to counter state
+                // can do a new order?
+                if(this.SleepLeftSinceLastOrdering == 0.0f){ this.isMoving = true; }
                 break;
             case TargetLocation.Exit:
                 // heading to exit state
@@ -238,9 +259,12 @@ public class CustomerObject : MonoBehaviour
         }
 
         // snore
-        this.sleepLeftSinceLastOrder = Mathf.Max( this.sleepLeftSinceLastOrder - Time.deltaTime, 0.0f );
+        this.snore();
 
-        if(this.sleepLeftSinceLastOrder == 0.0f){ this.announcedOrder = false; }
+
+        // allowed to speak again?
+        if(this.SleepLeftSinceLastSpeaking == 0.0f){ this.announcedOrder = false; }
+
 
         this.updatePosition();
     }

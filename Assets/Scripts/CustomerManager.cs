@@ -30,7 +30,7 @@ public class CustomerManager : MonoBehaviour
 
     // ===========================
 
-    private CustomerObject currentCustomer;
+    public CustomerObject currentCustomer;
     
     // ===========================
 
@@ -40,10 +40,8 @@ public class CustomerManager : MonoBehaviour
 
     // goes to the next customer ID and starts their ordering
     void callNextCustomer(){
-
         // then start the next order if we can
         this.currentCustomer = this.currentCustomer.customer_behind;
-        this.currentCustomer.startOrdering();
     }
 
     // ===========================

@@ -87,6 +87,7 @@
     - [x] customer sprites now randomised from list
 - [ ] `STAGE 103` - ***CORE MECHANIC - INPUT USAGE***
     - [x] add in the new sweetener option
+    - [x] fixing bug with customers sometimes returning too fast
     - [ ] scribble ideas for flow chart
     - [ ] scribble ideas for coffee order states
     - [ ] placeholder order option selection sprites as flow graph
