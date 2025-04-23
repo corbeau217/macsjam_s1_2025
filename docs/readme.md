@@ -113,7 +113,6 @@
     - [ ] add new speech bubble style to the scene
 - [ ] `STAGE 106` - ***CORE MECHANIC - CONSTRAINT USAGE***
     - [ ] second speech bubble language
-    - [ ] emoji to show if happy or mad at order
 - [ ] `STAGE 107` - ***LIGHT TASK - CUSTOMERS BETTER***
     - [ ] using move towards for customer stepping back
     - [ ] backwards movement speed
@@ -164,29 +163,36 @@
 - [ ] `STAGE 201` - ***NICER BUILDING***
     - [ ] make the building repository
     - [ ] add this repository as submodule
+    - [ ] rebuild game and upload to itch.io
+    - [ ] tidy up submission page
+    - [ ] emoji to show if happy or mad at order
 - [ ] `STAGE 202` - ***BETA PLANNING***
+    - [ ] tidy up order menu
+    - [ ] home screen scene before game
+- [ ] `STAGE 203` - ***BETA PLANNING***
     - [ ] outline further development plan
     - [ ] plan out what skeleton to include more core features
-- [ ] `STAGE 203` - ***BETA MECHANIC - TIME CRUNCHING***
+- [ ] `STAGE 204` - ***BETA MECHANIC - TIME CRUNCHING***
     - [ ] order timeframes and fail to deliver
     - [ ] variance in customer movement settings
-- [ ] `STAGE 204` - ***BETA SUBMISSION - TRANSLATION AND TIMING***
+- [ ] `STAGE 205` - ***BETA SUBMISSION - TRANSLATION AND TIMING***
     - [ ] rebuild game and upload to itch.io
     - [ ] tidy up submission page
-- [ ] `STAGE 205` - ***STRETCH 1 - MOUSE AND TOUCH MENU***
+- [ ] `STAGE 206` - ***STRETCH 1 - MOUSE AND TOUCH MENU***
     - [ ] plan out how to add touch functionality to menu
     - [ ] implement touch functionality
-- [ ] `STAGE 206` - ***STRETCH 2 - WORK DAY***
+    - [ ] order group highlighter with animations
+- [ ] `STAGE 207` - ***STRETCH 2 - WORK DAY***
     - [ ] implementing work day and time in game
-- [ ] `STAGE 207` - ***STRETCH 3 - PA SYSTEM ANNOUNCEMENTS***
+- [ ] `STAGE 208` - ***STRETCH 3 - PA SYSTEM ANNOUNCEMENTS***
     - [ ] source PA system announcements sound bytes
-- [ ] `STAGE 208` - ***STRETCH 4 - THIRD LANGUAGE***
+- [ ] `STAGE 209` - ***STRETCH 4 - THIRD LANGUAGE***
     - [ ] third speech bubble language
     - [ ] speech bubbles drifting?
-- [ ] `STAGE 209` - ***STRETCH SUBMISSION - MOUSE, TOUCH, EXPANDED WORLD***
+- [ ] `STAGE 210` - ***STRETCH SUBMISSION - MOUSE, TOUCH, EXPANDED WORLD***
     - [ ] rebuild game and upload to itch.io
     - [ ] tidy up submission page
-- [ ] `STAGE 210` - ***STRETCH 5 - MENUS AS BUBBLES***
+- [ ] `STAGE 211` - ***STRETCH 5 - MENUS AS BUBBLES***
     - [ ] bubbles that are animated to create the menus as needed
 ---
 
