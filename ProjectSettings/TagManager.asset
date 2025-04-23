@@ -68,3 +68,6 @@ TagManager:
   - name: SpeechBubbles
     uniqueID: 1165449165
     locked: 0
+  - name: LocationMarkers
+    uniqueID: 670969269
+    locked: 0

@@ -220,3 +220,9 @@
 </details>
     </li>
 </ul>
+
+## BUILDING NOTES
+
+* seems to use `16:10` ratio
+
+
