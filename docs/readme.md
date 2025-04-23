@@ -102,7 +102,9 @@
     - [x] moving flow graph scripts to scripts folder
     - [x] fixing order match bug
     - [x] fixing initial orders not randomised
-    - [ ] attempt to build to webgl
+    - [x] attempt to build to webgl
+    - [x] use a non-square sprite for location markers
+    - [x] tweak scene to fit 16:10 viewing ratio
     - [ ] upload current build to itch.io
     - [ ] minimalist itch.io page
 - [ ] `STAGE 105` - ***LIGHT TASK - BUBBLES BETTER***
@@ -111,6 +113,8 @@
 - [ ] `STAGE 106` - ***CORE MECHANIC - CONSTRAINT USAGE***
     - [ ] second speech bubble language
 - [ ] `STAGE 107` - ***LIGHT TASK - CUSTOMERS BETTER***
+    - [ ] using move towards for customer stepping back
+    - [ ] backwards movement speed
     - [ ] experiment with animations
     - [ ] add customer jiggling
     - [ ] speech bubble frame redesign
@@ -163,6 +167,7 @@
     - [ ] plan out what skeleton to include more core features
 - [ ] `STAGE 203` - ***BETA MECHANIC - TIME CRUNCHING***
     - [ ] order timeframes and fail to deliver
+    - [ ] variance in customer movement settings
 - [ ] `STAGE 204` - ***BETA SUBMISSION - TRANSLATION AND TIMING***
     - [ ] rebuild game and upload to itch.io
     - [ ] tidy up submission page
