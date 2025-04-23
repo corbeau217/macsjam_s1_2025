@@ -129,6 +129,9 @@
     - [x] add alternative speech bubble collection
     - [ ] when current orderer, rudely interrupt and swap bubble to order
     - [x] otherwise, mutter random french/english sentences
+    - [x] removed the pesky `.DS_Store` file from repo
+    - [x] adding screenshots/clips to documentation
+    - [ ] add sentence source images to docs
 - [ ] `STAGE 202` - ***CORE MECHANIC - HAPPY SAD EMOJI 3 STRIKES***
     - [ ] coffee machine blips for bad orders
     - [ ] coffee machine screen shows current streak
@@ -203,7 +206,14 @@
 </details>
 
 
-## USEFUL RESOURCES
+## USEFUL RESOURCES / REFERENCES
+
+### REFERENCES
+
+* [link to references page](/docs/sentence_source_images/readme.md)
+
+### UNITY DOCS
+
 * [key events (unity docs)](https://docs.unity3d.com/ScriptReference/Event-keyCode.html)
 * [`SpriteRenderer` (unity docs)](https://docs.unity3d.com/2021.2/Documentation/ScriptReference/SpriteRenderer.html)
 * [`Sprite` (unity docs)](https://docs.unity3d.com/2021.2/Documentation/ScriptReference/Sprite.html)
