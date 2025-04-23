@@ -3,22 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using static TargetLocation;
 
-// #######################################################
-// #######################################################
-
-public enum Milk {
-    Dairy,
-    Soy,
-    Almond,
-    Oat
-}
-
-public enum Sweetener {
-    SugarNone,
-    SugarHalf,
-    SugarFull,
-    SugarDouble
-}
 
 // #######################################################
 // #######################################################
@@ -26,6 +10,8 @@ public enum Sweetener {
 public class CoffeeOrder {
     // ================================================
     
+    public DrinkSize drinkSize;
+    public DrinkType drinkType;
     public Milk milk;
     public Sweetener sweetener;
 

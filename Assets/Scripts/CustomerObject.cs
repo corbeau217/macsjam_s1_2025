@@ -30,7 +30,7 @@ public class CustomerObject : MonoBehaviour
     // the customer instance to make sure we can access it
     public GameObject CustomerInstance;
     public SpriteRenderer CustomerSprite;
-    public SpeechBubbleController speechBubble;
+    public SpeechController speechBubbleController;
     
     // enum for our customer movement state
     public TargetLocation target = TargetLocation.Entry;
@@ -48,15 +48,11 @@ public class CustomerObject : MonoBehaviour
 
     public float exitProximityToTeleport = 1.0f; 
 
-    public float MINIMUM_SPEAKING_HONKSHOO = 5.0f;
-    public float MAXIMUM_SPEAKING_HONKSHOO = 15.0f;
-
     public float MINIMUM_ORDERING_HONKSHOO = 4.0f;
     public float MAXIMUM_ORDERING_HONKSHOO = 12.0f;
 
     public float orderingSpeechProximity = 1.0f;
 
-    public float SleepLeftSinceLastSpeaking = 0.0f;
     public float SleepLeftSinceLastOrdering = 0.0f;
 
     private bool announcedOrder = false;
@@ -85,7 +81,7 @@ public class CustomerObject : MonoBehaviour
 
     void rerollOrder(){
         this.order.randomiseCoffeeOrder();
-        this.speechBubble.setCoffeeOrder(this.order);
+        this.speechBubbleController.SetToOrder(this.order);
     }
     void rerollSprite(){
         // deeply cursed that length is capitalised in c#
@@ -111,7 +107,6 @@ public class CustomerObject : MonoBehaviour
         this.announcedOrder = false;
         this.CustomerInstance.transform.position = this.StoreEntrance.transform.position;
         this.target = TargetLocation.Ordering;
-        this.SleepLeftSinceLastSpeaking = 0.0f;
         this.snoozeOrdering();
         this.rerollSprite();
         this.rerollOrder();
@@ -146,7 +141,7 @@ public class CustomerObject : MonoBehaviour
         // this.inStore = true;
         this.isMoving = true;
         // print("leaving store");
-        this.speechBubble.interruptBubble();
+        this.speechBubbleController.InterruptRudely();
     }
 
     // when not in store we want to enter the store
@@ -172,10 +167,14 @@ public class CustomerObject : MonoBehaviour
     void testOrderingProximity(){
         
         float distanceToOrderWindow = Vector3.Distance(this.CustomerInstance.transform.position, this.OrderingLocation.transform.position);
-        // when near the window and not sleepy
+        // when near the window
         if( distanceToOrderWindow < this.orderingSpeechProximity && !announcedOrder){
             this.announceOrder();
         }
+        // // when near the window and not sleepy
+        // if( distanceToOrderWindow < this.orderingSpeechProximity && !announcedOrder){
+        //     this.announceOrder();
+        // }
     }
 
     // ========================================================
@@ -220,9 +219,8 @@ public class CustomerObject : MonoBehaviour
     }
 
     void announceOrder(){
-        print("i want a "+this.order.toString()+" please!\n");
-        this.speechBubble.showBubble();
-        this.SleepLeftSinceLastSpeaking = Random.Range(MINIMUM_SPEAKING_HONKSHOO, MAXIMUM_SPEAKING_HONKSHOO);
+        // print("i want a "+this.order.toString()+" please!\n");
+        this.speechBubbleController.SetLooping( true );
         this.announcedOrder = true;
     }
 
@@ -237,7 +235,6 @@ public class CustomerObject : MonoBehaviour
 
     // handle the time outs
     void snore(){
-        this.SleepLeftSinceLastSpeaking = Mathf.Max( this.SleepLeftSinceLastSpeaking - Time.deltaTime, 0.0f );
         this.SleepLeftSinceLastOrdering = Mathf.Max( this.SleepLeftSinceLastOrdering - Time.deltaTime, 0.0f );
     }
 
@@ -256,7 +253,7 @@ public class CustomerObject : MonoBehaviour
             case TargetLocation.Exit:
                 // heading to exit state
                 // interrupt any active bubbles
-                this.speechBubble.interruptBubble();
+                this.speechBubbleController.InterruptRudely();
                 break;
             default:
                 break;
@@ -264,10 +261,6 @@ public class CustomerObject : MonoBehaviour
 
         // snore
         this.snore();
-
-
-        // allowed to speak again?
-        if(this.SleepLeftSinceLastSpeaking == 0.0f){ this.announcedOrder = false; }
 
 
         this.updatePosition();

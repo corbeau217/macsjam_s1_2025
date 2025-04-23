@@ -2,15 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum OrderStage {
-    Inactive,
-    Sizes,
-    Types,
-    Milks,
-    Sweeteners,
-    Payments,
-    ProcessingPayment
-}
 
 public class CoffeeOrderFlowGraph : MonoBehaviour
 {
