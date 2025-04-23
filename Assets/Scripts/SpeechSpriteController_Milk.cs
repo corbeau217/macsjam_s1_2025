@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SpeechSpriteController_Milk : MonoBehaviour
 {
+    // TODO have this be used
+    public Sprite[] MilkSpriteList;
+
     public SpriteRenderer sprite_dairy;
     public SpriteRenderer sprite_soy;
     public SpriteRenderer sprite_almond;

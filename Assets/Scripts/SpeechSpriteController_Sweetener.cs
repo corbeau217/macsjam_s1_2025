@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class SpeechSpriteController_Sweetener : MonoBehaviour
 {
-
+    // TODO have this be used
+    public Sprite[] SweetenerSpriteList;
+    
     public SpriteRenderer sprite_half;
     public SpriteRenderer sprite_full;
     public SpriteRenderer sprite_double;

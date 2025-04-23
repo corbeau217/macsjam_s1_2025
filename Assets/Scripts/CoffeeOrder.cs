@@ -14,6 +14,7 @@ public enum Milk {
 }
 
 public enum Sweetener {
+    SugarNone,
     SugarHalf,
     SugarFull,
     SugarDouble
@@ -30,7 +31,7 @@ public class CoffeeOrder {
 
     // ================================================
     private const int MILK_COUNT = 4;
-    private const int SWEETENER_COUNT = 3;
+    private const int SWEETENER_COUNT = 4;
     // ================================================
 
     // CONSTRUCTOR
@@ -64,7 +65,8 @@ public class CoffeeOrder {
     }
     private string sweetenerString(){
         switch (this.sweetener){
-            case Sweetener.SugarHalf: return "1/2 sugar";
+            case Sweetener.SugarNone: return "no sugar";
+            case Sweetener.SugarHalf: return "1/2 a sugar";
             case Sweetener.SugarFull: return "1 sugar";
             case Sweetener.SugarDouble: return "2 sugars";
             default: return "sweetener?";

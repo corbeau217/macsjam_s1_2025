@@ -517,7 +517,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 244177609}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 2, z: 0}
+  m_LocalPosition: {x: 4, y: 3, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1214,6 +1214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 188dfd4844bc447b1960072cd9f6bb56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MilkSpriteList: []
   sprite_dairy: {fileID: 360116027}
   sprite_soy: {fileID: 1619396825}
   sprite_almond: {fileID: 1300302323}
@@ -1521,7 +1522,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &571997504
 Transform:
   m_ObjectHideFlags: 0
@@ -1864,7 +1865,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 695589073}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 2, z: 0}
+  m_LocalPosition: {x: 4, y: 3, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2003,6 +2004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7bbd9658c5174b40a5e1bb84b2316a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SweetenerSpriteList: []
   sprite_half: {fileID: 1692133332}
   sprite_full: {fileID: 207606942}
   sprite_double: {fileID: 1471621988}
@@ -2050,7 +2052,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840344631}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 2, z: 0}
+  m_LocalPosition: {x: 4, y: 3, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2175,7 +2177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &857578791
 Transform:
   m_ObjectHideFlags: 0
@@ -2388,7 +2390,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035604006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.25, z: 0}
+  m_LocalPosition: {x: 0, y: -1.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2719,6 +2721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 188dfd4844bc447b1960072cd9f6bb56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MilkSpriteList: []
   sprite_dairy: {fileID: 1213380839}
   sprite_soy: {fileID: 1066636870}
   sprite_almond: {fileID: 1704638307}
@@ -3360,6 +3363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 188dfd4844bc447b1960072cd9f6bb56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MilkSpriteList: []
   sprite_dairy: {fileID: 1877193252}
   sprite_soy: {fileID: 605057557}
   sprite_almond: {fileID: 1750308087}
@@ -3666,7 +3670,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1464230272
 Transform:
   m_ObjectHideFlags: 0
@@ -3934,6 +3938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7bbd9658c5174b40a5e1bb84b2316a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SweetenerSpriteList: []
   sprite_half: {fileID: 1281709525}
   sprite_full: {fileID: 1524334404}
   sprite_double: {fileID: 518852449}
@@ -4130,7 +4135,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608492493}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.25, z: 0}
+  m_LocalPosition: {x: 0, y: -1.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4775,6 +4780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7bbd9658c5174b40a5e1bb84b2316a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SweetenerSpriteList: []
   sprite_half: {fileID: 323445879}
   sprite_full: {fileID: 1496626121}
   sprite_double: {fileID: 160488753}
@@ -4994,6 +5000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7bbd9658c5174b40a5e1bb84b2316a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SweetenerSpriteList: []
   sprite_half: {fileID: 352556869}
   sprite_full: {fileID: 1779383219}
   sprite_double: {fileID: 160299849}
@@ -5013,7 +5020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1775446466
 Transform:
   m_ObjectHideFlags: 0
@@ -5281,6 +5288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 188dfd4844bc447b1960072cd9f6bb56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MilkSpriteList: []
   sprite_dairy: {fileID: 1023296860}
   sprite_soy: {fileID: 1339995912}
   sprite_almond: {fileID: 1258398181}
@@ -5698,7 +5706,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026742142}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 2, z: 0}
+  m_LocalPosition: {x: 4, y: 3, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6051,7 +6059,7 @@ Transform:
   m_GameObject: {fileID: 6267965525809307086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.689999, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2085969687}
@@ -6264,7 +6272,7 @@ Transform:
   m_GameObject: {fileID: 7029646492103470889}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -15.789999, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3995285861929496048}
@@ -6281,7 +6289,7 @@ Transform:
   m_GameObject: {fileID: 7029646491883217296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -17.98, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3995285862313255753}
@@ -6298,7 +6306,7 @@ Transform:
   m_GameObject: {fileID: 7029646491107099759}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -20.14, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3995285860933551798}

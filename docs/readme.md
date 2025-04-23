@@ -86,12 +86,14 @@
     - [x] add customer sprites to scene
     - [x] customer sprites now randomised from list
 - [ ] `STAGE 103` - ***CORE MECHANIC - INPUT USAGE***
+    - [x] add in the new sweetener option
     - [ ] setup order input detection
     - [ ] attempt to build to webgl
     - [ ] upload current build to itch.io
     - [ ] minimalist itch.io page
 - [ ] `STAGE 104` - ***LIGHT TASK - BUBBLES BETTER***
     - [ ] change speech bubble manager to swap sprites instead of objects
+    - [ ] add new speech bubble style to the scene
 - [ ] `STAGE 105` - ***CORE MECHANIC - CONSTRAINT USAGE***
     - [ ] second speech bubble language
 - [ ] `STAGE 106` - ***LIGHT TASK - CUSTOMERS BETTER***
