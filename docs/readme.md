@@ -125,10 +125,10 @@
 
 ---
 - [ ] `STAGE 201` - ***CORE MECHANIC - CONSTRAINT USAGE***
-    - [ ] add sprites for french mutterings
-    - [ ] add alternative speech bubble collection
+    - [x] add sprites for french mutterings
+    - [x] add alternative speech bubble collection
     - [ ] when current orderer, rudely interrupt and swap bubble to order
-    - [ ] otherwise, mutter random french/english sentences
+    - [x] otherwise, mutter random french/english sentences
 - [ ] `STAGE 202` - ***CORE MECHANIC - HAPPY SAD EMOJI 3 STRIKES***
     - [ ] coffee machine blips for bad orders
     - [ ] coffee machine screen shows current streak

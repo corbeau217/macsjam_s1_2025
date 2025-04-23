@@ -619,8 +619,8 @@ SpriteRenderer:
   m_SortingLayerID: 1165449165
   m_SortingLayer: 9
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 792f72d14621a4ade8490b963200c843, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 8c83c1692944a499fab8bffdf0123140, type: 3}
+  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1270,9 +1270,20 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0cc86e61bf64446ad8b766a3ab40b2a5, type: 3}
   - {fileID: 21300000, guid: 331fe405e6ce84d04bac5cac9dca7231, type: 3}
   - {fileID: 21300000, guid: 2acd5cd37dd91446c9f22816645ec3c4, type: 3}
-  MutteringEnglishSpriteList: []
-  MutteringFrenchSpriteList: []
-  PlaceHolderSpeechSprite: {fileID: 0}
+  MutteringEnglishSpriteList:
+  - {fileID: 21300000, guid: 2e89b154dcbab4195883ae31e1f6000f, type: 3}
+  - {fileID: 21300000, guid: 1d83efdbc86f644a1bcd0e6e6ba71050, type: 3}
+  - {fileID: 21300000, guid: 493413e14507a4aa2bcd2865873070fe, type: 3}
+  - {fileID: 21300000, guid: 4747ca70609024784a8983f29e190f24, type: 3}
+  - {fileID: 21300000, guid: 8071d767eaf04469bb8aa8e694c9425b, type: 3}
+  - {fileID: 21300000, guid: c64535999c01049619b37867bf71f880, type: 3}
+  - {fileID: 21300000, guid: 0d887769e3e8649dc884136d30769fab, type: 3}
+  MutteringFrenchSpriteList:
+  - {fileID: 21300000, guid: b3f19e4ab5f2b45c48a797989cc08fb1, type: 3}
+  - {fileID: 21300000, guid: 10830ab027bec4759b3c320a1b1cbf58, type: 3}
+  - {fileID: 21300000, guid: 90775f8b15a2c4904b0fd65babfb4405, type: 3}
+  - {fileID: 21300000, guid: 3f7095401af5240388b2cbccfe094d44, type: 3}
+  PlaceHolderSpeechSprite: {fileID: 21300000, guid: 8c83c1692944a499fab8bffdf0123140, type: 3}
   BubbleStatus: 0
   SpeechStatus: 0
   Stabbed: 0
@@ -1525,7 +1536,7 @@ SpriteRenderer:
   m_SortingLayerID: 1165449165
   m_SortingLayer: 9
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0e862b05c272447878cf1fc25ad8e5cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 88ae6c5b95b954e0998a29e63fb87b47, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2409,7 +2420,7 @@ SpriteRenderer:
   m_SortingLayerID: 1165449165
   m_SortingLayer: 9
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0e862b05c272447878cf1fc25ad8e5cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 88ae6c5b95b954e0998a29e63fb87b47, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3441,9 +3452,20 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0cc86e61bf64446ad8b766a3ab40b2a5, type: 3}
   - {fileID: 21300000, guid: 331fe405e6ce84d04bac5cac9dca7231, type: 3}
   - {fileID: 21300000, guid: 2acd5cd37dd91446c9f22816645ec3c4, type: 3}
-  MutteringEnglishSpriteList: []
-  MutteringFrenchSpriteList: []
-  PlaceHolderSpeechSprite: {fileID: 0}
+  MutteringEnglishSpriteList:
+  - {fileID: 21300000, guid: 2e89b154dcbab4195883ae31e1f6000f, type: 3}
+  - {fileID: 21300000, guid: 1d83efdbc86f644a1bcd0e6e6ba71050, type: 3}
+  - {fileID: 21300000, guid: 493413e14507a4aa2bcd2865873070fe, type: 3}
+  - {fileID: 21300000, guid: 4747ca70609024784a8983f29e190f24, type: 3}
+  - {fileID: 21300000, guid: 8071d767eaf04469bb8aa8e694c9425b, type: 3}
+  - {fileID: 21300000, guid: c64535999c01049619b37867bf71f880, type: 3}
+  - {fileID: 21300000, guid: 0d887769e3e8649dc884136d30769fab, type: 3}
+  MutteringFrenchSpriteList:
+  - {fileID: 21300000, guid: b3f19e4ab5f2b45c48a797989cc08fb1, type: 3}
+  - {fileID: 21300000, guid: 10830ab027bec4759b3c320a1b1cbf58, type: 3}
+  - {fileID: 21300000, guid: 90775f8b15a2c4904b0fd65babfb4405, type: 3}
+  - {fileID: 21300000, guid: 3f7095401af5240388b2cbccfe094d44, type: 3}
+  PlaceHolderSpeechSprite: {fileID: 21300000, guid: 8c83c1692944a499fab8bffdf0123140, type: 3}
   BubbleStatus: 0
   SpeechStatus: 0
   Stabbed: 0
@@ -4080,8 +4102,8 @@ SpriteRenderer:
   m_SortingLayerID: 1165449165
   m_SortingLayer: 9
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 792f72d14621a4ade8490b963200c843, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 8c83c1692944a499fab8bffdf0123140, type: 3}
+  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4242,9 +4264,20 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0cc86e61bf64446ad8b766a3ab40b2a5, type: 3}
   - {fileID: 21300000, guid: 331fe405e6ce84d04bac5cac9dca7231, type: 3}
   - {fileID: 21300000, guid: 2acd5cd37dd91446c9f22816645ec3c4, type: 3}
-  MutteringEnglishSpriteList: []
-  MutteringFrenchSpriteList: []
-  PlaceHolderSpeechSprite: {fileID: 0}
+  MutteringEnglishSpriteList:
+  - {fileID: 21300000, guid: 2e89b154dcbab4195883ae31e1f6000f, type: 3}
+  - {fileID: 21300000, guid: 1d83efdbc86f644a1bcd0e6e6ba71050, type: 3}
+  - {fileID: 21300000, guid: 493413e14507a4aa2bcd2865873070fe, type: 3}
+  - {fileID: 21300000, guid: 4747ca70609024784a8983f29e190f24, type: 3}
+  - {fileID: 21300000, guid: 8071d767eaf04469bb8aa8e694c9425b, type: 3}
+  - {fileID: 21300000, guid: c64535999c01049619b37867bf71f880, type: 3}
+  - {fileID: 21300000, guid: 0d887769e3e8649dc884136d30769fab, type: 3}
+  MutteringFrenchSpriteList:
+  - {fileID: 21300000, guid: b3f19e4ab5f2b45c48a797989cc08fb1, type: 3}
+  - {fileID: 21300000, guid: 10830ab027bec4759b3c320a1b1cbf58, type: 3}
+  - {fileID: 21300000, guid: 90775f8b15a2c4904b0fd65babfb4405, type: 3}
+  - {fileID: 21300000, guid: 3f7095401af5240388b2cbccfe094d44, type: 3}
+  PlaceHolderSpeechSprite: {fileID: 21300000, guid: 8c83c1692944a499fab8bffdf0123140, type: 3}
   BubbleStatus: 0
   SpeechStatus: 0
   Stabbed: 0
@@ -5820,7 +5853,7 @@ SpriteRenderer:
   m_SortingLayerID: 1165449165
   m_SortingLayer: 9
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0e862b05c272447878cf1fc25ad8e5cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 88ae6c5b95b954e0998a29e63fb87b47, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7142,8 +7175,8 @@ SpriteRenderer:
   m_SortingLayerID: 1165449165
   m_SortingLayer: 9
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 792f72d14621a4ade8490b963200c843, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 8c83c1692944a499fab8bffdf0123140, type: 3}
+  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -8165,8 +8198,8 @@ SpriteRenderer:
   m_SortingLayerID: 1165449165
   m_SortingLayer: 9
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 792f72d14621a4ade8490b963200c843, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 8c83c1692944a499fab8bffdf0123140, type: 3}
+  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -8867,9 +8900,20 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0cc86e61bf64446ad8b766a3ab40b2a5, type: 3}
   - {fileID: 21300000, guid: 331fe405e6ce84d04bac5cac9dca7231, type: 3}
   - {fileID: 21300000, guid: 2acd5cd37dd91446c9f22816645ec3c4, type: 3}
-  MutteringEnglishSpriteList: []
-  MutteringFrenchSpriteList: []
-  PlaceHolderSpeechSprite: {fileID: 0}
+  MutteringEnglishSpriteList:
+  - {fileID: 21300000, guid: 2e89b154dcbab4195883ae31e1f6000f, type: 3}
+  - {fileID: 21300000, guid: 1d83efdbc86f644a1bcd0e6e6ba71050, type: 3}
+  - {fileID: 21300000, guid: 493413e14507a4aa2bcd2865873070fe, type: 3}
+  - {fileID: 21300000, guid: 4747ca70609024784a8983f29e190f24, type: 3}
+  - {fileID: 21300000, guid: 8071d767eaf04469bb8aa8e694c9425b, type: 3}
+  - {fileID: 21300000, guid: c64535999c01049619b37867bf71f880, type: 3}
+  - {fileID: 21300000, guid: 0d887769e3e8649dc884136d30769fab, type: 3}
+  MutteringFrenchSpriteList:
+  - {fileID: 21300000, guid: b3f19e4ab5f2b45c48a797989cc08fb1, type: 3}
+  - {fileID: 21300000, guid: 10830ab027bec4759b3c320a1b1cbf58, type: 3}
+  - {fileID: 21300000, guid: 90775f8b15a2c4904b0fd65babfb4405, type: 3}
+  - {fileID: 21300000, guid: 3f7095401af5240388b2cbccfe094d44, type: 3}
+  PlaceHolderSpeechSprite: {fileID: 21300000, guid: 8c83c1692944a499fab8bffdf0123140, type: 3}
   BubbleStatus: 0
   SpeechStatus: 0
   Stabbed: 0
@@ -9206,7 +9250,7 @@ SpriteRenderer:
   m_SortingLayerID: 1165449165
   m_SortingLayer: 9
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0e862b05c272447878cf1fc25ad8e5cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 88ae6c5b95b954e0998a29e63fb87b47, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
