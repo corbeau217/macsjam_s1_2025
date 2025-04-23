@@ -87,45 +87,57 @@
     - [x] customer sprites now randomised from list
 - [ ] `STAGE 103` - ***CORE MECHANIC - INPUT USAGE***
     - [x] add in the new sweetener option
-    - [ ] setup order input detection
+    - [ ] scribble ideas for flow chart
+    - [ ] scribble ideas for coffee order states
+    - [ ] placeholder order option selection sprites as flow graph
+    - [ ] create states for coffee machine system
+    - [ ] detect input to make order selections
+    - [ ] have graph sprites hide to show order
+    - [ ] confirm order making is working
+- [ ] `STAGE 104` - ***INITIAL BUILD - SUBMIT EARLY GAME***
     - [ ] attempt to build to webgl
     - [ ] upload current build to itch.io
     - [ ] minimalist itch.io page
-- [ ] `STAGE 104` - ***LIGHT TASK - BUBBLES BETTER***
+- [ ] `STAGE 105` - ***LIGHT TASK - BUBBLES BETTER***
     - [ ] change speech bubble manager to swap sprites instead of objects
     - [ ] add new speech bubble style to the scene
-- [ ] `STAGE 105` - ***CORE MECHANIC - CONSTRAINT USAGE***
+- [ ] `STAGE 106` - ***CORE MECHANIC - CONSTRAINT USAGE***
     - [ ] second speech bubble language
-- [ ] `STAGE 106` - ***LIGHT TASK - CUSTOMERS BETTER***
+- [ ] `STAGE 107` - ***LIGHT TASK - CUSTOMERS BETTER***
     - [ ] experiment with animations
     - [ ] add customer jiggling
     - [ ] speech bubble frame redesign
-- [ ] `STAGE 107` - ***CORE MECHANIC - CURRENCY***
+- [ ] `STAGE 108` - ***CORE MECHANIC - CURRENCY***
     - [ ] add in player funds
     - [ ] add in order values
     - [ ] use order values for player funds
-- [ ] `STAGE 108` - ***CORE MECHANIC - PRIMITIVE WIN / LOSS SYSTEM***
+- [ ] `STAGE 109` - ***CORE MECHANIC - PRIMITIVE WIN / LOSS SYSTEM***
     - [ ] show win screen when you get 100 coins above float
     - [ ] show bankrupt screen when you get negative coins
-- [ ] `STAGE 109` - ***DOCUMENTATION - PRE-ALPHA GAME***
+- [ ] `STAGE 110` - ***DOCUMENTATION - PRE-ALPHA GAME***
     - [ ] wrap up primitive game MVP in a bow
     - [ ] screenshot/recording of mvp game systems
-- [ ] `STAGE 110` - ***PRE-ALPHA SUBMISSION - NO SOUND***
+- [ ] `STAGE 111` - ***PRE-ALPHA SUBMISSION - NO SOUND***
     - [ ] rebuild game for web
     - [ ] upload current build to itch.io
     - [ ] cleanup itch.io page
-- [ ] `STAGE 111` - ***ALPHA MECHANIC - SOUND EFFECTS***
+- [ ] `STAGE 112` - ***ALPHA MECHANIC - SOUND EFFECTS***
     - [ ] source sound effects
     - [ ] add sound effects to the game
     - [ ] build with sound effects
-- [ ] `STAGE 112` - ***ALPHA SUBMISSION - SOUND EFFECTS***
+- [ ] `STAGE 113` - ***ALPHA SUBMISSION - SOUND EFFECTS***
     - [ ] rebuild game and upload to itch.io
     - [ ] tidy up submission page
     - [ ] investigate sound quality
-- [ ] `STAGE 113` - ***BETA MECHANIC - TRANSLATION SYSTEM***
+- [ ] `STAGE 114` - ***BETA MECHANIC - TRANSLATION SYSTEM***
     - [ ] speech bubbles in other languages translate to english after delay
     - [ ] translation loading sprite
     - [ ] translation in progress sprite usage
+- [ ] `STAGE 115` - ***BETA MECHANICS - MORE SPRITES***
+    - [ ] coffee cup sprite for regular order
+    - [ ] coffee bean sprite for generic coffee
+    - [ ] credit card sprite for payment
+    - [ ] add new sprites to scene to make orders prettier
 ---
 
 </details>
@@ -160,6 +172,8 @@
 - [ ] `STAGE 209` - ***STRETCH SUBMISSION - MOUSE, TOUCH, EXPANDED WORLD***
     - [ ] rebuild game and upload to itch.io
     - [ ] tidy up submission page
+- [ ] `STAGE 210` - ***STRETCH 5 - MENUS AS BUBBLES***
+    - [ ] bubbles that are animated to create the menus as needed
 ---
 
 </details>
@@ -167,6 +181,17 @@
 
 ## USEFUL RESOURCES
 * [key events (unity docs)](https://docs.unity3d.com/ScriptReference/Event-keyCode.html)
+* [`SpriteRenderer` (unity docs)](https://docs.unity3d.com/2021.2/Documentation/ScriptReference/SpriteRenderer.html)
+* [`Sprite` (unity docs)](https://docs.unity3d.com/2021.2/Documentation/ScriptReference/Sprite.html)
+* [`Random` (unity docs)](https://docs.unity3d.com/2021.2/Documentation/ScriptReference/Random.html)
+* [`Vector3` (unity docs)](https://docs.unity3d.com/2021.2/Documentation/ScriptReference/Vector3.html)
+* [`StateMachineBehaviour` (unity docs)](https://docs.unity3d.com/2021.2/Documentation/ScriptReference/StateMachineBehaviour.html)
+* [`WebGLInput` (unity docs)](https://docs.unity3d.com/2021.2/Documentation/ScriptReference/WebGLInput.html)
+* [`TouchType` (unity docs)](https://docs.unity3d.com/2021.2/Documentation/ScriptReference/TouchType.html)
+* [`UnityEngine.Device.Screen` (unity docs)](https://docs.unity3d.com/2021.2/Documentation/ScriptReference/Device.Screen.html)
+* [`UnityEngine.SceneManagement.Scene` (unity docs)](https://docs.unity3d.com/2021.2/Documentation/ScriptReference/SceneManagement.Scene.html)
+* [`UnityEngine.Sprites.DataUtility` (unity docs)](https://docs.unity3d.com/2021.2/Documentation/ScriptReference/Sprites.DataUtility.html)
+* [`UnityEngine.UIElements.ClickEvent` (unity docs)](https://docs.unity3d.com/2021.2/Documentation/ScriptReference/UIElements.ClickEvent.html)
 
 ## PROJECT ENVIRONMENT
 
