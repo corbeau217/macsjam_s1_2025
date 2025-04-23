@@ -66,7 +66,7 @@
 
 
 ### DAY 2
-- [ ] `day 2` - `WEDNESDAY (23rd April 2025)`
+- [x] `day 2` - `WEDNESDAY (23rd April 2025)`
 
 <details><summary><i>show/hide checklist</i></summary>
 
@@ -95,7 +95,7 @@
     - [x] detect input to make order selections
     - [x] have graph sprites hide to show order
     - [x] confirm order making is working
-- [ ] `STAGE 104` - ***INITIAL BUILD - SUBMIT EARLY GAME***
+- [x] `STAGE 104` - ***INITIAL BUILD - SUBMIT EARLY GAME***
     - [x] added no sugar option to current speech bubble style
     - [x] make node key sprites
     - [x] add sprites to scene
@@ -108,48 +108,12 @@
     - [x] upload current build to itch.io
     - [x] minimalist itch.io page
     - [x] explored itch.io settings and made ready
-- [ ] `STAGE 105` - ***LIGHT TASK - BUBBLES BETTER***
-    - [ ] change speech bubble manager to swap sprites instead of objects
-    - [ ] add new speech bubble style to the scene
-- [ ] `STAGE 106` - ***CORE MECHANIC - CONSTRAINT USAGE***
-    - [ ] second speech bubble language
-- [ ] `STAGE 107` - ***LIGHT TASK - CUSTOMERS BETTER***
-    - [ ] using move towards for customer stepping back
-    - [ ] backwards movement speed
-    - [ ] experiment with animations
-    - [ ] add customer jiggling
-    - [ ] speech bubble frame redesign
-- [ ] `STAGE 108` - ***CORE MECHANIC - CURRENCY***
-    - [ ] add in player funds
-    - [ ] add in order values
-    - [ ] use order values for player funds
-- [ ] `STAGE 109` - ***CORE MECHANIC - PRIMITIVE WIN / LOSS SYSTEM***
-    - [ ] show win screen when you get 100 coins above float
-    - [ ] show bankrupt screen when you get negative coins
-- [ ] `STAGE 110` - ***DOCUMENTATION - PRE-ALPHA GAME***
-    - [ ] wrap up primitive game MVP in a bow
-    - [ ] screenshot/recording of mvp game systems
-- [ ] `STAGE 111` - ***PRE-ALPHA SUBMISSION - NO SOUND***
-    - [ ] rebuild game for web
-    - [ ] upload current build to itch.io
-    - [ ] cleanup itch.io page
-- [ ] `STAGE 112` - ***ALPHA MECHANIC - SOUND EFFECTS***
-    - [ ] source sound effects
-    - [ ] add sound effects to the game
-    - [ ] build with sound effects
-- [ ] `STAGE 113` - ***ALPHA SUBMISSION - SOUND EFFECTS***
-    - [ ] rebuild game and upload to itch.io
-    - [ ] tidy up submission page
-    - [ ] investigate sound quality
-- [ ] `STAGE 114` - ***BETA MECHANIC - TRANSLATION SYSTEM***
-    - [ ] speech bubbles in other languages translate to english after delay
-    - [ ] translation loading sprite
-    - [ ] translation in progress sprite usage
-- [ ] `STAGE 115` - ***BETA MECHANICS - MORE SPRITES***
-    - [ ] coffee cup sprite for regular order
-    - [ ] coffee bean sprite for generic coffee
-    - [ ] credit card sprite for payment
-    - [ ] add new sprites to scene to make orders prettier
+- [x] `STAGE 105` - ***LIGHT TASK - BUBBLES BETTER***
+    - [x] change speech bubble manager to swap sprites instead of objects
+    - [x] add new speech bubble style to the scene
+    - [x] speech bubble frame redesign
+    - [x] match colours for speech bubbles and order icons
+    - [x] add colour hex values to readme
 ---
 
 </details>
@@ -160,39 +124,75 @@
 <details><summary><i>show/hide checklist</i></summary>
 
 ---
-- [ ] `STAGE 201` - ***NICER BUILDING***
+- [ ] `STAGE 200` - ***DOCUMENTATION - HAPPY SAD EMOJI 3 STRIKES***
+    - [ ] document and plan out using happy / sad emoji for 3 strikes and streak size
+    - [ ] add second language to game
+    - [ ] add happy sad to game
+- [ ] `STAGE 201` - ***CORE MECHANIC - CONSTRAINT USAGE***
+    - [ ] second speech bubble language
+- [ ] `STAGE 202` - ***LIGHT TASK - CUSTOMERS BETTER***
+    - [ ] using move towards for customer stepping back
+    - [ ] backwards movement speed
+    - [ ] experiment with animations
+    - [ ] add customer jiggling
+    - [ ] add in player funds
+    - [ ] add in order values
+    - [ ] use order values for player funds
+- [ ] `STAGE 204` - ***CORE MECHANIC - PRIMITIVE WIN / LOSS SYSTEM***
+    - [ ] show win screen when you get 100 coins above float
+    - [ ] show bankrupt screen when you get negative coins
+- [ ] `STAGE 205` - ***DOCUMENTATION - PRE-ALPHA GAME***
+    - [ ] wrap up primitive game MVP in a bow
+    - [ ] screenshot/recording of mvp game systems
+- [ ] `STAGE 206` - ***PRE-ALPHA SUBMISSION - NO SOUND***
+    - [ ] rebuild game for web
+    - [ ] upload current build to itch.io
+    - [ ] cleanup itch.io page
+- [ ] `STAGE 207` - ***ALPHA MECHANIC - SOUND EFFECTS***
+    - [ ] source sound effects
+    - [ ] add sound effects to the game
+    - [ ] build with sound effects
+- [ ] `STAGE 208` - ***ALPHA SUBMISSION - SOUND EFFECTS***
+    - [ ] rebuild game and upload to itch.io
+    - [ ] tidy up submission page
+    - [ ] investigate sound quality
+- [ ] `STAGE 209` - ***BETA MECHANIC - TRANSLATION SYSTEM***
+    - [ ] speech bubbles in other languages translate to english after delay
+    - [ ] translation loading sprite
+    - [ ] translation in progress sprite usage
+- [ ] `STAGE 210` - ***NICER BUILDING***
     - [ ] make the building repository
     - [ ] add this repository as submodule
     - [ ] rebuild game and upload to itch.io
     - [ ] tidy up submission page
     - [ ] emoji to show if happy or mad at order
-- [ ] `STAGE 202` - ***BETA PLANNING***
+- [ ] `STAGE 211` - ***BETA PLANNING***
     - [ ] tidy up order menu
     - [ ] home screen scene before game
-- [ ] `STAGE 203` - ***BETA PLANNING***
+- [ ] `STAGE 212` - ***BETA PLANNING***
     - [ ] outline further development plan
     - [ ] plan out what skeleton to include more core features
-- [ ] `STAGE 204` - ***BETA MECHANIC - TIME CRUNCHING***
+- [ ] `STAGE 213` - ***BETA MECHANIC - TIME CRUNCHING***
     - [ ] order timeframes and fail to deliver
     - [ ] variance in customer movement settings
-- [ ] `STAGE 205` - ***BETA SUBMISSION - TRANSLATION AND TIMING***
+- [ ] `STAGE 214` - ***BETA SUBMISSION - TRANSLATION AND TIMING***
     - [ ] rebuild game and upload to itch.io
     - [ ] tidy up submission page
-- [ ] `STAGE 206` - ***STRETCH 1 - MOUSE AND TOUCH MENU***
+- [ ] `STAGE 215` - ***STRETCH 1 - MOUSE AND TOUCH MENU***
     - [ ] plan out how to add touch functionality to menu
     - [ ] implement touch functionality
     - [ ] order group highlighter with animations
-- [ ] `STAGE 207` - ***STRETCH 2 - WORK DAY***
+- [ ] `STAGE 216` - ***STRETCH 2 - WORK DAY***
     - [ ] implementing work day and time in game
-- [ ] `STAGE 208` - ***STRETCH 3 - PA SYSTEM ANNOUNCEMENTS***
+- [ ] `STAGE 217` - ***STRETCH 3 - PA SYSTEM ANNOUNCEMENTS***
     - [ ] source PA system announcements sound bytes
-- [ ] `STAGE 209` - ***STRETCH 4 - THIRD LANGUAGE***
+- [ ] `STAGE 218` - ***STRETCH 4 - THIRD LANGUAGE***
     - [ ] third speech bubble language
     - [ ] speech bubbles drifting?
-- [ ] `STAGE 210` - ***STRETCH SUBMISSION - MOUSE, TOUCH, EXPANDED WORLD***
+- [ ] `STAGE 219` - ***STRETCH SUBMISSION - MOUSE, TOUCH, EXPANDED WORLD***
     - [ ] rebuild game and upload to itch.io
     - [ ] tidy up submission page
-- [ ] `STAGE 211` - ***STRETCH 5 - MENUS AS BUBBLES***
+- [ ] `STAGE 220` - ***STRETCH 5 - MENUS AS BUBBLES***
     - [ ] bubbles that are animated to create the menus as needed
 ---
 
