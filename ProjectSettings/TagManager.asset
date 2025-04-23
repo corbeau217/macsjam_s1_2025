@@ -59,6 +59,9 @@ TagManager:
   - name: CounterClutter
     uniqueID: 886111937
     locked: 0
+  - name: CoffeeOrder
+    uniqueID: 3404262055
+    locked: 0
   - name: SpeechBubbles
     uniqueID: 1165449165
     locked: 0
