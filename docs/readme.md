@@ -236,6 +236,20 @@
 
 </details>
     </li>
+    <li>order flow graph scribble
+<details><summary>(<i>show / hide</i>)</summary>
+        
+![scribble](/docs/planning_scribbles/order_flow_graph_scribble.png)
+
+</details>
+    </li>
+    <li>speech bubble state diagram
+<details><summary>(<i>show / hide</i>)</summary>
+        
+![scribble](/docs/planning_scribbles/speech_bubble_state.png)
+
+</details>
+    </li>
 </ul>
 
 ## BUILDING NOTES
