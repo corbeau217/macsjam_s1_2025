@@ -97,7 +97,8 @@
     - [x] confirm order making is working
 - [ ] `STAGE 104` - ***INITIAL BUILD - SUBMIT EARLY GAME***
     - [x] added no sugar option to current speech bubble style
-    - [ ] make node key sprites
+    - [x] make node key sprites
+    - [x] add sprites to scene
     - [ ] attempt to build to webgl
     - [ ] upload current build to itch.io
     - [ ] minimalist itch.io page
