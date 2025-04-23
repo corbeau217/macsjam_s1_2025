@@ -96,6 +96,8 @@
     - [x] have graph sprites hide to show order
     - [x] confirm order making is working
 - [ ] `STAGE 104` - ***INITIAL BUILD - SUBMIT EARLY GAME***
+    - [x] added no sugar option to current speech bubble style
+    - [ ] make node key sprites
     - [ ] attempt to build to webgl
     - [ ] upload current build to itch.io
     - [ ] minimalist itch.io page

@@ -7,7 +7,7 @@ public class CoffeeOrderNodeGroup : MonoBehaviour
     // ========================================================
     // ========================================================
 
-    public SpriteRenderer[] NodeList;
+    public GameObject[] NodeList;
     public GameObject SelfReference;
 
     // ========================================================
@@ -15,13 +15,13 @@ public class CoffeeOrderNodeGroup : MonoBehaviour
 
     public void SetActiveNode( int InputNodeID ){
         for (int i = 0; i < this.NodeList.Length; i++) {
-            this.NodeList[i].enabled = i == InputNodeID;
+            this.NodeList[i].SetActive (i == InputNodeID);
         }
     }
 
     public void SetAllActiveStatus( bool StatusToSet ){
         for (int i = 0; i < this.NodeList.Length; i++) {
-            this.NodeList[i].enabled = StatusToSet;
+            this.NodeList[i].SetActive (StatusToSet);
         }
     }
 
@@ -34,7 +34,7 @@ public class CoffeeOrderNodeGroup : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
-        
+
     }
 
     // Update is called once per frame
