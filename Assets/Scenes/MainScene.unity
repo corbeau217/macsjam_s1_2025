@@ -5779,8 +5779,8 @@ SpriteRenderer:
   m_SortingLayerID: -1235979093
   m_SortingLayer: 4
   m_SortingOrder: 5
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.72888833, g: 0.35686278, b: 0.9607843, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 38989abb3d29d4a8381732ed1bfba6e0, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5863,8 +5863,8 @@ SpriteRenderer:
   m_SortingLayerID: -1235979093
   m_SortingLayer: 4
   m_SortingOrder: 5
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.35686278, g: 0.5890569, b: 0.9607843, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 38989abb3d29d4a8381732ed1bfba6e0, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5947,8 +5947,8 @@ SpriteRenderer:
   m_SortingLayerID: -1235979093
   m_SortingLayer: 4
   m_SortingOrder: 5
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.35686278, g: 0.9607843, b: 0.6351105, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 38989abb3d29d4a8381732ed1bfba6e0, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5999,8 +5999,8 @@ SpriteRenderer:
   m_SortingLayerID: -1235979093
   m_SortingLayer: 4
   m_SortingOrder: 5
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.9607843, g: 0.46430025, b: 0.35686278, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 38989abb3d29d4a8381732ed1bfba6e0, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6071,6 +6071,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91973178eec9492abcaaec0c1a50760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite_options:
+  - {fileID: 21300000, guid: 38989abb3d29d4a8381732ed1bfba6e0, type: 3}
+  - {fileID: 21300000, guid: 373a5705d36c64cc0983e4c28ab55b7d, type: 3}
+  - {fileID: 21300000, guid: 31830f0cf02fe45068d7670aff457b5d, type: 3}
+  - {fileID: 21300000, guid: 1346d1d88e4084d7b991534a88d9dcbf, type: 3}
+  - {fileID: 21300000, guid: d2923ba79c2344e66b056b5b22ab0207, type: 3}
   customer_behind: {fileID: 8200815298953052576}
   customer_inFront: {fileID: 8200815300112345830}
   CustomerInstance: {fileID: 6267965525809307086}
@@ -6165,6 +6171,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91973178eec9492abcaaec0c1a50760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite_options:
+  - {fileID: 21300000, guid: 38989abb3d29d4a8381732ed1bfba6e0, type: 3}
+  - {fileID: 21300000, guid: 373a5705d36c64cc0983e4c28ab55b7d, type: 3}
+  - {fileID: 21300000, guid: 31830f0cf02fe45068d7670aff457b5d, type: 3}
+  - {fileID: 21300000, guid: 1346d1d88e4084d7b991534a88d9dcbf, type: 3}
+  - {fileID: 21300000, guid: d2923ba79c2344e66b056b5b22ab0207, type: 3}
   customer_behind: {fileID: 8200815299806580505}
   customer_inFront: {fileID: 5097297707576881991}
   CustomerInstance: {fileID: 7029646492103470889}
@@ -6191,6 +6203,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91973178eec9492abcaaec0c1a50760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite_options:
+  - {fileID: 21300000, guid: 38989abb3d29d4a8381732ed1bfba6e0, type: 3}
+  - {fileID: 21300000, guid: 373a5705d36c64cc0983e4c28ab55b7d, type: 3}
+  - {fileID: 21300000, guid: 31830f0cf02fe45068d7670aff457b5d, type: 3}
+  - {fileID: 21300000, guid: 1346d1d88e4084d7b991534a88d9dcbf, type: 3}
+  - {fileID: 21300000, guid: d2923ba79c2344e66b056b5b22ab0207, type: 3}
   customer_behind: {fileID: 8200815300112345830}
   customer_inFront: {fileID: 8200815298953052576}
   CustomerInstance: {fileID: 7029646491883217296}
@@ -6217,6 +6235,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91973178eec9492abcaaec0c1a50760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite_options:
+  - {fileID: 21300000, guid: 38989abb3d29d4a8381732ed1bfba6e0, type: 3}
+  - {fileID: 21300000, guid: 373a5705d36c64cc0983e4c28ab55b7d, type: 3}
+  - {fileID: 21300000, guid: 31830f0cf02fe45068d7670aff457b5d, type: 3}
+  - {fileID: 21300000, guid: 1346d1d88e4084d7b991534a88d9dcbf, type: 3}
+  - {fileID: 21300000, guid: d2923ba79c2344e66b056b5b22ab0207, type: 3}
   customer_behind: {fileID: 5097297707576881991}
   customer_inFront: {fileID: 8200815299806580505}
   CustomerInstance: {fileID: 7029646491107099759}

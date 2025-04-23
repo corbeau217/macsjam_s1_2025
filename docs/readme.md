@@ -78,12 +78,13 @@
     - [x] cleanup TODO based on time remaining
     - [x] add missing tasks in TODO section
     - [x] move unecessary features to stretch goals
-- [ ] `STAGE 102` - ***LIGHT TASK - USING MORE SPRITES***
+- [x] `STAGE 102` - ***LIGHT TASK - USING MORE SPRITES***
     - [x] add order menu sprites to scene
     - [x] add location marker layer
     - [x] location marker layer culled from camera
     - [x] using sprite layers for draw ordering
-    - [ ] add customer sprites to scene
+    - [x] add customer sprites to scene
+    - [x] customer sprites now randomised from list
 - [ ] `STAGE 103` - ***CORE MECHANIC - INPUT USAGE***
     - [ ] setup order input detection
     - [ ] attempt to build to webgl
@@ -96,6 +97,7 @@
 - [ ] `STAGE 106` - ***LIGHT TASK - CUSTOMERS BETTER***
     - [ ] experiment with animations
     - [ ] add customer jiggling
+    - [ ] speech bubble frame redesign
 - [ ] `STAGE 107` - ***CORE MECHANIC - CURRENCY***
     - [ ] add in player funds
     - [ ] add in order values

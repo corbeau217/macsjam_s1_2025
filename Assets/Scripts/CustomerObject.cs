@@ -5,6 +5,10 @@ using static TargetLocation;
 
 public class CustomerObject : MonoBehaviour
 {
+    // ========================================================
+    // ========================================================
+
+    public Sprite[] sprite_options;
 
     // ========================================================
     // ========================================================
@@ -68,27 +72,33 @@ public class CustomerObject : MonoBehaviour
         this.OrderingLocation = ordering;
         this.StoreExit = exit;
         this.target = TargetLocation.Entry;
+        this.rerollSprite();
     }
 
-    // ================================================
+    // ========================================================
+    // ========================================================
 
-    public void leaveStore(){
-        this.target = TargetLocation.Exit;
-        // this.inStore = true;
-        this.isMoving = true;
-        // print("leaving store");
-        this.speechBubble.interruptBubble();
+    void rerollSprite(){
+        // deeply cursed that length is capitalised in c#
+        int newSpriteID = Random.Range(0,this.sprite_options.Length);
+        this.CustomerSprite.sprite = this.sprite_options[newSpriteID];
+        // laziness, just remove this later
+        if(newSpriteID == 1){
+            this.CustomerSprite.flipX = true;
+        }
+        else {
+            this.CustomerSprite.flipX = false;
+        }
     }
 
-    // when not in store we want to enter the store
-    public void startOrdering(){
-        this.order.randomiseCoffeeOrder();
-        this.speechBubble.setCoffeeOrder(this.order);
+    void resetCustomer(){
+        this.isMoving = false;
+        this.announcedOrder = false;
+        this.CustomerInstance.transform.position = this.StoreEntrance.transform.position;
         this.target = TargetLocation.Ordering;
-        this.isMoving = true;
+        this.sleepLeftSinceLastOrder = 0.0f;
+        this.rerollSprite();
     }
-
-    
 
     // ========================================================
     // ========================================================
@@ -106,13 +116,27 @@ public class CustomerObject : MonoBehaviour
         }
     }
 
-    void resetCustomer(){
-        this.isMoving = false;
-        this.announcedOrder = false;
-        this.CustomerInstance.transform.position = this.StoreEntrance.transform.position;
-        this.target = TargetLocation.Ordering;
-        this.sleepLeftSinceLastOrder = 0.0f;
+    // ========================================================
+    // ========================================================
+
+    public void leaveStore(){
+        this.target = TargetLocation.Exit;
+        // this.inStore = true;
+        this.isMoving = true;
+        // print("leaving store");
+        this.speechBubble.interruptBubble();
     }
+
+    // when not in store we want to enter the store
+    public void startOrdering(){
+        this.order.randomiseCoffeeOrder();
+        this.speechBubble.setCoffeeOrder(this.order);
+        this.target = TargetLocation.Ordering;
+        this.isMoving = true;
+    }
+
+    // ========================================================
+    // ========================================================
 
     // check for near the exit and mark us as being able to teleport to entrance
     void testExitProximity(){
@@ -126,6 +150,19 @@ public class CustomerObject : MonoBehaviour
         
         this.resetCustomer();
     }
+
+    // shouts our order
+    void testOrderingProximity(){
+        
+        float distanceToOrderWindow = Vector3.Distance(this.CustomerInstance.transform.position, this.OrderingLocation.transform.position);
+        // when near the window and not sleepy
+        if( distanceToOrderWindow < this.orderingSpeechProximity && !announcedOrder){
+            this.announceOrder();
+        }
+    }
+
+    // ========================================================
+    // ========================================================
 
 
     // for handling the movement
@@ -162,7 +199,7 @@ public class CustomerObject : MonoBehaviour
             this.isMoving = true;
         }
 
-        this.testNearOrderWindow();
+        this.testOrderingProximity();
     }
 
     void announceOrder(){
@@ -170,16 +207,6 @@ public class CustomerObject : MonoBehaviour
         this.speechBubble.showBubble();
         this.sleepLeftSinceLastOrder = Random.Range(MINIMUM_HONKSHOO, MAXIMUM_HONKSHOO);
         this.announcedOrder = true;
-    }
-
-    // shouts our order
-    void testNearOrderWindow(){
-        
-        float distanceToOrderWindow = Vector3.Distance(this.CustomerInstance.transform.position, this.OrderingLocation.transform.position);
-        // when near the window and not sleepy
-        if( distanceToOrderWindow < this.orderingSpeechProximity && !announcedOrder){
-            this.announceOrder();
-        }
     }
 
     // ========================================================
