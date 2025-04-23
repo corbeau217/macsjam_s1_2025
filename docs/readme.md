@@ -105,13 +105,15 @@
     - [x] attempt to build to webgl
     - [x] use a non-square sprite for location markers
     - [x] tweak scene to fit 16:10 viewing ratio
-    - [ ] upload current build to itch.io
-    - [ ] minimalist itch.io page
+    - [x] upload current build to itch.io
+    - [x] minimalist itch.io page
+    - [x] explored itch.io settings and made ready
 - [ ] `STAGE 105` - ***LIGHT TASK - BUBBLES BETTER***
     - [ ] change speech bubble manager to swap sprites instead of objects
     - [ ] add new speech bubble style to the scene
 - [ ] `STAGE 106` - ***CORE MECHANIC - CONSTRAINT USAGE***
     - [ ] second speech bubble language
+    - [ ] emoji to show if happy or mad at order
 - [ ] `STAGE 107` - ***LIGHT TASK - CUSTOMERS BETTER***
     - [ ] using move towards for customer stepping back
     - [ ] backwards movement speed
@@ -229,5 +231,29 @@
 ## BUILDING NOTES
 
 * seems to use `16:10` ratio
+```
+960x600
+```
 
 
+## ITCH.IO NOTES
+
+```
+The cover image is used whenever itch.io wants to link to your project from another part of the site. Required (Minimum: 315x250, Recommended: 630x500)
+```
+
+### uploading webgl
+
+* [Uploading HTML5 games](https://itch.io/docs/creators/html5) (itch.io docs)
+
+```
+ZIP file requirements
+
+There are a couple of requirements for ZIP files in place to prevent abuse and to ensure a suitable experience for people running your project in their browser:
+
+    The ZIP file should not contain more than 1,000 individual files after extraction.
+    The maximum length of a file name including path should not be greater than 240 characters long.
+    The size of all the extracted content should not be greater than 500MB.
+    The size any single extracted file should not be greater than 200MB.
+    The filenames are case sensitive and should be encoded as UTF-8
+```
