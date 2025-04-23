@@ -9,7 +9,8 @@ public class SpeechController : MonoBehaviour
     // sprite group \\
     // ==========================================
 
-    public GameObject SpeechBubbleCollection;
+    public GameObject OrderingSpeechBubble;
+    public GameObject MutteringSpeechBubble;
 
     // ______________
     // sprite layers \\
@@ -20,6 +21,8 @@ public class SpeechController : MonoBehaviour
     public SpriteRenderer MilkElement;
     public SpriteRenderer SweetenerElement;
 
+    public SpriteRenderer MutteringElement;
+
     // ____________________
     // sprite option lists \\
     // ==========================================
@@ -29,14 +32,31 @@ public class SpeechController : MonoBehaviour
     public Sprite[] MilkSpriteList;
     public Sprite[] SweetenerSpriteList;
 
+    public Sprite[] MutteringEnglishSpriteList;
+    public Sprite[] MutteringFrenchSpriteList;
+
+    // _________________
+    // default options \\
+    // ==========================================
+
+    public Sprite PlaceHolderSpeechSprite;
+
     // _________________
     // state variables \\
     // ==========================================
 
     public SpeechBubbleState BubbleStatus = SpeechBubbleState.Inactive;
 
+    public SpeechMode SpeechStatus = SpeechMode.Inactive;
+
     // when we want graceful exiting a bubble loop
     public bool Stabbed = false;
+
+    // _________________________
+    // language based variables \\
+    // ==========================================
+
+    public int LANGUAGE_COUNT = 2;
 
     // ___________________
     // toasting variables \\
@@ -68,6 +88,10 @@ public class SpeechController : MonoBehaviour
     public void SetLooping( bool isLooping ){
         this.ToastLooping = isLooping;
     }
+    public void SetBubbleActivity( bool orderingBubbleActivity, bool mutteringBubbleActivity ){
+        this.OrderingSpeechBubble.SetActive( orderingBubbleActivity );
+        this.MutteringSpeechBubble.SetActive( mutteringBubbleActivity );
+    }
 
     // _______________________
     // state handle functions \\
@@ -77,6 +101,10 @@ public class SpeechController : MonoBehaviour
         this.BubbleToasting_TimeLeft = 0.0f;
         this.BubbleSnoring_TimeLeft = 0.0f;
         this.Stabbed = false;
+        
+        // remove any speech statuses
+        this.SpeechStatus = SpeechMode.Inactive;
+
         // ready for slurping up new order
         this.BubbleStatus = SpeechBubbleState.Existing;
     }
@@ -84,14 +112,43 @@ public class SpeechController : MonoBehaviour
     public void BubbleState_OnExisting(){
         // ready for slurping up new order
         if(this.NewBubbleOrder != null ){
+            this.SpeechStatus = SpeechMode.Ordering;
             this.SliceOrder();
+        }
+        else {
+            this.RollMutteringLanguage();
+            this.BubbleStatus = SpeechBubbleState.Sliced;
         }
     }
 
     public void BubbleState_OnSliced(){
+        // check for muttering and prep
+        switch (this.SpeechStatus) {
+            // not muttering
+            default:
+                break;
+            // muttering rolling
+            case SpeechMode.MutteringEnglish:
+            case SpeechMode.MutteringFrench:
+                this.RollMutteringOption();
+                this.ReSliceMuttering();
+                break;
+        }
+
+        // now deal with the toast looping
         if(this.ToastLooping){
-            // hide the whole collection
-            this.SpeechBubbleCollection.SetActive( true );
+            // show the whole collection based on status
+            switch (this.SpeechStatus) {
+                // not muttering
+                default:
+                    this.SetBubbleActivity( true, false );
+                    break;
+                // muttering rolling
+                case SpeechMode.MutteringEnglish:
+                case SpeechMode.MutteringFrench:
+                    this.SetBubbleActivity( false, true );
+                    break;
+            }
             // set us up to toast
             this.BubbleToasting_TimeLeft = Random.Range( this.BubbleToasting_TimeMinimum, this.BubbleToasting_TimeMaximum );
             // BZZZRRRRTTT
@@ -110,8 +167,8 @@ public class SpeechController : MonoBehaviour
     }
 
     public void BubbleState_OnPopped(){
-        // hide the whole collection
-        this.SpeechBubbleCollection.SetActive( false );
+        // hide the collections
+        this.SetBubbleActivity( false, false );
         // make us sleepy
         this.BubbleSnoring_TimeLeft = Random.Range( this.BubbleSnoring_TimeMinimum, this.BubbleSnoring_TimeMaximum );
         // honk shoo zzz
@@ -140,10 +197,76 @@ public class SpeechController : MonoBehaviour
     }
 
     public void BubbleState_OnDiedDead(){
-        // hide the whole collection
-        this.SpeechBubbleCollection.SetActive( false );
+        // hide both collections
+        this.SetBubbleActivity( false, false );
+
+        // remove muttering chances
+        this.SpeechStatus = SpeechMode.Inactive;
+
         // make it not active
         this.BubbleStatus = SpeechBubbleState.Inactive;
+    }
+
+    // _____________________
+    // mutttering functions \\
+    // ==========================================
+
+    public void RollMutteringLanguage(){
+        // choose language
+        int languageIndex = Random.Range(0,this.LANGUAGE_COUNT);
+        switch (languageIndex)
+        {
+            case 0:
+                this.SpeechStatus = SpeechMode.MutteringEnglish;
+                break;
+            default:
+            case 1:
+                this.SpeechStatus = SpeechMode.MutteringFrench;
+                break;
+        }
+        // let the toasting happen
+        this.ToastLooping = true;
+    }
+
+    public void RollMutteringOption(){
+        // TODO ....
+    }
+
+    // same as slicing an order but we need it to be re-runnable during the sliced
+    public void ReSliceMuttering(){
+        // declare variables
+        Sprite mutteringSpriteSelection = this.PlaceHolderSpeechSprite;
+        Sprite[] mutteringSpriteList = {};
+
+        // gather language based data
+        switch (this.SpeechStatus) {
+            // not muttering
+            default:
+                // huh? que pasa?
+                break;
+            // muttering rolling
+            case SpeechMode.MutteringEnglish:
+                // choose from english list
+                mutteringSpriteList = this.MutteringEnglishSpriteList;
+                break;
+            case SpeechMode.MutteringFrench:
+                // choose from french list
+                mutteringSpriteList = this.MutteringFrenchSpriteList;
+                break;
+        }
+
+        // do we have options?
+        if( mutteringSpriteList.Length > 0 ){
+            // roll for an option
+            int randomSpriteIndex = Random.Range(0, mutteringSpriteList.Length);
+            // retrieve the option
+            mutteringSpriteSelection = mutteringSpriteList[randomSpriteIndex];
+        }
+        // otherwise using the placeholder still
+        // else {  }
+
+        // update the sprite ready for use
+        this.MutteringElement.sprite = mutteringSpriteSelection;
     }
 
     // ________________
