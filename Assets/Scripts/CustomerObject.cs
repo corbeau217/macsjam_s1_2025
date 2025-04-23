@@ -77,11 +77,16 @@ public class CustomerObject : MonoBehaviour
         this.StoreExit = exit;
         this.target = TargetLocation.Entry;
         this.rerollSprite();
+        this.rerollOrder();
     }
 
     // ========================================================
     // ========================================================
 
+    void rerollOrder(){
+        this.order.randomiseCoffeeOrder();
+        this.speechBubble.setCoffeeOrder(this.order);
+    }
     void rerollSprite(){
         // deeply cursed that length is capitalised in c#
         int newSpriteID = Random.Range( 0, this.sprite_options.Length );
@@ -109,8 +114,7 @@ public class CustomerObject : MonoBehaviour
         this.SleepLeftSinceLastSpeaking = 0.0f;
         this.snoozeOrdering();
         this.rerollSprite();
-        this.order.randomiseCoffeeOrder();
-        this.speechBubble.setCoffeeOrder(this.order);
+        this.rerollOrder();
         
     }
 

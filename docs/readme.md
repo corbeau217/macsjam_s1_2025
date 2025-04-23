@@ -99,6 +99,9 @@
     - [x] added no sugar option to current speech bubble style
     - [x] make node key sprites
     - [x] add sprites to scene
+    - [x] moving flow graph scripts to scripts folder
+    - [x] fixing order match bug
+    - [x] fixing initial orders not randomised
     - [ ] attempt to build to webgl
     - [ ] upload current build to itch.io
     - [ ] minimalist itch.io page

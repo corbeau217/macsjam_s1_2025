@@ -59,6 +59,7 @@ public class CoffeeOrder {
         int milkID = (int)this.milk;
         int sweetenerID = (int)this.sweetener;
         // 0 - sizes, 1 - types, 2 - milks, 3 - sweeteners, 4 - payments
+        Debug.Log($"milk want {GroupIDs[2]} have {milkID}, sweetener want {GroupIDs[3]} have {sweetenerID}\n");
         return (GroupIDs[2] == milkID) && (GroupIDs[3] == sweetenerID);
     }
 
