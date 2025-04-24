@@ -124,79 +124,95 @@
 <details><summary><i>show/hide checklist</i></summary>
 
 ---
-- [ ] `STAGE 201` - ***CORE MECHANIC - CONSTRAINT USAGE***
+- [x] `STAGE 201` - ***CORE MECHANIC - CONSTRAINT USAGE***
     - [x] add sprites for french mutterings
     - [x] add alternative speech bubble collection
-    - [ ] when current orderer, rudely interrupt and swap bubble to order
+    - [x] when current orderer, rudely interrupt and swap bubble to order
     - [x] otherwise, mutter random french/english sentences
     - [x] removed the pesky `.DS_Store` file from repo
     - [x] adding screenshots/clips to documentation
-    - [ ] add sentence source images to docs
+- [ ] `STAGE 202` - ***REBUILD AND SUBMIT***
+    - [ ] rebuild game for web
+    - [ ] upload current build to itch.io
 - [ ] `STAGE 202` - ***CORE MECHANIC - HAPPY SAD EMOJI 3 STRIKES***
-    - [ ] coffee machine blips for bad orders
-    - [ ] coffee machine screen shows current streak
-    - [ ] draw digit sprites for screen
-- [ ] `STAGE 203` - ***LIGHT TASK - CUSTOMERS BETTER***
+    - [x] detecting order's error count
+    - [x] track order error count 
+    - [x] track successful order count 
+    - [ ] add sentence source images to docs
+- [ ] `STAGE 203` - ***CORE MECHANIC - MENUS***
+    - [ ] press tab to show order menu reference
+    - [ ] home screen scene before game
+    - [x] game detects win state when 10 successful orders
+    - [x] game detects loss state when 4 order mistakes
+    - [ ] win screen shown on win state
+    - [ ] loss screen shown on loss state
+- [ ] `STAGE 202` - ***REBUILD AND SUBMIT***
+    - [ ] rebuild game for web
+    - [ ] upload current build to itch.io
+- [ ] `STAGE 206` - ***LIGHT TASK - IMPROVED MOVEMENT***
     - [ ] using move towards for customer stepping back
     - [ ] backwards movement speed
     - [ ] experiment with animations
-    - [ ] add customer jiggling
-    - [ ] press tab to show order menu reference
-- [ ] `STAGE 204` - ***FINAL MECHANICS - PRE-ALPHA GAME***
-    - [ ] home screen scene before game
+    - [ ] add customer idle animation
+    - [ ] add customer movement animation
+- [x] `STAGE 204` - ***LIGHT TASK - GAME STATUS***
+    - [x] coffee machine blips for bad order count
+    - [x] coffee machine screen shows successful orders
+---
+- [ ] `STAGE 3xx` - ***FINAL MECHANICS - PRE-ALPHA GAME***
     - [ ] wrap up primitive game MVP in a bow
     - [ ] screenshot/recording of mvp game systems
-- [ ] `STAGE 205` - ***PRE-ALPHA SUBMISSION - NO SOUND***
+- [ ] `STAGE 3xx` - ***PRE-ALPHA SUBMISSION - NO SOUND***
     - [ ] rebuild game for web
     - [ ] upload current build to itch.io
     - [ ] cleanup itch.io page
-- [ ] `STAGE 206` - ***ALPHA MECHANIC - SOUND EFFECTS***
+- [ ] `STAGE 3xx` - ***ALPHA MECHANIC - SOUND EFFECTS***
     - [ ] source sound effects
     - [ ] add sound effects to the game
     - [ ] build with sound effects
-- [ ] `STAGE 207` - ***ALPHA SUBMISSION - SOUND EFFECTS***
+- [ ] `STAGE 3xx` - ***ALPHA SUBMISSION - SOUND EFFECTS***
     - [ ] rebuild game and upload to itch.io
     - [ ] tidy up submission page
     - [ ] investigate sound quality
-- [ ] `STAGE 208` - ***BETA MECHANIC - TRANSLATION SYSTEM***
+- [ ] `STAGE 3xx` - ***BETA MECHANIC - TRANSLATION SYSTEM***
     - [ ] speech bubbles in other languages translate to english after delay
     - [ ] translation loading sprite
     - [ ] translation in progress sprite usage
-- [ ] `STAGE 209` - ***NICER BUILDING***
+- [ ] `STAGE 3xx` - ***NICER BUILDING***
     - [ ] make the building repository
     - [ ] add this repository as submodule
     - [ ] rebuild game and upload to itch.io
     - [ ] tidy up submission page
     - [ ] emoji to show if happy or mad at order
-- [ ] `STAGE 210` - ***BETA PLANNING***
+- [ ] `STAGE 3xx` - ***BETA PLANNING***
     - [ ] tidy up order menu
     - [ ] home screen scene before game
-- [ ] `STAGE 211` - ***BETA PLANNING***
+- [ ] `STAGE 3xx` - ***BETA PLANNING***
     - [ ] outline further development plan
     - [ ] plan out what skeleton to include more core features
-- [ ] `STAGE 212` - ***BETA MECHANIC - TIME CRUNCHING***
+- [ ] `STAGE 3xx` - ***BETA MECHANIC - TIME CRUNCHING***
     - [ ] order timeframes and fail to deliver
     - [ ] variance in customer movement settings
-- [ ] `STAGE 213` - ***BETA SUBMISSION - TRANSLATION AND TIMING***
+- [ ] `STAGE 3xx` - ***BETA SUBMISSION - TRANSLATION AND TIMING***
     - [ ] rebuild game and upload to itch.io
     - [ ] tidy up submission page
-- [ ] `STAGE 214` - ***STRETCH 1 - MOUSE AND TOUCH MENU***
+- [ ] `STAGE 3xx` - ***STRETCH 1 - MOUSE AND TOUCH MENU***
     - [ ] plan out how to add touch functionality to menu
     - [ ] implement touch functionality
     - [ ] order group highlighter with animations
-- [ ] `STAGE 215` - ***STRETCH 2 - WORK DAY***
+- [ ] `STAGE 3xx` - ***STRETCH 2 - WORK DAY***
     - [ ] implementing work day and time in game
-- [ ] `STAGE 216` - ***STRETCH 3 - PA SYSTEM ANNOUNCEMENTS***
+- [ ] `STAGE 3xx` - ***STRETCH 3 - PA SYSTEM ANNOUNCEMENTS***
     - [ ] source PA system announcements sound bytes
-- [ ] `STAGE 217` - ***STRETCH 4 - THIRD LANGUAGE***
+- [ ] `STAGE 3xx` - ***STRETCH 4 - THIRD LANGUAGE***
     - [ ] third speech bubble language
     - [ ] speech bubbles drifting?
-- [ ] `STAGE 218` - ***STRETCH SUBMISSION - MOUSE, TOUCH, EXPANDED WORLD***
+- [ ] `STAGE 3xx` - ***STRETCH SUBMISSION - MOUSE, TOUCH, EXPANDED WORLD***
     - [ ] rebuild game and upload to itch.io
     - [ ] tidy up submission page
-- [ ] `STAGE 219` - ***STRETCH 5 - MENUS AS BUBBLES***
+- [ ] `STAGE 3xx` - ***STRETCH 5 - MENUS AS BUBBLES***
     - [ ] bubbles that are animated to create the menus as needed
-- [ ] `STAGE 220` - ***STRETCH 6 - CURRENCY***
+- [ ] `STAGE 3xx` - ***STRETCH 6 - CURRENCY***
     - [ ] add in player funds
     - [ ] add in order values
     - [ ] use order values for player funds

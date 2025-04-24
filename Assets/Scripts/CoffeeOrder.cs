@@ -45,12 +45,29 @@ public class CoffeeOrder {
     // ================================================
 
     // index error if we got a short array
-    public bool MatchWithGroupSelectionIDs( int[] GroupIDs ){
+    //  gives number of errors in the order
+    public int GetErrorCountInTransaction( int[] GroupIDs ){
+        int sizeID = (int)this.drinkSize;
+        int typeID = (int)this.drinkType;
         int milkID = (int)this.milk;
         int sweetenerID = (int)this.sweetener;
+        
         // 0 - sizes, 1 - types, 2 - milks, 3 - sweeteners, 4 - payments
-        Debug.Log($"milk want {GroupIDs[2]} have {milkID}, sweetener want {GroupIDs[3]} have {sweetenerID}\n");
-        return (GroupIDs[2] == milkID) && (GroupIDs[3] == sweetenerID);
+
+        // debugging spam
+        // Debug.Log($"SIZE want {GroupIDs[0]} have {sizeID}");
+        // Debug.Log($"TYPE want {GroupIDs[1]} have {typeID}");
+        // Debug.Log($"MILK want {GroupIDs[2]} have {milkID}");
+        // Debug.Log($"SWEETENER want {GroupIDs[3]} have {sweetenerID}");
+        
+        // say it all
+        int errorCount = 0;
+        if( GroupIDs[0] != sizeID ){ errorCount++; }
+        if( GroupIDs[1] != typeID ){ errorCount++; }
+        if( GroupIDs[2] != milkID ){ errorCount++; }
+        if( GroupIDs[3] != sweetenerID ){ errorCount++; }
+
+        return errorCount;
     }
 
     // ================================================

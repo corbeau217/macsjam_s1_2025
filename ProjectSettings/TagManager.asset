@@ -71,3 +71,6 @@ TagManager:
   - name: LocationMarkers
     uniqueID: 670969269
     locked: 0
+  - name: CoffeeMachineOrderStatus
+    uniqueID: 2887121803
+    locked: 0

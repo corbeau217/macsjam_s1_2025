@@ -16,9 +16,9 @@ public class CustomerObject : MonoBehaviour
     // ================================================
 
     // location markers
-    private GameObject StoreEntrance;
-    private GameObject OrderingLocation;
-    private GameObject StoreExit;
+    public GameObject StoreEntrance;
+    public GameObject OrderingLocation;
+    public GameObject StoreExit;
 
     // ================================================
     
@@ -67,13 +67,11 @@ public class CustomerObject : MonoBehaviour
     // ========================================================
 
 
-    public void provideLocations(GameObject entry, GameObject ordering, GameObject exit){
-        this.StoreEntrance = entry;
-        this.OrderingLocation = ordering;
-        this.StoreExit = exit;
-        this.target = TargetLocation.Entry;
+    public void initialise(){
         this.rerollSprite();
         this.rerollOrder();
+        this.target = TargetLocation.Ordering;
+        this.isMoving = true;
     }
 
     // ========================================================
@@ -81,7 +79,6 @@ public class CustomerObject : MonoBehaviour
 
     void rerollOrder(){
         this.order.randomiseCoffeeOrder();
-        this.speechBubbleController.SetToOrder(this.order);
     }
     void rerollSprite(){
         // deeply cursed that length is capitalised in c#
@@ -136,18 +133,16 @@ public class CustomerObject : MonoBehaviour
     // ========================================================
     // ========================================================
 
+    public void prepareOrderSpeech(){
+        this.speechBubbleController.SetToOrder(this.order);
+    }
+
     public void leaveStore(){
         this.target = TargetLocation.Exit;
         // this.inStore = true;
         this.isMoving = true;
         // print("leaving store");
         this.speechBubbleController.InterruptRudely();
-    }
-
-    // when not in store we want to enter the store
-    public void startOrdering(){
-        this.target = TargetLocation.Ordering;
-        this.isMoving = true;
     }
 
     // ========================================================
@@ -219,9 +214,18 @@ public class CustomerObject : MonoBehaviour
     }
 
     void announceOrder(){
+        // debugging spam
         // print("i want a "+this.order.toString()+" please!\n");
+
         this.speechBubbleController.SetLooping( true );
         this.announcedOrder = true;
+    }
+
+    // ========================================================
+    // ========================================================
+
+    public void HandleYuckyOrder( int orderErrorCount ){
+        // TODO : how yucky was it? do we talk about it?
     }
 
     // ========================================================
@@ -230,7 +234,7 @@ public class CustomerObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        // ..
     }
 
     // handle the time outs

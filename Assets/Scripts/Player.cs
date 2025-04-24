@@ -22,10 +22,10 @@ public class Player : MonoBehaviour
     // ========================================================
 
     public void HandleOrderComplete( int[] OrderDetails ){
-        // get the status
-        bool wasOrderCorrect = this.CustomerManagerObj.currentCustomer.order.MatchWithGroupSelectionIDs( OrderDetails );
+        // get total 
+        int orderErrorCount = this.CustomerManagerObj.currentCustomer.order.GetErrorCountInTransaction( OrderDetails );
         // tell them about the order and if it matched
-        this.CustomerManagerObj.notifyOrderComplete( wasOrderCorrect );
+        this.CustomerManagerObj.notifyTransactionComplete( orderErrorCount );
     }
 
     // ========================================================
