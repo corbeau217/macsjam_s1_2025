@@ -44,6 +44,8 @@ public class CustomerObject : MonoBehaviour
     // how much space they want to leave to the next person
     public float desiredPersonalSpace = 3.5f;
 
+    public Vector3 StepBackVector = new Vector3(-2.5f, 0.0f, 0.0f);
+
     // ================================================
 
     public float exitProximityToTeleport = 1.0f; 
@@ -179,16 +181,23 @@ public class CustomerObject : MonoBehaviour
     // for handling the movement
     void approachTarget(GameObject targetObj, GameObject obstacleObj){
         // how to obstacle
-        float distance_to_obstacle = Vector3.Distance(this.CustomerInstance.transform.position, obstacleObj.transform.position);
+        float obstacleDistance = Vector3.Distance(this.CustomerInstance.transform.position, obstacleObj.transform.position);
+        float targetDistance = Vector3.Distance(this.CustomerInstance.transform.position, targetObj.transform.position);
+
+        // smallest movement distance portion
+        float maximumMovementDistance = Mathf.Min(targetDistance, Mathf.Min(obstacleDistance - this.desiredPersonalSpace, this.baseMovementSpeed));
+
+
         // check we want to move forward
-        if(distance_to_obstacle > this.desiredPersonalSpace){
-            // move towards the destination
-            this.CustomerInstance.transform.position = Vector3.MoveTowards(this.CustomerInstance.transform.position, targetObj.transform.position, this.baseMovementSpeed * Time.deltaTime);
+        if(obstacleDistance > this.desiredPersonalSpace){
+            // move towards the destination but 
+            this.CustomerInstance.transform.position = Vector3.MoveTowards(this.CustomerInstance.transform.position, targetObj.transform.position, maximumMovementDistance * Time.deltaTime);
         }
         else {
-            Vector3 movement = new Vector3(-(this.baseMovementSpeed * Time.deltaTime), 0, 0);
-            // move towards the destination
-            this.CustomerInstance.transform.position = this.CustomerInstance.transform.position + movement;
+            // probably should save this when we notice it
+            Vector3 StepBackPosition = this.CustomerInstance.transform.position + this.StepBackVector;
+            // move backwards half speed
+            this.CustomerInstance.transform.position =  Vector3.MoveTowards(this.CustomerInstance.transform.position, StepBackPosition, (this.baseMovementSpeed/2.0f) * Time.deltaTime);
         }
     }
 
