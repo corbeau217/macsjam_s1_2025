@@ -29,6 +29,15 @@ public class MenuToasterController : MonoBehaviour
     
     public float RelaxSnappingDistance = 1.0f;
 
+    public bool KeyPressDetected_Override = false;
+
+    // ====================================
+    // ====================================
+
+    public bool ShouldToast(){
+        return KeyPressDetected_Override || Input.GetKey( this.ShowMenuKeyCode );
+    }
+
     // ====================================
     // ====================================
 
@@ -38,12 +47,12 @@ public class MenuToasterController : MonoBehaviour
     }
     public void ToastState_OnReady(){
         // should toast?
-        if(Input.GetKey( this.ShowMenuKeyCode )){
+        if( this.ShouldToast() ){
             this.ToastStatus = MenuToastState.Toasting;
         }
     }
     public void ToastState_OnToasting(){
-        if(!Input.GetKey( this.ShowMenuKeyCode )){
+        if( !this.ShouldToast() ){
             // no longer holding
             this.ToastStatus = MenuToastState.Relaxing;
         }
