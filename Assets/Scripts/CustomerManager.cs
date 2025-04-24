@@ -18,6 +18,8 @@ public class CustomerManager : MonoBehaviour
     // handling order status
     public CoffeeMachineDisplayController CoffeeMachine;
 
+    public WinMenuController winMenu;
+
     // customer sprites
     public CustomerObject[] CustomerList;
 
@@ -28,6 +30,7 @@ public class CustomerManager : MonoBehaviour
     public CustomerObject currentCustomer;
 
     public bool GameShouldEnd = false;
+    public bool Lost = false;
     
     // ===========================
 
@@ -75,13 +78,18 @@ public class CustomerManager : MonoBehaviour
     // ========================================================
     // ========================================================
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    public void TestReset(){
+        if(Input.GetKey( KeyCode.Space )||Input.GetKey( KeyCode.Escape )){
+            this.winMenu.Reset();
+            this.StartGame();
+        }
+    }
+    public void StartGame(){
         // enforce they start false
 
         this.GameShouldEnd = false;
         this.currentOrderComplete = false;
+        this.Lost = false;
 
         // prep customers
 
@@ -91,9 +99,16 @@ public class CustomerManager : MonoBehaviour
         this.setCurrentCustomer(this.CustomerList[0]);
     }
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        this.StartGame();
+    }
+
     // Update is called once per frame
     void Update()
     {
+
         // when we dont know yet about the game ending
         if(!this.GameShouldEnd){
             // game state changes
@@ -101,12 +116,25 @@ public class CustomerManager : MonoBehaviour
                 // uhhh game is over
                 Debug.Log("RIP you lost!");
                 this.GameShouldEnd = true;
+                this.Lost = true;
             }
             else if(this.CoffeeMachine.IsFinishedOrders()){
                 // uhhh game is over
                 Debug.Log("You done it!");
+                this.winMenu.Won();
                 this.GameShouldEnd = true;
             }
+        }
+        // when ended
+        else{
+            this.TestReset();
+        }
+
+        // they keep leavving till escape
+        if(this.Lost){
+            this.currentCustomer.leaveStore();
+            this.callNextCustomer();
+            this.TestReset();
         }
 
         // check for when we need to have our current customer's order completed
@@ -115,6 +143,7 @@ public class CustomerManager : MonoBehaviour
             this.currentCustomer.leaveStore();
             this.callNextCustomer();
         }
+
     }
 
     // ========================================================
