@@ -117,7 +117,6 @@
 ---
 
 </details>
-
 ### DAY 2
 - [ ] `day 3` - `THURSDAY (24th April 2025)` - **FINAL DAY**
 
@@ -131,34 +130,40 @@
     - [x] otherwise, mutter random french/english sentences
     - [x] removed the pesky `.DS_Store` file from repo
     - [x] adding screenshots/clips to documentation
-- [ ] `STAGE 202` - ***REBUILD AND SUBMIT***
-    - [ ] rebuild game for web
-    - [ ] upload current build to itch.io
-- [ ] `STAGE 202` - ***CORE MECHANIC - HAPPY SAD EMOJI 3 STRIKES***
+- [x] `STAGE 202` - ***REBUILD AND SUBMIT***
+    - [x] rebuild game for web
+    - [x] upload current build to itch.io
+- [x] `STAGE 202` - ***CORE MECHANIC - HAPPY SAD EMOJI 3 STRIKES***
     - [x] detecting order's error count
     - [x] track order error count 
     - [x] track successful order count 
-    - [ ] add sentence source images to docs
 - [ ] `STAGE 203` - ***CORE MECHANIC - MENUS***
-    - [ ] press tab to show order menu reference
+    - [x] press tab to show order menu reference
     - [ ] home screen scene before game
     - [x] game detects win state when 10 successful orders
     - [x] game detects loss state when 4 order mistakes
     - [ ] win screen shown on win state
-    - [ ] loss screen shown on loss state
-- [ ] `STAGE 202` - ***REBUILD AND SUBMIT***
-    - [ ] rebuild game for web
-    - [ ] upload current build to itch.io
-- [ ] `STAGE 206` - ***LIGHT TASK - IMPROVED MOVEMENT***
-    - [ ] using move towards for customer stepping back
-    - [ ] backwards movement speed
-    - [ ] experiment with animations
-    - [ ] add customer idle animation
-    - [ ] add customer movement animation
+    - [x] loss screen shown on loss state
+- [x] `STAGE 202` - ***REBUILD AND SUBMIT***
+    - [x] rebuild game for web
+    - [x] upload current build to itch.io
+- [x] `STAGE 206` - ***LIGHT TASK - IMPROVED MOVEMENT***
+    - [x] using move towards for customer stepping back
+    - [x] backwards movement speed
 - [x] `STAGE 204` - ***LIGHT TASK - GAME STATUS***
     - [x] coffee machine blips for bad order count
     - [x] coffee machine screen shows successful orders
 ---
+
+</details>
+
+### POST-SUBMISSION 
+- [ ] `day .` - `...` - **AFTER**
+---
+- [ ] `STAGE 3xx` - ***FINAL MECHANICS - ANIMATIONS***
+    - [ ] experiment with animations
+    - [ ] add customer idle animation
+    - [ ] add customer movement animation
 - [ ] `STAGE 3xx` - ***FINAL MECHANICS - PRE-ALPHA GAME***
     - [ ] wrap up primitive game MVP in a bow
     - [ ] screenshot/recording of mvp game systems
@@ -219,6 +224,7 @@
     - [ ] show bankrupt screen when you get negative coins
 ---
 
+<details><summary><i>show/hide checklist</i></summary>
 </details>
 
 
