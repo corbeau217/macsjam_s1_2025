@@ -2,16 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum MenuToastState {
-    // start of game
-    Initialising,
-    // when it's hidden
-    Ready,
-    // when it's moving to the toast location
-    Toasting,
-    // when it's retreating to the hiding location
-    Relaxing,
-}
 
 public class MenuToasterController : MonoBehaviour
 {
@@ -22,7 +12,7 @@ public class MenuToasterController : MonoBehaviour
 
     public MenuToastState ToastStatus = MenuToastState.Initialising;
 
-    public KeyCode ShowMenuKeyCode = KeyCode.Tab;
+    public KeyCode ShowMenuKeyCode = KeyCode.None;
 
     public float toastingMovementSpeed = 7.0f;
     public float hidingMovementSpeed = 10.0f;
@@ -102,7 +92,6 @@ public class MenuToasterController : MonoBehaviour
     void Start()
     {
         this.ToastStatus = MenuToastState.Initialising;
-        this.ShowMenuKeyCode = KeyCode.Tab;
     }
 
     // Update is called once per frame

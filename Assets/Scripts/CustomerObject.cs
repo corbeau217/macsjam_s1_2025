@@ -35,25 +35,28 @@ public class CustomerObject : MonoBehaviour
     // enum for our customer movement state
     public TargetLocation target = TargetLocation.Entry;
 
+    public Vector3 InitalisationPosition;
+
     // how fast to move
-    public float baseMovementSpeed;
-    
+    public float baseMovementSpeed = 9.0f;
+
     // for detecting if we need to update anything
     public bool isMoving = false;
 
     // how much space they want to leave to the next person
-    public float desiredPersonalSpace = 3.5f;
+    public float initialPersonalSpace = 3.0f;
+    public float desiredPersonalSpace = 3.0f;
 
-    public Vector3 StepBackVector = new Vector3(-2.5f, 0.0f, 0.0f);
+    public Vector3 StepBackVector = new Vector3(-2.5f, 0.1f, 0.0f);
 
     // ================================================
 
     public float exitProximityToTeleport = 1.0f; 
 
-    public float MINIMUM_ORDERING_HONKSHOO = 4.0f;
-    public float MAXIMUM_ORDERING_HONKSHOO = 12.0f;
+    public float OrderSnoozeMin = 4.0f;
+    public float OrderSnoozeMax = 12.0f;
 
-    public float orderingSpeechProximity = 1.0f;
+    public float OrderSpeechProximity = 1.0f;
 
     public float SleepLeftSinceLastOrdering = 0.0f;
 
@@ -68,21 +71,42 @@ public class CustomerObject : MonoBehaviour
     // ========================================================
     // ========================================================
 
+    public void Hush(){ 
+        this.speechBubbleController.NewBubbleOrder = null;
+        this.speechBubbleController.InterruptRudely();
+    }
+    public void Ensnare(){
+        this.isMoving = false;
+    }
+    public void Banish(){
+        this.CustomerInstance.transform.position = this.InitalisationPosition;
+    }
 
+    public void Reincarnate(){
+        this.Hush();
+        this.Banish();
+        this.rerollSprite();
+        this.rerollOrder();
+        this.target = TargetLocation.Ordering;
+        this.isMoving = true;
+        this.desiredPersonalSpace = this.initialPersonalSpace;
+    }
+    
     public void initialise(){
         this.rerollSprite();
         this.rerollOrder();
         this.target = TargetLocation.Ordering;
         this.isMoving = true;
+        this.desiredPersonalSpace = this.initialPersonalSpace;
     }
 
     // ========================================================
     // ========================================================
 
-    void rerollOrder(){
+    public void rerollOrder(){
         this.order.randomiseCoffeeOrder();
     }
-    void rerollSprite(){
+    public void rerollSprite(){
         // deeply cursed that length is capitalised in c#
         int newSpriteID = Random.Range( 0, this.sprite_options.Length );
         // this.CustomerSprite.sprite = this.sprite_options[newSpriteID];
@@ -113,8 +137,14 @@ public class CustomerObject : MonoBehaviour
     }
 
     void snoozeOrdering(){
-        this.SleepLeftSinceLastOrdering = Random.Range(MINIMUM_ORDERING_HONKSHOO, MAXIMUM_ORDERING_HONKSHOO);
+        this.SleepLeftSinceLastOrdering = Random.Range(OrderSnoozeMin, OrderSnoozeMax);
     }
+
+    // ========================================================
+    // ========================================================
+
+    public Vector3 CurrentLocation(){ return this.CustomerInstance.transform.position; }
+    public float DistanceToGameObject(GameObject InputObject){ return Vector3.Distance(this.CurrentLocation(), InputObject.transform.position); }
 
     // ========================================================
     // ========================================================
@@ -144,7 +174,7 @@ public class CustomerObject : MonoBehaviour
         // this.inStore = true;
         this.isMoving = true;
         // print("leaving store");
-        this.speechBubbleController.InterruptRudely();
+        this.Hush();
     }
 
     // ========================================================
@@ -152,7 +182,7 @@ public class CustomerObject : MonoBehaviour
 
     // check for near the exit and mark us as being able to teleport to entrance
     void testExitProximity(){
-        float distance_to_exit = Vector3.Distance(this.CustomerInstance.transform.position, this.StoreExit.transform.position);
+        float distance_to_exit = this.DistanceToGameObject(this.StoreExit);
 
         // close
         if(distance_to_exit <= exitProximityToTeleport){
@@ -163,15 +193,11 @@ public class CustomerObject : MonoBehaviour
     // shouts our order
     void testOrderingProximity(){
         
-        float distanceToOrderWindow = Vector3.Distance(this.CustomerInstance.transform.position, this.OrderingLocation.transform.position);
+        float distanceToOrderWindow = this.DistanceToGameObject(this.OrderingLocation);
         // when near the window
-        if( distanceToOrderWindow < this.orderingSpeechProximity && !announcedOrder){
+        if( distanceToOrderWindow < this.OrderSpeechProximity && !announcedOrder){
             this.announceOrder();
         }
-        // // when near the window and not sleepy
-        // if( distanceToOrderWindow < this.orderingSpeechProximity && !announcedOrder){
-        //     this.announceOrder();
-        // }
     }
 
     // ========================================================
@@ -181,8 +207,8 @@ public class CustomerObject : MonoBehaviour
     // for handling the movement
     void approachTarget(GameObject targetObj, GameObject obstacleObj){
         // how to obstacle
-        float obstacleDistance = Vector3.Distance(this.CustomerInstance.transform.position, obstacleObj.transform.position);
-        float targetDistance = Vector3.Distance(this.CustomerInstance.transform.position, targetObj.transform.position);
+        float obstacleDistance = this.DistanceToGameObject(obstacleObj);
+        float targetDistance = this.DistanceToGameObject(targetObj);
 
         // smallest movement distance portion
         float maximumMovementDistance = Mathf.Min(targetDistance, Mathf.Min(obstacleDistance - this.desiredPersonalSpace, this.baseMovementSpeed));

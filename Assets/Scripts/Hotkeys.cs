@@ -19,4 +19,11 @@ public class Hotkeys : MonoBehaviour
     public const KeyCode Select_Sweetener_Double = KeyCode.D;
 
     public const KeyCode Select_Payment_Card = KeyCode.Space;
+
+    // TODO: implement
+    public const KeyCode ShowOrderMenu = KeyCode.Tab;
+
+    // TODO: implement
+    public const KeyCode RestartGameKey1 = KeyCode.Space;
+    public const KeyCode RestartGameKey2 = KeyCode.Escape;
 }

@@ -41,6 +41,14 @@ public class CoffeeOrderFlowGraph : MonoBehaviour
     // ========================================================
     // ========================================================
 
+    public void DeactivateFlowGraph(){
+        // clear the selections
+        this.OrderSelectionIDs = new int[this.NodeGroupList.Length];
+        // hide em
+        this.HideAllGroups();
+        // and make it startable
+        this.CurrentOrderStage = OrderStage.Inactive;
+    }
     public void ResetFlowGraph(){
         // clear the selections
         this.OrderSelectionIDs = new int[this.NodeGroupList.Length];
@@ -215,8 +223,9 @@ public class CoffeeOrderFlowGraph : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(this.CurrentOrderStage == OrderStage.Inactive){
-            this.ResetFlowGraph();
+
+        if(this.CurrentOrderStage == OrderStage.Inactive && this.PlayerReference.CustomerManagerObj.canMakeOrder){
+                this.ResetFlowGraph();
         }
         else if(this.CurrentOrderStage == OrderStage.ProcessingPayment){
                 this.ProcessOrder();

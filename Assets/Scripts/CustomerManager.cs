@@ -4,8 +4,6 @@ using UnityEngine;
 using static TargetLocation;
 
 
-
-
 public class CustomerManager : MonoBehaviour
 {
 
@@ -17,8 +15,10 @@ public class CustomerManager : MonoBehaviour
 
     // handling order status
     public CoffeeMachineDisplayController CoffeeMachine;
+    public CoffeeOrderFlowGraph OrderGraph;
 
     public WinMenuController winMenu;
+    public WinMenuController lossMenu;
 
     // customer sprites
     public CustomerObject[] CustomerList;
@@ -27,10 +27,16 @@ public class CustomerManager : MonoBehaviour
 
     // ===========================
 
+    public GameModeState GameStatus = GameModeState.MainMenu;
+
     public CustomerObject currentCustomer;
 
-    public bool GameShouldEnd = false;
-    public bool Lost = false;
+    public float ResetInputDelay = 1.0f;
+    public float ResetKeySnoozeTime = 0.0f;
+
+    public bool canMakeOrder = false;
+
+    public float reducedPersonalSpace = 2.3f;
     
     // ===========================
 
@@ -78,18 +84,90 @@ public class CustomerManager : MonoBehaviour
     // ========================================================
     // ========================================================
 
-    public void TestReset(){
-        if(Input.GetKey( KeyCode.Space )||Input.GetKey( KeyCode.Escape )){
-            this.winMenu.Reset();
-            this.StartGame();
+    public void TestForReset(){
+        if( Input.GetKey( Hotkeys.RestartGameKey1 ) || Input.GetKey( Hotkeys.RestartGameKey1 ) ){
+            this.GameStatus = GameModeState.Restart;
         }
     }
-    public void StartGame(){
+    
+    public void GameEndInputSnooze(){
+        this.ResetKeySnoozeTime = this.ResetInputDelay;
+    }
+
+    public void GameEndInputSnore(){
+        // reduce time left for input
+        this.ResetKeySnoozeTime = Mathf.Max(this.ResetKeySnoozeTime - Time.deltaTime, 0.0f);
+    }
+    public void GameEndingTick(){
+        this.GameEndInputSnore();
+
+        // can try to reset game 
+        if( this.ResetKeySnoozeTime == 0.0f ){
+            this.TestForReset();
+        }
+    }
+
+    // ========================================================
+    // ========================================================
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        // ...
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        switch (this.GameStatus) {
+            default:
+                break;
+            case GameModeState.MainMenu:
+                this.GameState_OnMainMenu();
+                break;
+            case GameModeState.Initialisation:
+                this.GameState_OnInitialisation();
+                break;
+            case GameModeState.Playing:
+                this.GameState_OnPlaying();
+                break;
+            case GameModeState.Won:
+                this.GameState_OnWon();
+                break;
+            case GameModeState.Lost:
+                this.GameState_OnLost();
+                break;
+            case GameModeState.Restart:
+                this.GameState_OnRestart();
+                break;
+            case GameModeState.Returning:
+                this.GameState_OnReturning();
+                break;
+        }
+    }
+    public void PreGameEndEvent(){
+        this.MassBanishment();
+        this.MassPolymorph();
+        this.GameEndInputSnooze();
+        this.canMakeOrder = false;
+        this.OrderGraph.DeactivateFlowGraph();
+
+        this.HuddleTogether();
+    }
+    // ========================================================
+    // ========================================================
+
+    public void GameState_OnMainMenu(){
+        this.canMakeOrder = false;
+        this.GameStatus = GameModeState.Initialisation; // skip
+        // ....
+    }
+    public void GameState_OnInitialisation(){
+        this.canMakeOrder = false;
+
         // enforce they start false
 
-        this.GameShouldEnd = false;
         this.currentOrderComplete = false;
-        this.Lost = false;
 
         // prep customers
 
@@ -97,56 +175,110 @@ public class CustomerManager : MonoBehaviour
             this.CustomerList[i].initialise();
         }
         this.setCurrentCustomer(this.CustomerList[0]);
+
+        this.GameStatus = GameModeState.Playing;
+    }
+    public void GameState_OnPlaying(){
+        this.canMakeOrder = true;
+        
+        // look for game state changes
+        if(this.CoffeeMachine.IsTooManyErrors()){
+            this.PreGameEndEvent();
+            this.lossMenu.SetToasting();
+            this.GameStatus = GameModeState.Lost;
+        }
+        // otherwise got enough orders?
+        else if(this.CoffeeMachine.IsFinishedOrders()){
+            this.PreGameEndEvent();
+            this.winMenu.SetToasting();
+            this.GameStatus = GameModeState.Won;
+        }
+        // otherwise do game moment
+        else {
+            // check for when we need to have our current customer's order completed
+            if(this.currentOrderComplete){
+                this.currentOrderComplete = false;
+                this.currentCustomer.leaveStore();
+                this.callNextCustomer();
+            }
+        }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        this.StartGame();
+    public void GameState_OnWon(){
+        this.canMakeOrder = false;
+        this.currentCustomer.isMoving = false;
+        this.GameEndingTick();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    public void GameState_OnLost(){
+        this.canMakeOrder = false;
+        // make them keep walking
+        this.currentCustomer.leaveStore();
+        this.callNextCustomer();
 
-        // when we dont know yet about the game ending
-        if(!this.GameShouldEnd){
-            // game state changes
-            if(this.CoffeeMachine.IsTooManyErrors()){
-                // uhhh game is over
-                Debug.Log("RIP you lost!");
-                this.GameShouldEnd = true;
-                this.Lost = true;
-            }
-            else if(this.CoffeeMachine.IsFinishedOrders()){
-                // uhhh game is over
-                Debug.Log("You done it!");
-                this.winMenu.Won();
-                this.GameShouldEnd = true;
-            }
-        }
-        // when ended
-        else{
-            this.TestReset();
-        }
+        this.GameEndingTick();
+    }
 
-        // they keep leavving till escape
-        if(this.Lost){
-            this.currentCustomer.leaveStore();
-            this.callNextCustomer();
-            this.TestReset();
-        }
+    public void GameState_OnRestart(){
+        this.canMakeOrder = false;
 
-        // check for when we need to have our current customer's order completed
-        if(this.currentOrderComplete){
-            this.currentOrderComplete = false;
-            this.currentCustomer.leaveStore();
-            this.callNextCustomer();
-        }
+        this.CoffeeMachine.ResetMachine();
+        this.winMenu.RelaxMenu();
+        this.lossMenu.RelaxMenu();
 
+        // undo any order tests
+        this.currentOrderComplete = false;
+
+        // prep customers
+
+        for (int i = 0; i < this.CustomerList.Length; i++) {
+            this.CustomerList[i].Reincarnate();
+        }
+        this.setCurrentCustomer(this.CustomerList[0]);
+
+        this.ResetKeySnoozeTime = 0.0f;
+
+        this.GameStatus = GameModeState.Playing;
+    }
+
+    public void GameState_OnReturning(){
+        this.canMakeOrder = false;
+
+        this.CoffeeMachine.ResetMachine();
+        this.winMenu.RelaxMenu();
+        this.lossMenu.RelaxMenu();
+
+        // undo any order tests
+        this.currentOrderComplete = false;
+
+        this.MassBanishment();
+
+        this.ResetKeySnoozeTime = 0.0f;
+
+        this.GameStatus = GameModeState.MainMenu; // uhhhh idk skip to menu?
     }
 
     // ========================================================
     // ========================================================
+
+    public void MassBanishment(){
+        // shut up, get out.
+        for (int i = 0; i < this.CustomerList.Length; i++) {
+            this.CustomerList[i].Hush();
+            this.CustomerList[i].Banish();
+        }
+    }
+    public void MassPolymorph(){
+        // shut up, get out.
+        for (int i = 0; i < this.CustomerList.Length; i++) {
+            this.CustomerList[i].rerollSprite();
+        }
+    }
+    public void HuddleTogether(){
+        // shut up, get out.
+        for (int i = 0; i < this.CustomerList.Length; i++) {
+            this.CustomerList[i].desiredPersonalSpace = this.reducedPersonalSpace;
+        }
+    }
 
 }

@@ -130,7 +130,6 @@ public class SpeechController : MonoBehaviour
             // muttering rolling
             case SpeechMode.MutteringEnglish:
             case SpeechMode.MutteringFrench:
-                this.RollMutteringOption();
                 this.ReSliceMuttering();
                 break;
         }
@@ -226,10 +225,6 @@ public class SpeechController : MonoBehaviour
         }
         // let the toasting happen
         this.ToastLooping = true;
-    }
-
-    public void RollMutteringOption(){
-        // TODO ....
     }
 
     // same as slicing an order but we need it to be re-runnable during the sliced

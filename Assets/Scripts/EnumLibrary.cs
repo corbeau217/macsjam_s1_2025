@@ -81,3 +81,35 @@ public enum SpeechMode {
 
 // #######################################################
 // #######################################################
+
+public enum MenuToastState {
+    // start of game
+    Initialising,
+    // when it's hidden
+    Ready,
+    // when it's moving to the toast location
+    Toasting,
+    // when it's retreating to the hiding location
+    Relaxing,
+}
+
+
+public enum GameModeState {
+    // main menu
+    MainMenu,
+    // when loading game
+    Initialisation,
+    // in game
+    Playing,
+    // win screen
+    Won,
+    // losing screen
+    Lost,
+    // reseting game
+    Restart,
+    // goes back to the menu
+    Returning,
+}
+
+// #######################################################
+// #######################################################

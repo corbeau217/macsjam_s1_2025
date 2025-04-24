@@ -25,6 +25,11 @@ public class CoffeeMachineDisplayController : MonoBehaviour
         }
     }
 
+    public void ResetMachine(){
+        this.SuccessBlipCounter.ResetCounter();
+        this.ErrorBlipCounter.ResetCounter();
+    }
+
     // Start is called before the first frame update
     void Start()
     {

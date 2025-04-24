@@ -36,13 +36,13 @@ public class BlipCounter : MonoBehaviour
 
     public bool IsMaximum(){ return this.CurrentCount == this.BlipList.Length; }
 
-    public void Reset(){  this.SetCount( this.StartingCount ); }
+    public void ResetCounter(){  this.SetCount( this.StartingCount ); }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        this.Reset();
+        this.ResetCounter();
     }
 
     // Update is called once per frame
