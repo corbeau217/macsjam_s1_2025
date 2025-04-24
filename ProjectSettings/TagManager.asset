@@ -44,9 +44,6 @@ TagManager:
   - name: Background
     uniqueID: 3853064151
     locked: 0
-  - name: OrderMenu
-    uniqueID: 80557363
-    locked: 0
   - name: BackgroundClutter
     uniqueID: 1352373491
     locked: 0
@@ -68,9 +65,18 @@ TagManager:
   - name: SpeechBubbles
     uniqueID: 1165449165
     locked: 0
+  - name: ToastyMenu
+    uniqueID: 80557363
+    locked: 0
   - name: LocationMarkers
     uniqueID: 670969269
     locked: 0
   - name: CoffeeMachineOrderStatus
     uniqueID: 2887121803
+    locked: 0
+  - name: WinLossMenu
+    uniqueID: 1532869665
+    locked: 0
+  - name: MainMenu
+    uniqueID: 2315735711
     locked: 0
