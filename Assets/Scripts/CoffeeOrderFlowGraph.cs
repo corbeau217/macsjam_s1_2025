@@ -13,6 +13,8 @@ public class CoffeeOrderFlowGraph : MonoBehaviour
 
     public Player PlayerReference;
 
+    public CoffeeCupController MachineCup;
+
     public OrderStage CurrentOrderStage;
 
     public int[] OrderSelectionIDs = {};
@@ -115,6 +117,7 @@ public class CoffeeOrderFlowGraph : MonoBehaviour
                 break;
             case OrderStage.Sizes:
                 this.OrderSelectionIDs[0] = SelectionID;
+                this.MachineCup.ShowCup();
                 break;
             case OrderStage.Types:
                 this.OrderSelectionIDs[1] = SelectionID;
@@ -144,6 +147,7 @@ public class CoffeeOrderFlowGraph : MonoBehaviour
     // ========================================================
 
     public void ProcessOrder(){
+        this.MachineCup.TakeCup();
         // give player the order information
         this.PlayerReference.HandleOrderComplete( this.OrderSelectionIDs );
         // mark it as finished

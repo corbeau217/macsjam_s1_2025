@@ -14,8 +14,8 @@ public class MenuToasterController : MonoBehaviour
 
     public KeyCode ShowMenuKeyCode = KeyCode.None;
 
-    public float toastingMovementSpeed = 7.0f;
-    public float hidingMovementSpeed = 10.0f;
+    public float toastingMovementSpeed = 10.0f;
+    public float hidingMovementSpeed = 20.0f;
     
     public float RelaxSnappingDistance = 1.0f;
 
@@ -51,8 +51,12 @@ public class MenuToasterController : MonoBehaviour
         }
     }
     public void ToastState_OnRelaxing(){
-        if(this.DistanceToObject(this.HidingLocation) < this.RelaxSnappingDistance){
+        if( this.ShouldToast() ){
+            this.ToastStatus = MenuToastState.Toasting;
+        }
+        else if(this.DistanceToObject(this.HidingLocation) < this.RelaxSnappingDistance){
             this.SnapToHiding();
+            this.ToastStatus = MenuToastState.Ready;
         }
         else{
             this.MoveTo(this.HidingLocation.transform.position, this.hidingMovementSpeed);
