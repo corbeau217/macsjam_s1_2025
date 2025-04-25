@@ -142,7 +142,7 @@
     - [ ] home screen scene before game
     - [x] game detects win state when 10 successful orders
     - [x] game detects loss state when 4 order mistakes
-    - [ ] win screen shown on win state
+    - [x] win screen shown on win state
     - [x] loss screen shown on loss state
 - [x] `STAGE 202` - ***REBUILD AND SUBMIT***
     - [x] rebuild game for web
@@ -165,10 +165,10 @@
     - [ ] add customer idle animation
     - [ ] add customer movement animation
 - [ ] `STAGE 3xx` - ***FINAL MECHANICS - PRE-ALPHA GAME***
-    - [ ] wrap up primitive game MVP in a bow
-    - [ ] screenshot/recording of mvp game systems
+    - [x] wrap up primitive game MVP in a bow
+    - [x] screenshot/recording of mvp game systems
 - [ ] `STAGE 3xx` - ***PRE-ALPHA SUBMISSION - NO SOUND***
-    - [ ] rebuild game for web
+    - [x] rebuild game for web
     - [ ] upload current build to itch.io
     - [ ] cleanup itch.io page
 - [ ] `STAGE 3xx` - ***ALPHA MECHANIC - SOUND EFFECTS***
