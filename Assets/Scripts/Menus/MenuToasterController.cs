@@ -8,6 +8,7 @@ public class MenuToasterController : MonoBehaviour
     public GameObject MenuReference;
 
     public AudioSource ShowSound;
+    public AudioSource HideSound;
 
     public GameObject HidingLocation;
     public GameObject ToastingLocation;
@@ -35,6 +36,11 @@ public class MenuToasterController : MonoBehaviour
             this.ShowSound.Play();
         }
     }
+    public void AttemptHideSound(){
+        if(this.HideSound != null){
+            this.HideSound.Play();
+        }
+    }
 
     // ====================================
     // ====================================
@@ -54,6 +60,7 @@ public class MenuToasterController : MonoBehaviour
         if( !this.ShouldToast() ){
             // no longer holding
             this.ToastStatus = MenuToastState.Relaxing;
+            this.AttemptHideSound();
         }
         else {
             this.MoveTo(this.ToastingLocation.transform.position, this.toastingMovementSpeed);
