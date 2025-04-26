@@ -139,7 +139,7 @@ public class CoffeeOrderFlowGraph : MonoBehaviour
 
         // make decision
         CoffeeOrderNodeGroup currentGroup = this.CurrentOrderNodeGroup();
-        currentGroup.SetActiveNode( SelectionID );
+        currentGroup.SelectNode( SelectionID );
         
         this.CycleNextStage();
         if(this.CurrentOrderStage != OrderStage.ProcessingPayment){

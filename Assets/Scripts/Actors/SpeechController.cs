@@ -11,6 +11,8 @@ public class SpeechController : MonoBehaviour
 
     public GameObject OrderingSpeechBubble;
     public GameObject MutteringSpeechBubble;
+    public AudioSource OrderingSound;
+    public AudioSource MutteringSound;
 
     // ______________
     // sprite layers \\
@@ -85,12 +87,39 @@ public class SpeechController : MonoBehaviour
     // activate/deactivate \\
     // ==========================================
 
+    public void AttemptMutteringSound(){
+        if(this.MutteringSound != null){
+            this.MutteringSound.Play();
+        }
+    }
+    public void AttemptOrderingSound(){
+        if(this.OrderingSound != null){
+            this.OrderingSound.Play();
+        }
+    }
+
     public void SetLooping( bool isLooping ){
         this.ToastLooping = isLooping;
     }
-    public void SetBubbleActivity( bool orderingBubbleActivity, bool mutteringBubbleActivity ){
-        this.OrderingSpeechBubble.SetActive( orderingBubbleActivity );
-        this.MutteringSpeechBubble.SetActive( mutteringBubbleActivity );
+    public void SetBubbleActivity( SpeechMode status ){
+        switch (status) {
+            default:
+            case SpeechMode.Inactive:
+                this.OrderingSpeechBubble.SetActive( false );
+                this.MutteringSpeechBubble.SetActive( false );
+                break;
+            case SpeechMode.MutteringEnglish:
+            case SpeechMode.MutteringFrench:
+                this.OrderingSpeechBubble.SetActive( false );
+                this.MutteringSpeechBubble.SetActive( true );
+                this.AttemptMutteringSound();
+                break;
+            case SpeechMode.Ordering:
+                this.OrderingSpeechBubble.SetActive( true );
+                this.MutteringSpeechBubble.SetActive( false );
+                this.AttemptOrderingSound();
+                break;
+        }
     }
 
     // _______________________
@@ -137,17 +166,7 @@ public class SpeechController : MonoBehaviour
         // now deal with the toast looping
         if(this.ToastLooping){
             // show the whole collection based on status
-            switch (this.SpeechStatus) {
-                // not muttering
-                default:
-                    this.SetBubbleActivity( true, false );
-                    break;
-                // muttering rolling
-                case SpeechMode.MutteringEnglish:
-                case SpeechMode.MutteringFrench:
-                    this.SetBubbleActivity( false, true );
-                    break;
-            }
+            this.SetBubbleActivity( this.SpeechStatus );
             // set us up to toast
             this.BubbleToasting_TimeLeft = Random.Range( this.BubbleToasting_TimeMinimum, this.BubbleToasting_TimeMaximum );
             // BZZZRRRRTTT
@@ -167,7 +186,7 @@ public class SpeechController : MonoBehaviour
 
     public void BubbleState_OnPopped(){
         // hide the collections
-        this.SetBubbleActivity( false, false );
+        this.SetBubbleActivity( SpeechMode.Inactive );
         // make us sleepy
         this.BubbleSnoring_TimeLeft = Random.Range( this.BubbleSnoring_TimeMinimum, this.BubbleSnoring_TimeMaximum );
         // honk shoo zzz
@@ -197,7 +216,7 @@ public class SpeechController : MonoBehaviour
 
     public void BubbleState_OnDiedDead(){
         // hide both collections
-        this.SetBubbleActivity( false, false );
+        this.SetBubbleActivity( SpeechMode.Inactive );
 
         // remove muttering chances
         this.SpeechStatus = SpeechMode.Inactive;

@@ -6,11 +6,22 @@ public class CoffeeOrderNodeController : MonoBehaviour
 {
     public GameObject SelfReference;
     public KeyCode Hotkey;
-    // public 
+    public AudioSource SelectSound;
 
 
     public void SetActiveStatus( bool newActiveStatus ){
         this.SelfReference.SetActive( newActiveStatus );
+    }
+
+    public void Select(){
+        this.SetActiveStatus(true);
+        this.AttemptSound();
+    }
+    public void AttemptSound(){
+        if(this.SelectSound != null){
+            // play with 0 delay
+            this.SelectSound.Play( 0 );
+        }
     }
 
 

@@ -38,6 +38,16 @@ public class CoffeeOrderNodeGroup : MonoBehaviour
     // ========================================================
     // ========================================================
 
+    public void SelectNode( int NodeIndex ){
+        // hide all
+        this.SetAllActiveStatus( false );
+        // perform the select
+        this.NodeList[ NodeIndex ].Select();
+    }
+
+    // ========================================================
+    // ========================================================
+
     // Start is called before the first frame update
     void Start() {
         // gathering the hotkeys for this group

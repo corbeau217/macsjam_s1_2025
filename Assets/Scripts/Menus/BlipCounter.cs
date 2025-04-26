@@ -5,6 +5,7 @@ using UnityEngine;
 public class BlipCounter : MonoBehaviour
 {
     public SpriteRenderer[] BlipList;
+    public AudioSource IncreaseSound;
     public int StartingCount = 0;
     public int CurrentCount = 0;
 
@@ -30,9 +31,20 @@ public class BlipCounter : MonoBehaviour
     }
 
 
-    public void Increase(){ this.UpdateCount( Mathf.Min(this.BlipList.Length, this.CurrentCount+1) ); }
+    public void AttemptIncreaseSound(){
+        if (this.IncreaseSound != null) {
+            this.IncreaseSound.Play();
+        }
+    }
+    public void Increase(){
+        this.AttemptIncreaseSound();
+        this.UpdateCount( Mathf.Min(this.BlipList.Length, this.CurrentCount+1) );
 
-    public void Decrease(){ this.UpdateCount( Mathf.Max(                   0, this.CurrentCount-1) ); }
+    }
+
+    public void Decrease(){
+        this.UpdateCount( Mathf.Max(                   0, this.CurrentCount-1) );
+    }
 
     public bool IsMaximum(){ return this.CurrentCount == this.BlipList.Length; }
 

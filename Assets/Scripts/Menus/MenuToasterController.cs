@@ -7,6 +7,8 @@ public class MenuToasterController : MonoBehaviour
 {
     public GameObject MenuReference;
 
+    public AudioSource ShowSound;
+
     public GameObject HidingLocation;
     public GameObject ToastingLocation;
 
@@ -28,6 +30,12 @@ public class MenuToasterController : MonoBehaviour
         return KeyPressDetected_Override || Input.GetKey( this.ShowMenuKeyCode );
     }
 
+    public void AttemptShowSound(){
+        if(this.ShowSound != null){
+            this.ShowSound.Play();
+        }
+    }
+
     // ====================================
     // ====================================
 
@@ -39,6 +47,7 @@ public class MenuToasterController : MonoBehaviour
         // should toast?
         if( this.ShouldToast() ){
             this.ToastStatus = MenuToastState.Toasting;
+            this.AttemptShowSound();
         }
     }
     public void ToastState_OnToasting(){

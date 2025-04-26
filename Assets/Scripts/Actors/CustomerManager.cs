@@ -66,7 +66,7 @@ public class CustomerManager : MonoBehaviour
             // had errors?
             if(orderErrorCount > 0){
                 // log it
-                Debug.Log($"EW THAT WAS YUCK! ({orderErrorCount} mistakes)\n");
+                // Debug.Log($"EW THAT WAS YUCK! ({orderErrorCount} mistakes)\n");
                 // let the customer complain
                 this.currentCustomer.HandleYuckyOrder( orderErrorCount );
             }
