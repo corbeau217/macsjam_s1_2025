@@ -85,7 +85,7 @@ public class CustomerManager : MonoBehaviour
     // ========================================================
 
     public void TestForReset(){
-        if( Input.GetKey( Hotkeys.RestartGameKey1 ) || Input.GetKey( Hotkeys.RestartGameKey1 ) ){
+        if( Input.GetKey( Hotkeys.RestartGameKey1 ) || Input.GetKey( Hotkeys.RestartGameKey2 ) ){
             this.GameStatus = GameModeState.Restart;
         }
     }
