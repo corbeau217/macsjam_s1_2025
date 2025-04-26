@@ -404,6 +404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelfReference: {fileID: 26892024}
+  Hotkey: 109
 --- !u!1 &29015743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,6 +1510,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelfReference: {fileID: 158617666}
+  Hotkey: 110
 --- !u!1 &184266526
 GameObject:
   m_ObjectHideFlags: 0
@@ -3234,6 +3238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelfReference: {fileID: 356084554}
+  Hotkey: 111
 --- !u!1 &359324885
 GameObject:
   m_ObjectHideFlags: 0
@@ -3404,10 +3410,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NodeList:
-  - {fileID: 158617666}
-  - {fileID: 1330981595}
-  - {fileID: 1672218082}
-  - {fileID: 842378474}
+  - {fileID: 158617670}
+  - {fileID: 1330981599}
+  - {fileID: 1672218086}
+  - {fileID: 842378478}
   SelfReference: {fileID: 372895610}
 --- !u!1 &383283593
 GameObject:
@@ -3874,7 +3880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NodeList:
-  - {fileID: 1210726178}
+  - {fileID: 1210726181}
   SelfReference: {fileID: 436204226}
 --- !u!1 &461210376
 GameObject:
@@ -5601,6 +5607,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelfReference: {fileID: 694204074}
+  Hotkey: 32
 --- !u!1 &695589073
 GameObject:
   m_ObjectHideFlags: 0
@@ -6398,7 +6406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NodeList:
-  - {fileID: 1241598611}
+  - {fileID: 1241598615}
   SelfReference: {fileID: 766828471}
 --- !u!1 &768836625
 GameObject:
@@ -7025,6 +7033,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelfReference: {fileID: 842378474}
+  Hotkey: 100
 --- !u!1 &844078587
 GameObject:
   m_ObjectHideFlags: 0
@@ -9525,6 +9535,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelfReference: {fileID: 1210726178}
+  Hotkey: 114
 --- !u!82 &1210726182
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9986,6 +9998,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelfReference: {fileID: 1241598611}
+  Hotkey: 99
 --- !u!1 &1245718776
 GameObject:
   m_ObjectHideFlags: 0
@@ -10052,7 +10066,7 @@ MonoBehaviour:
   ToastingLocation: {fileID: 965825746}
   ToastStatus: 0
   ShowMenuKeyCode: 0
-  toastingMovementSpeed: 20
+  toastingMovementSpeed: 50
   hidingMovementSpeed: 20
   RelaxSnappingDistance: 0.1
   KeyPressDetected_Override: 0
@@ -10629,6 +10643,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelfReference: {fileID: 1330981595}
+  Hotkey: 104
 --- !u!1 &1332651021
 GameObject:
   m_ObjectHideFlags: 0
@@ -11656,6 +11672,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelfReference: {fileID: 1484857517}
+  Hotkey: 110
 --- !u!1 &1486638553
 GameObject:
   m_ObjectHideFlags: 0
@@ -12678,10 +12696,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NodeList:
-  - {fileID: 26892024}
-  - {fileID: 1484857517}
-  - {fileID: 1935448260}
-  - {fileID: 356084554}
+  - {fileID: 26892028}
+  - {fileID: 1484857521}
+  - {fileID: 1935448264}
+  - {fileID: 356084558}
   SelfReference: {fileID: 1596395194}
 --- !u!1 &1597486096
 GameObject:
@@ -13101,7 +13119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NodeList:
-  - {fileID: 694204074}
+  - {fileID: 694204078}
   SelfReference: {fileID: 1669643383}
 --- !u!1 &1672171719
 GameObject:
@@ -13384,6 +13402,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelfReference: {fileID: 1672218082}
+  Hotkey: 102
 --- !u!1 &1683696583
 GameObject:
   m_ObjectHideFlags: 0
@@ -14520,6 +14540,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelfReference: {fileID: 1935448260}
+  Hotkey: 97
 --- !u!1 &1935730344
 GameObject:
   m_ObjectHideFlags: 0

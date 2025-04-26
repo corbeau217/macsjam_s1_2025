@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class CoffeeOrderNodeController : MonoBehaviour
 {
+    public GameObject SelfReference;
+    public KeyCode Hotkey;
+    // public 
+
+
+    public void SetActiveStatus( bool newActiveStatus ){
+        this.SelfReference.SetActive( newActiveStatus );
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {

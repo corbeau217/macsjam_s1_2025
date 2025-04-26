@@ -174,49 +174,16 @@ public class CoffeeOrderFlowGraph : MonoBehaviour
     // ========================================================
 
     public void HandleInputs(){
-        KeyCode[] hotkeySizes = { Hotkeys.Select_Size_RegularCoffee };
-        KeyCode[] hotkeyTypes = { Hotkeys.Select_Type_Generic };
-        KeyCode[] hotkeyMilks = { Hotkeys.Select_Milk_Dairy, Hotkeys.Select_Milk_Soy, Hotkeys.Select_Milk_Almond, Hotkeys.Select_Milk_Oat };
-        KeyCode[] hotkeySweeteners = { Hotkeys.Select_Sweetener_None, Hotkeys.Select_Sweetener_Half, Hotkeys.Select_Sweetener_Full, Hotkeys.Select_Sweetener_Double };
-        KeyCode[] hotkeyPayments = { Hotkeys.Select_Payment_Card };
+        if(this.CurrentOrderStage != OrderStage.Inactive){
+            KeyCode[] hotkeyGroupToTest = this.CurrentOrderNodeGroup().GetGroupHotkeys();
 
-        KeyCode[] hotkeyGroupToTest = {};
-
-        switch (this.CurrentOrderStage) {
-            default: // zzz we dont care
-                break;
-            case OrderStage.Sizes:
-                // -------------------
-                hotkeyGroupToTest = hotkeySizes;
-                // -------------------
-                break;
-            case OrderStage.Types:
-                // -------------------
-                hotkeyGroupToTest = hotkeyTypes;
-                // -------------------
-                break;
-            case OrderStage.Milks:
-                // -------------------
-                hotkeyGroupToTest = hotkeyMilks;
-                // -------------------
-                break;
-            case OrderStage.Sweeteners:
-                // -------------------
-                hotkeyGroupToTest = hotkeySweeteners;
-                // -------------------
-                break;
-            case OrderStage.Payments:
-                // -------------------
-                hotkeyGroupToTest = hotkeyPayments;
-                // -------------------
-                break;
-        }
-        // check that group's hotkeys
-        for (int i = 0; i < hotkeyGroupToTest.Length; i++) {
-            // did we find one?
-            if( Input.GetKey( hotkeyGroupToTest[i] ) ){
-                this.SelectOption( i ); // select it then
-                break; // leave the loop
+            // check that group's hotkeys
+            for (int i = 0; i < hotkeyGroupToTest.Length; i++) {
+                // did we find one?
+                if( Input.GetKey( hotkeyGroupToTest[i] ) ){
+                    this.SelectOption( i ); // select it then
+                    break; // leave the loop
+                }
             }
         }
     }
@@ -227,7 +194,7 @@ public class CoffeeOrderFlowGraph : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.OrderSelectionIDs = new int[this.NodeGroupList.Length];
     }
 
     // Update is called once per frame
