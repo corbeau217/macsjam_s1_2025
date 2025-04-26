@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WinMenuController : MonoBehaviour
+public class ForcedMenuToaster : MonoBehaviour
 {
     public MenuToasterController ForcedToaster;
 

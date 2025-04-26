@@ -17,8 +17,8 @@ public class CustomerManager : MonoBehaviour
     public CoffeeMachineDisplayController CoffeeMachine;
     public CoffeeOrderFlowGraph OrderGraph;
 
-    public WinMenuController winMenu;
-    public WinMenuController lossMenu;
+    public ForcedMenuToaster winMenu;
+    public ForcedMenuToaster lossMenu;
 
     // customer sprites
     public CustomerObject[] CustomerList;
