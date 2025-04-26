@@ -7,6 +7,7 @@ public class CoffeeOrderNodeGroup : MonoBehaviour
     // ========================================================
     // ========================================================
 
+    // TODO: change to CoffeeOrderNodeController
     public GameObject[] NodeList;
     public GameObject SelfReference;
 

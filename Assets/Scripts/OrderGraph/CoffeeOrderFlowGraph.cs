@@ -112,28 +112,34 @@ public class CoffeeOrderFlowGraph : MonoBehaviour
         }
     }
     public void SelectOption( int SelectionID ){
+        int groupIndex = 0;
         switch (this.CurrentOrderStage) {
             default:  // uuhhh what? huh?
                 break;
             case OrderStage.Sizes:
-                this.OrderSelectionIDs[0] = SelectionID;
+                groupIndex = 0;
                 this.MachineCup.ShowCup();
                 break;
             case OrderStage.Types:
-                this.OrderSelectionIDs[1] = SelectionID;
+                groupIndex = 1;
                 break;
             case OrderStage.Milks:
-                this.OrderSelectionIDs[2] = SelectionID;
+                groupIndex = 2;
                 break;
             case OrderStage.Sweeteners:
-                this.OrderSelectionIDs[3] = SelectionID;
+                groupIndex = 3;
                 break;
             case OrderStage.Payments:
-                this.OrderSelectionIDs[4] = SelectionID;
+                groupIndex = 4;
                 break;
         }
+
+        this.OrderSelectionIDs[groupIndex] = SelectionID;
+
+
         // make decision
-        this.CurrentOrderNodeGroup().SetActiveNode( SelectionID );
+        CoffeeOrderNodeGroup currentGroup = this.CurrentOrderNodeGroup();
+        currentGroup.SetActiveNode( SelectionID );
         
         this.CycleNextStage();
         if(this.CurrentOrderStage != OrderStage.ProcessingPayment){
