@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class SpeechController : MonoBehaviour
 {
+    public GameObject SelfReference;
+
     // _____________
     // sprite group \\
     // ==========================================
@@ -48,7 +50,7 @@ public class SpeechController : MonoBehaviour
     // ==========================================
 
     public SpeechBubbleState BubbleStatus = SpeechBubbleState.Inactive;
-
+    
     public SpeechMode SpeechStatus = SpeechMode.Inactive;
 
     // when we want graceful exiting a bubble loop
@@ -68,6 +70,10 @@ public class SpeechController : MonoBehaviour
     public float BubbleToasting_TimeMaximum = 6.0f;
 
     public float BubbleToasting_TimeLeft = 0.0f;
+
+    public float BubbleMovementBaseSpeed = 0.3f;
+    public float BubbleMovementSpeed = 0.3f;
+    public float BubbleMovementSpeedRange = 0.3f;
 
     // __________________
     // snoring variables \\
@@ -121,6 +127,28 @@ public class SpeechController : MonoBehaviour
                 break;
         }
     }
+    public void BubbleMoveUpdate(){
+        Vector3 movementVector = new Vector3(0.0f, this.BubbleMovementSpeed * Time.deltaTime, 0.0f);
+        switch ( this.SpeechStatus ) {
+            default:
+            case SpeechMode.Inactive:
+                break;
+            case SpeechMode.MutteringEnglish:
+            case SpeechMode.MutteringFrench:
+                // ...
+                this.MutteringSpeechBubble.transform.position = this.MutteringSpeechBubble.transform.position + movementVector;
+                break;
+            case SpeechMode.Ordering:
+                // ...
+                this.OrderingSpeechBubble.transform.position = this.OrderingSpeechBubble.transform.position + movementVector;
+                break;
+        }
+    }
+    public void ResetBubblePosition(){
+        this.MutteringSpeechBubble.transform.position = this.SelfReference.transform.position;
+        this.OrderingSpeechBubble.transform.position = this.SelfReference.transform.position;
+
+    }
 
     // _______________________
     // state handle functions \\
@@ -171,16 +199,19 @@ public class SpeechController : MonoBehaviour
             this.BubbleToasting_TimeLeft = Random.Range( this.BubbleToasting_TimeMinimum, this.BubbleToasting_TimeMaximum );
             // BZZZRRRRTTT
             this.BubbleStatus = SpeechBubbleState.Toasting;
+            this.BubbleMovementSpeed = Random.Range( this.BubbleMovementBaseSpeed-(BubbleMovementSpeedRange/2.0f), this.BubbleMovementBaseSpeed+(BubbleMovementSpeedRange/2.0f) );
         }
     }
 
     public void BubbleState_OnToasting(){
         // lower bound as 0.0f
         this.BubbleToasting_TimeLeft = Mathf.Max(this.BubbleToasting_TimeLeft - Time.deltaTime, 0.0f);
+        this.BubbleMoveUpdate();
         // check we should awake
         if(this.BubbleToasting_TimeLeft == 0.0f){
             // next update will catch this and update it
             this.BubbleStatus = SpeechBubbleState.Popped;
+            this.ResetBubblePosition();
         }
     }
 

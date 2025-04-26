@@ -74,6 +74,7 @@ public class CustomerObject : MonoBehaviour
     public void Hush(){ 
         this.speechBubbleController.NewBubbleOrder = null;
         this.speechBubbleController.InterruptRudely();
+        this.speechBubbleController.ResetBubblePosition();
     }
     public void Ensnare(){
         this.isMoving = false;
@@ -167,6 +168,7 @@ public class CustomerObject : MonoBehaviour
 
     public void prepareOrderSpeech(){
         this.speechBubbleController.SetToOrder(this.order);
+        this.speechBubbleController.ResetBubblePosition();
     }
 
     public void leaveStore(){

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static TargetLocation;
 
 
@@ -85,8 +86,11 @@ public class CustomerManager : MonoBehaviour
     // ========================================================
 
     public void TestForReset(){
-        if( Input.GetKey( Hotkeys.RestartGameKey1 ) || Input.GetKey( Hotkeys.RestartGameKey2 ) ){
+        if( Input.GetKey( Hotkeys.RestartGameKey ) ){
             this.GameStatus = GameModeState.Restart;
+        }
+        else if( Input.GetKey( Hotkeys.ExitGameKey ) ){
+            SceneManager.LoadScene("MainMenu");
         }
     }
     

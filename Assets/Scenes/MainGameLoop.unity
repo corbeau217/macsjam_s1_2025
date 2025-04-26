@@ -1470,6 +1470,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1188937883}
+  - {fileID: 1742298891}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2008,6 +2009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe0a8f8f68f14c219cf19708c87dc8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelfReference: {fileID: 244177609}
   OrderingSpeechBubble: {fileID: 2102959802}
   MutteringSpeechBubble: {fileID: 645834802}
   OrderingSound: {fileID: 774242751}
@@ -2052,6 +2054,9 @@ MonoBehaviour:
   BubbleToasting_TimeMinimum: 4
   BubbleToasting_TimeMaximum: 9
   BubbleToasting_TimeLeft: 0
+  BubbleMovementBaseSpeed: 0.2
+  BubbleMovementSpeed: 0.2
+  BubbleMovementSpeedRange: 0.3
   BubbleSnoring_TimeMinimum: 3
   BubbleSnoring_TimeMaximum: 10
   BubbleSnoring_TimeLeft: 0
@@ -3122,7 +3127,7 @@ Transform:
   - {fileID: 51083148}
   - {fileID: 1329667394}
   m_Father: {fileID: 1490354956}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &340730825
 MonoBehaviour:
@@ -6667,6 +6672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe0a8f8f68f14c219cf19708c87dc8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelfReference: {fileID: 695589073}
   OrderingSpeechBubble: {fileID: 1390841705}
   MutteringSpeechBubble: {fileID: 1329249176}
   OrderingSound: {fileID: 949728069}
@@ -6711,6 +6717,9 @@ MonoBehaviour:
   BubbleToasting_TimeMinimum: 4
   BubbleToasting_TimeMaximum: 9
   BubbleToasting_TimeLeft: 0
+  BubbleMovementBaseSpeed: 0.2
+  BubbleMovementSpeed: 0.2
+  BubbleMovementSpeedRange: 0.3
   BubbleSnoring_TimeMinimum: 3
   BubbleSnoring_TimeMaximum: 10
   BubbleSnoring_TimeLeft: 0
@@ -7932,6 +7941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe0a8f8f68f14c219cf19708c87dc8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelfReference: {fileID: 840344631}
   OrderingSpeechBubble: {fileID: 1565832087}
   MutteringSpeechBubble: {fileID: 140437300}
   OrderingSound: {fileID: 1882034274}
@@ -7976,6 +7986,9 @@ MonoBehaviour:
   BubbleToasting_TimeMinimum: 4
   BubbleToasting_TimeMaximum: 9
   BubbleToasting_TimeLeft: 0
+  BubbleMovementBaseSpeed: 0.2
+  BubbleMovementSpeed: 0.2
+  BubbleMovementSpeedRange: 0.3
   BubbleSnoring_TimeMinimum: 3
   BubbleSnoring_TimeMaximum: 10
   BubbleSnoring_TimeLeft: 0
@@ -13872,7 +13885,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1742298891}
   - {fileID: 1546764091}
   - {fileID: 340730824}
   m_Father: {fileID: 0}
@@ -14780,7 +14792,7 @@ Transform:
   - {fileID: 372895611}
   - {fileID: 1669643384}
   m_Father: {fileID: 1490354956}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1549981641
 GameObject:
@@ -16144,8 +16156,8 @@ Transform:
   m_LocalScale: {x: 17.901, y: 2.164666, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1490354956}
-  m_RootOrder: 0
+  m_Father: {fileID: 200239197}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1742298892
 SpriteRenderer:
@@ -18450,6 +18462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe0a8f8f68f14c219cf19708c87dc8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelfReference: {fileID: 2026742142}
   OrderingSpeechBubble: {fileID: 359324885}
   MutteringSpeechBubble: {fileID: 586150989}
   OrderingSound: {fileID: 1913513736}
@@ -18494,6 +18507,9 @@ MonoBehaviour:
   BubbleToasting_TimeMinimum: 4
   BubbleToasting_TimeMaximum: 9
   BubbleToasting_TimeLeft: 0
+  BubbleMovementBaseSpeed: 0.2
+  BubbleMovementSpeed: 0.2
+  BubbleMovementSpeedRange: 0.3
   BubbleSnoring_TimeMinimum: 3
   BubbleSnoring_TimeMaximum: 10
   BubbleSnoring_TimeLeft: 0
@@ -19826,6 +19842,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 31830f0cf02fe45068d7670aff457b5d, type: 3}
   - {fileID: 21300000, guid: 1346d1d88e4084d7b991534a88d9dcbf, type: 3}
   - {fileID: 21300000, guid: d2923ba79c2344e66b056b5b22ab0207, type: 3}
+  - {fileID: 21300000, guid: fbef73bf4aa4b49a48e4b245a1cf3f4a, type: 3}
+  - {fileID: 21300000, guid: 7d5f6e426d66d4f1bb35749d8357fdb4, type: 3}
+  - {fileID: 21300000, guid: d31b8aee2b6034d77bdc80da82b63bd5, type: 3}
+  - {fileID: 21300000, guid: 5112d3eccc094473da562fa32044146e, type: 3}
   StoreEntrance: {fileID: 284722982}
   OrderingLocation: {fileID: 1417042053}
   StoreExit: {fileID: 1704072599}
@@ -19932,6 +19952,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 31830f0cf02fe45068d7670aff457b5d, type: 3}
   - {fileID: 21300000, guid: 1346d1d88e4084d7b991534a88d9dcbf, type: 3}
   - {fileID: 21300000, guid: d2923ba79c2344e66b056b5b22ab0207, type: 3}
+  - {fileID: 21300000, guid: fbef73bf4aa4b49a48e4b245a1cf3f4a, type: 3}
+  - {fileID: 21300000, guid: 7d5f6e426d66d4f1bb35749d8357fdb4, type: 3}
+  - {fileID: 21300000, guid: d31b8aee2b6034d77bdc80da82b63bd5, type: 3}
+  - {fileID: 21300000, guid: 5112d3eccc094473da562fa32044146e, type: 3}
   StoreEntrance: {fileID: 284722982}
   OrderingLocation: {fileID: 1417042053}
   StoreExit: {fileID: 1704072599}
@@ -19970,6 +19994,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 31830f0cf02fe45068d7670aff457b5d, type: 3}
   - {fileID: 21300000, guid: 1346d1d88e4084d7b991534a88d9dcbf, type: 3}
   - {fileID: 21300000, guid: d2923ba79c2344e66b056b5b22ab0207, type: 3}
+  - {fileID: 21300000, guid: fbef73bf4aa4b49a48e4b245a1cf3f4a, type: 3}
+  - {fileID: 21300000, guid: 7d5f6e426d66d4f1bb35749d8357fdb4, type: 3}
+  - {fileID: 21300000, guid: d31b8aee2b6034d77bdc80da82b63bd5, type: 3}
+  - {fileID: 21300000, guid: 5112d3eccc094473da562fa32044146e, type: 3}
   StoreEntrance: {fileID: 284722982}
   OrderingLocation: {fileID: 1417042053}
   StoreExit: {fileID: 1704072599}
@@ -20008,6 +20036,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 31830f0cf02fe45068d7670aff457b5d, type: 3}
   - {fileID: 21300000, guid: 1346d1d88e4084d7b991534a88d9dcbf, type: 3}
   - {fileID: 21300000, guid: d2923ba79c2344e66b056b5b22ab0207, type: 3}
+  - {fileID: 21300000, guid: fbef73bf4aa4b49a48e4b245a1cf3f4a, type: 3}
+  - {fileID: 21300000, guid: 7d5f6e426d66d4f1bb35749d8357fdb4, type: 3}
+  - {fileID: 21300000, guid: d31b8aee2b6034d77bdc80da82b63bd5, type: 3}
+  - {fileID: 21300000, guid: 5112d3eccc094473da562fa32044146e, type: 3}
   StoreEntrance: {fileID: 284722982}
   OrderingLocation: {fileID: 1417042053}
   StoreExit: {fileID: 1704072599}

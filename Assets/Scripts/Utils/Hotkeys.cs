@@ -22,6 +22,6 @@ public class Hotkeys : MonoBehaviour
 
     public const KeyCode ShowOrderMenu = KeyCode.Tab;
 
-    public const KeyCode RestartGameKey1 = KeyCode.Space;
-    public const KeyCode RestartGameKey2 = KeyCode.Escape;
+    public const KeyCode RestartGameKey = KeyCode.Space;
+    public const KeyCode ExitGameKey = KeyCode.Escape;
 }
