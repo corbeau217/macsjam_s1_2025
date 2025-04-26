@@ -171,10 +171,10 @@
     - [x] rebuild game for web
     - [ ] upload current build to itch.io
     - [ ] cleanup itch.io page
-- [ ] `STAGE 3xx` - ***ALPHA MECHANIC - SOUND EFFECTS***
-    - [ ] source sound effects
-    - [ ] add sound effects to the game
-    - [ ] build with sound effects
+- [x] `STAGE 3xx` - ***ALPHA MECHANIC - SOUND EFFECTS***
+    - [x] source sound effects
+    - [x] add sound effects to the game
+    - [x] build with sound effects
 - [ ] `STAGE 3xx` - ***ALPHA SUBMISSION - SOUND EFFECTS***
     - [ ] rebuild game and upload to itch.io
     - [ ] tidy up submission page
@@ -188,9 +188,9 @@
     - [ ] add this repository as submodule
     - [ ] rebuild game and upload to itch.io
     - [ ] tidy up submission page
-    - [ ] emoji to show if happy or mad at order
+    - [x] emoji to show if happy or mad at order
 - [ ] `STAGE 3xx` - ***BETA PLANNING***
-    - [ ] tidy up order menu
+    - [x] tidy up order menu
     - [ ] home screen scene before game
 - [ ] `STAGE 3xx` - ***BETA PLANNING***
     - [ ] outline further development plan
