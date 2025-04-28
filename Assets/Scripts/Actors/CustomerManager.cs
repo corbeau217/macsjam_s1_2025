@@ -11,6 +11,7 @@ public class CustomerManager : MonoBehaviour
     // ========================================================
     // ========================================================
 
+    public Sprite[] CustomerSpriteOptions;
 
     // ===========================
 
@@ -176,7 +177,7 @@ public class CustomerManager : MonoBehaviour
         // prep customers
 
         for (int i = 0; i < this.CustomerList.Length; i++) {
-            this.CustomerList[i].initialise();
+            this.CustomerList[i].initialise( this.CustomerSpriteOptions );
         }
         this.setCurrentCustomer(this.CustomerList[0]);
 

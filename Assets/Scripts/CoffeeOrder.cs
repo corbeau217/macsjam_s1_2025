@@ -73,32 +73,54 @@ public class CoffeeOrder {
         if( GroupIDs[2] != milkID ){ errorCount++; }
         if( GroupIDs[3] != sweetenerID ){ errorCount++; }
 
+        if(errorCount != 0 ){
+            Debug.Log( $"meant to be:\n{this.toString()}" );
+            Debug.Log( $"had:\n{new CoffeeOrder( GroupIDs[0], GroupIDs[1], GroupIDs[2], GroupIDs[3]).toString()}" );
+        }
+
         return errorCount;
     }
 
     // ================================================
 
-    // private string milkString(){
-    //     switch (this.milk){
-    //         case Milk.Dairy: return "Dairy";
-    //         case Milk.Soy: return "Soy";
-    //         case Milk.Almond: return "Almond";
-    //         case Milk.Oat: return "Oat";
-    //         default: return "¿milk?";
-    //     }
-    // }
-    // private string sweetenerString(){
-    //     switch (this.sweetener){
-    //         case Sweetener.SugarNone: return "no sugar";
-    //         case Sweetener.SugarHalf: return "1/2 a sugar";
-    //         case Sweetener.SugarFull: return "1 sugar";
-    //         case Sweetener.SugarDouble: return "2 sugars";
-    //         default: return "sweetener?";
-    //     }
-    // }
-    // public string toString(){
-    //     return "Order with: "+this.milkString()+" milk, and "+this.sweetenerString();
-    // }
+    private string sizeString(){
+        switch (this.drinkSize){
+            case DrinkSize.Small: return "Small";
+            case DrinkSize.Regular: return "Regular";
+            case DrinkSize.Large: return "Large";
+            default: return "¿size?";
+        }
+    }
+    private string typeString(){
+        switch (this.drinkType){
+            case DrinkType.GenericCoffee: return "Generic Coffee";
+            case DrinkType.FlatWhite: return "Flat White";
+            case DrinkType.Cappuccino: return "Cappuccino";
+            case DrinkType.Latte: return "Latte";
+            default: return "¿type?";
+        }
+    }
+    private string milkString(){
+        switch (this.milk){
+            case Milk.Dairy: return "Dairy";
+            case Milk.Soy: return "Soy";
+            case Milk.Almond: return "Almond";
+            case Milk.Oat: return "Oat";
+            default: return "¿milk?";
+        }
+    }
+    private string sweetenerString(){
+        switch (this.sweetener){
+            case Sweetener.SugarNone: return "no sugar";
+            case Sweetener.SugarHalf: return "1/2 a sugar";
+            case Sweetener.SugarFull: return "1 sugar";
+            case Sweetener.SugarDouble: return "2 sugars";
+            default: return "sweetener?";
+        }
+    }
+    public string toString(){
+        return this.sizeString()+" "+this.typeString()+" "+this.milkString()+" "+this.sweetenerString();
+    }
 }
 
 // #######################################################

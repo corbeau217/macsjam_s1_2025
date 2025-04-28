@@ -93,7 +93,8 @@ public class CustomerObject : MonoBehaviour
         this.desiredPersonalSpace = this.initialPersonalSpace;
     }
     
-    public void initialise(){
+    public void initialise(Sprite[] inputSprites){
+        this.sprite_options = inputSprites;
         this.rerollSprite();
         this.rerollOrder();
         this.target = TargetLocation.Ordering;
