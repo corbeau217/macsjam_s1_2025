@@ -6,7 +6,7 @@ public class CoffeeMachineDisplayController : MonoBehaviour
 {
     public BlipCounter SuccessBlipCounter;
     public BlipCounter ErrorBlipCounter;
-    public OrderErrorDisplay ErrorDisplay;
+    // public OrderErrorDisplay ErrorDisplay;
 
     // should enum our status
     public bool IsTooManyErrors(){
@@ -20,18 +20,18 @@ public class CoffeeMachineDisplayController : MonoBehaviour
     public void ProcessOrderTransaction( int orderErrorCount ){
         if( orderErrorCount == 0 ){
             this.SuccessBlipCounter.Increase();
-            this.ErrorDisplay.Clear();
+            // this.ErrorDisplay.Clear();
         }
         else {
             this.ErrorBlipCounter.Increase();
-            this.ErrorDisplay.Set( orderErrorCount );
+            // this.ErrorDisplay.Set( orderErrorCount );
         }
     }
 
     public void ResetMachine(){
         this.SuccessBlipCounter.ResetCounter();
         this.ErrorBlipCounter.ResetCounter();
-            this.ErrorDisplay.Clear();
+            // this.ErrorDisplay.Clear();
     }
 
     // Start is called before the first frame update

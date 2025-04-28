@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     // access to the customer manager
     public CustomerManager CustomerManagerObj;
+    public CashRegister CashRegisterReference;
 
     // ================================================
 
@@ -26,6 +27,7 @@ public class Player : MonoBehaviour
         int orderErrorCount = this.CustomerManagerObj.currentCustomer.order.GetErrorCountInTransaction( OrderDetails );
         // tell them about the order and if it matched
         this.CustomerManagerObj.notifyTransactionComplete( orderErrorCount );
+        this.CashRegisterReference.ProcessTransaction( OrderDetails, orderErrorCount );
     }
 
     // ========================================================

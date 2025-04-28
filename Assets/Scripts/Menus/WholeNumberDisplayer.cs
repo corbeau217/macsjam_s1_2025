@@ -32,7 +32,7 @@ public class WholeNumberDisplayer : MonoBehaviour
 
     public void UpdateDisplayDigits(){
         // when not the same as what's happening
-        if(this.CurrentValue!=this.CurrentDisplayValue){
+        if(this.CurrentValue != this.CurrentDisplayValue){
             // get the digits from the clamped value
             int[] digits = this.GetDigits( Mathf.Min( this.CurrentValue, this.MaximumDisplayValue ) );
             // update all
