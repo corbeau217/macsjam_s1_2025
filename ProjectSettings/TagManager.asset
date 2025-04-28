@@ -74,6 +74,9 @@ TagManager:
   - name: CoffeeMachineOrderStatus
     uniqueID: 2887121803
     locked: 0
+  - name: FundsMenu
+    uniqueID: 534574993
+    locked: 0
   - name: WinLossMenu
     uniqueID: 1532869665
     locked: 0
