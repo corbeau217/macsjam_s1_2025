@@ -14,10 +14,15 @@ public enum TargetLocation {
 // #######################################################
 
 public enum DrinkSize {
-    Regular
+    Small,
+    Regular,
+    Large
 }
 public enum DrinkType {
-    GenericCoffee
+    GenericCoffee,
+    FlatWhite,
+    Cappuccino,
+    Latte
 }
 
 public enum Milk {
