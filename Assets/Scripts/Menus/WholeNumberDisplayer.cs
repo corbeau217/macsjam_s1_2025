@@ -29,6 +29,9 @@ public class WholeNumberDisplayer : MonoBehaviour
     public void SetValue(int newValue){
         this.CurrentValue = newValue;
     }
+    public void ModifyValue(int valueChange){
+        this.CurrentValue += valueChange;
+    }
 
     public void UpdateDisplayDigits(){
         // when not the same as what's happening

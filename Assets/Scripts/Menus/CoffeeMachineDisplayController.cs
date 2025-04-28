@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class CoffeeMachineDisplayController : MonoBehaviour
 {
-    public BlipCounter SuccessBlipCounter;
-    public BlipCounter ErrorBlipCounter;
+    // public BlipCounter SuccessBlipCounter;
+    // public BlipCounter ErrorBlipCounter;
     // public OrderErrorDisplay ErrorDisplay;
+    public WholeNumberDisplayer StreakCounter;
+
+    public void HandleBadOrder( int mistakeCount ){
+        this.StreakCounter.SetValue( 0 );
+    }
+    public void HandleGoodOrder(){
+        this.StreakCounter.ModifyValue( 1 );
+    }
+
 
     // should enum our status
     public bool IsTooManyErrors(){
@@ -14,29 +23,33 @@ public class CoffeeMachineDisplayController : MonoBehaviour
     }
     public bool IsFinishedOrders(){
         // made all the orders we wanted
-        return this.SuccessBlipCounter.IsMaximum();
+        return false;
     }
 
     public void ProcessOrderTransaction( int orderErrorCount ){
         if( orderErrorCount == 0 ){
-            this.SuccessBlipCounter.Increase();
+            // this.SuccessBlipCounter.Increase();
             // this.ErrorDisplay.Clear();
+            this.HandleGoodOrder();
         }
-        // else {
-        //     this.ErrorBlipCounter.Increase();
-        //     // this.ErrorDisplay.Set( orderErrorCount );
-        // }
+        else {
+            // this.ErrorBlipCounter.Increase();
+            // this.ErrorDisplay.Set( orderErrorCount );
+            this.HandleBadOrder( orderErrorCount );
+        }
     }
 
     public void ResetMachine(){
-        this.SuccessBlipCounter.ResetCounter();
-        this.ErrorBlipCounter.ResetCounter();
-            // this.ErrorDisplay.Clear();
+        this.StreakCounter.SetValue( 0 );
+        // this.SuccessBlipCounter.ResetCounter();
+        // this.ErrorBlipCounter.ResetCounter();
+        // this.ErrorDisplay.Clear();
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        this.StreakCounter.SetValue( 0 );
         // ...
     }
 
