@@ -10,7 +10,7 @@ public class CoffeeMachineDisplayController : MonoBehaviour
 
     // should enum our status
     public bool IsTooManyErrors(){
-        return this.ErrorBlipCounter.IsMaximum();
+        return false;
     }
     public bool IsFinishedOrders(){
         // made all the orders we wanted
@@ -22,10 +22,10 @@ public class CoffeeMachineDisplayController : MonoBehaviour
             this.SuccessBlipCounter.Increase();
             // this.ErrorDisplay.Clear();
         }
-        else {
-            this.ErrorBlipCounter.Increase();
-            // this.ErrorDisplay.Set( orderErrorCount );
-        }
+        // else {
+        //     this.ErrorBlipCounter.Increase();
+        //     // this.ErrorDisplay.Set( orderErrorCount );
+        // }
     }
 
     public void ResetMachine(){
