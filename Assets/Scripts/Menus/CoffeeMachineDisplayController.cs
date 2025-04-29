@@ -9,6 +9,7 @@ public class CoffeeMachineDisplayController : MonoBehaviour
     // public OrderErrorDisplay ErrorDisplay;
     public WholeNumberDisplayer StreakCounter;
     public PressureGaugeController PressureGauge;
+    public WholeNumberDisplayer WallHighscore;
 
     public int MistakesForEmploymentTermination = 100;
 
@@ -17,6 +18,7 @@ public class CoffeeMachineDisplayController : MonoBehaviour
     public void HandleBadOrder( int mistakeCount ){
         // process the streak data
         this.StreakHighScore = Mathf.Max( this.StreakHighScore, this.StreakCounter.CurrentValue );
+        this.WallHighscore.SetValue(this.StreakHighScore);
         // reset everything and log the mistake
         this.StreakCounter.SetValue( 0 );
         this.PressureGauge.ModifyValue( mistakeCount );
