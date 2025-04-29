@@ -7,6 +7,8 @@ public class PressureGaugeController : MonoBehaviour
     public SpriteRenderer GaugeShape;
     public SpriteRenderer Needle;
     public AudioSource IncreaseSound;
+    public WholeNumberDisplayer ValueDisplay;
+    public LightBlinkController WarningLight;
 
     public float GaugeMaximum = 100.0f;
     public float GaugeMinimum =   0.0f;
@@ -15,8 +17,10 @@ public class PressureGaugeController : MonoBehaviour
     // calculated
     private float GaugeRange = 0.0f;
 
-    public Vector3 RotationMaximum = new Vector3(0.0f, 0.0f,  29.0f);
-    public Vector3 RotationMinimum = new Vector3(0.0f, 0.0f, 192.6f);
+    public float WarningPercentage = 0.7f;
+
+    public Vector3 RotationMaximum = new Vector3(0.0f, 0.0f, -114.7f);
+    public Vector3 RotationMinimum = new Vector3(0.0f, 0.0f, 123.8f);
 
     public void ChangeMaximum( float newMaximum ){
         this.GaugeMaximum = newMaximum;
@@ -45,6 +49,9 @@ public class PressureGaugeController : MonoBehaviour
     public bool IsMaximum(){
         return this.CurrentValue == this.GaugeMaximum;
     }
+    public Vector3 GetNeedleRotation(){
+        return Vector3.Lerp(this.RotationMinimum, this.RotationMaximum, this.Percentage());
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -57,7 +64,17 @@ public class PressureGaugeController : MonoBehaviour
     void Update()
     {
         this.ClampValue();
-        Vector3 CurrentRotation = Vector3.Slerp(this.RotationMinimum, this.RotationMaximum, this.Percentage());
+        Vector3 CurrentRotation = GetNeedleRotation();
         this.Needle.transform.localEulerAngles = CurrentRotation;
+        this.ValueDisplay.SetValue( (int)(this.CurrentValue) );
+
+        if(this.CurrentValue >= this.WarningPercentage * this.GaugeMaximum){
+            this.WarningLight.Enable();
+            this.WarningLight.CurrentIntervalT = this.Percentage();
+        }
+        else{
+            this.WarningLight.Disable();
+            this.WarningLight.CurrentIntervalT = 0.0f;
+        }
     }
 }
