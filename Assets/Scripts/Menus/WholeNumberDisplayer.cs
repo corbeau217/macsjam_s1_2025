@@ -5,6 +5,7 @@ using UnityEngine;
 public class WholeNumberDisplayer : MonoBehaviour
 {
     public GameObject SelfReference;
+    public AudioSource IncreaseSound;
 
     // from lowest value to highest value
     public SevenSegmentController[] DigitControllers;
@@ -29,8 +30,9 @@ public class WholeNumberDisplayer : MonoBehaviour
     public void SetValue(int newValue){
         this.CurrentValue = newValue;
     }
-    public void ModifyValue(int valueChange){
-        this.CurrentValue += valueChange;
+    public void ModifyValue(int inputValue){
+        this.CurrentValue += inputValue;
+        if(this.IncreaseSound!=null  && inputValue > 0) { this.IncreaseSound.Play(); }
     }
 
     public void UpdateDisplayDigits(){

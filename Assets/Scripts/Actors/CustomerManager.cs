@@ -151,6 +151,7 @@ public class CustomerManager : MonoBehaviour
         }
     }
     public void PreGameEndEvent(){
+        // TODO: use the streak highscore from the CoffeeMachine
         this.MassBanishment();
         this.MassPolymorph();
         this.GameEndInputSnooze();

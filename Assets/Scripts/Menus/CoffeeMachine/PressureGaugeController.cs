@@ -6,6 +6,7 @@ public class PressureGaugeController : MonoBehaviour
 {
     public SpriteRenderer GaugeShape;
     public SpriteRenderer Needle;
+    public AudioSource IncreaseSound;
 
     public float GaugeMaximum = 100.0f;
     public float GaugeMinimum =   0.0f;
@@ -17,6 +18,14 @@ public class PressureGaugeController : MonoBehaviour
     public Vector3 RotationMaximum = new Vector3(0.0f, 0.0f,  29.0f);
     public Vector3 RotationMinimum = new Vector3(0.0f, 0.0f, 192.6f);
 
+    public void ChangeMaximum( float newMaximum ){
+        this.GaugeMaximum = newMaximum;
+        this.GaugeRange = this.GaugeMaximum - this.GaugeMinimum;
+    }
+    public void ModifyValue( float inputValue ){
+        this.CurrentValue += inputValue;
+        if(this.IncreaseSound!=null && inputValue > 0) { this.IncreaseSound.Play(); }
+    }
     public void SetValue(float NewValue){
         this.CurrentValue = NewValue;
     }
@@ -33,6 +42,9 @@ public class PressureGaugeController : MonoBehaviour
         return (this.CurrentValue - this.GaugeMinimum)/this.GaugeRange;
     }
 
+    public bool IsMaximum(){
+        return this.CurrentValue == this.GaugeMaximum;
+    }
     // Start is called before the first frame update
     void Start()
     {

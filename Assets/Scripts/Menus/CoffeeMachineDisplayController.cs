@@ -8,9 +8,18 @@ public class CoffeeMachineDisplayController : MonoBehaviour
     // public BlipCounter ErrorBlipCounter;
     // public OrderErrorDisplay ErrorDisplay;
     public WholeNumberDisplayer StreakCounter;
+    public PressureGaugeController PressureGauge;
+
+    public int MistakesForEmploymentTermination = 100;
+
+    public int StreakHighScore = 0;
 
     public void HandleBadOrder( int mistakeCount ){
+        // process the streak data
+        this.StreakHighScore = Mathf.Max( this.StreakHighScore, this.StreakCounter.CurrentValue );
+        // reset everything and log the mistake
         this.StreakCounter.SetValue( 0 );
+        this.PressureGauge.ModifyValue( mistakeCount );
     }
     public void HandleGoodOrder(){
         this.StreakCounter.ModifyValue( 1 );
@@ -19,7 +28,7 @@ public class CoffeeMachineDisplayController : MonoBehaviour
 
     // should enum our status
     public bool IsTooManyErrors(){
-        return false;
+        return this.PressureGauge.IsMaximum();
     }
     public bool IsFinishedOrders(){
         // made all the orders we wanted
@@ -41,6 +50,7 @@ public class CoffeeMachineDisplayController : MonoBehaviour
 
     public void ResetMachine(){
         this.StreakCounter.SetValue( 0 );
+        this.PressureGauge.SetToMinimum();
         // this.SuccessBlipCounter.ResetCounter();
         // this.ErrorBlipCounter.ResetCounter();
         // this.ErrorDisplay.Clear();
@@ -51,6 +61,7 @@ public class CoffeeMachineDisplayController : MonoBehaviour
     {
         this.StreakCounter.SetValue( 0 );
         // ...
+        this.PressureGauge.ChangeMaximum( MistakesForEmploymentTermination );
     }
 
     // Update is called once per frame
