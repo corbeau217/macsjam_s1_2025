@@ -12,6 +12,7 @@
 
 # ignore the haters
 mono_crash.*.json
+mono_crash.*.blob
 
 .DS_Store
 */.DS_Store
