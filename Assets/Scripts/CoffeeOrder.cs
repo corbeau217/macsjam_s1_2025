@@ -73,10 +73,11 @@ public class CoffeeOrder {
         if( GroupIDs[2] != milkID ){ errorCount++; }
         if( GroupIDs[3] != sweetenerID ){ errorCount++; }
 
-        if(errorCount != 0 ){
-            Debug.Log( $"meant to be:\n{this.toString()}" );
-            Debug.Log( $"had:\n{new CoffeeOrder( GroupIDs[0], GroupIDs[1], GroupIDs[2], GroupIDs[3]).toString()}" );
-        }
+        // debugging spam
+        // if(errorCount != 0 ){
+        //     Debug.Log( $"meant to be:\n{this.toString()}" );
+        //     Debug.Log( $"had:\n{new CoffeeOrder( GroupIDs[0], GroupIDs[1], GroupIDs[2], GroupIDs[3]).toString()}" );
+        // }
 
         return errorCount;
     }

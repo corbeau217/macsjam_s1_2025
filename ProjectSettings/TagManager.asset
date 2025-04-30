@@ -44,17 +44,26 @@ TagManager:
   - name: Background
     uniqueID: 3853064151
     locked: 0
+  - name: CafeStructureLayer1
+    uniqueID: 2924771479
+    locked: 0
   - name: BackgroundClutter
     uniqueID: 1352373491
     locked: 0
   - name: Customers
     uniqueID: 3058988203
     locked: 0
-  - name: Counter
+  - name: CafeStructureLayer2
+    uniqueID: 1272423521
+    locked: 0
+  - name: CafeCounterLayer1
     uniqueID: 1062417607
     locked: 0
-  - name: CounterClutter
+  - name: CafeCounterLayer2
     uniqueID: 886111937
+    locked: 0
+  - name: LocationMarkers
+    uniqueID: 670969269
     locked: 0
   - name: CoffeeOrder
     uniqueID: 3404262055
@@ -68,17 +77,17 @@ TagManager:
   - name: ToastyMenu
     uniqueID: 80557363
     locked: 0
-  - name: LocationMarkers
-    uniqueID: 670969269
-    locked: 0
   - name: CoffeeMachineOrderStatus
     uniqueID: 2887121803
     locked: 0
-  - name: FundsMenu
+  - name: Interface_StaticMenus
     uniqueID: 534574993
     locked: 0
-  - name: WinLossMenu
+  - name: Interface_WinLossMenus
     uniqueID: 1532869665
+    locked: 0
+  - name: Interface_CashRegister
+    uniqueID: 60992211
     locked: 0
   - name: MainMenu
     uniqueID: 2315735711
