@@ -6,7 +6,7 @@ public class CoffeeMachineDisplayController : MonoBehaviour
 {
     // public BlipCounter SuccessBlipCounter;
     // public BlipCounter ErrorBlipCounter;
-    // public OrderErrorDisplay ErrorDisplay;
+    // public PressureGaugeMistakeCounter ErrorDisplay;
     public WholeNumberDisplayer StreakCounter;
     public PressureGaugeController PressureGauge;
     public WholeNumberDisplayer WallHighscore;

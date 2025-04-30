@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OrderErrorDisplay : MonoBehaviour
+public class PressureGaugeMistakeCounter : MonoBehaviour
 {
     public SevenSegmentController SevenSegment;
 

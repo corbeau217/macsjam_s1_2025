@@ -5,7 +5,7 @@ using UnityEngine;
 public class CashRegister : MonoBehaviour
 {   
     public Bank BankReference;
-    public OrderErrorDisplay ErrorDisplay;
+    public PressureGaugeMistakeCounter ErrorDisplay;
     public Prices PricesReference;
 
     public void ProcessTransaction( int[] orderDetails, int orderErrorCount ){

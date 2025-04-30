@@ -78,7 +78,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6888025872975138811}
   m_Layer: 0
-  m_Name: OrderingBubble
+  m_Name: Ordering
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -452,7 +452,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6888025873467718408}
   m_Layer: 0
-  m_Name: MutteringBubble
+  m_Name: Muttering
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -487,7 +487,7 @@ GameObject:
   - component: {fileID: 6888025873687109510}
   - component: {fileID: 6888025873687109513}
   m_Layer: 11
-  m_Name: cus1_sprite
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1163,7 +1163,7 @@ GameObject:
   - component: {fileID: 6888025874981017667}
   - component: {fileID: 6888025874981017669}
   m_Layer: 0
-  m_Name: cus1_SpeechBubble
+  m_Name: SpeechBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
