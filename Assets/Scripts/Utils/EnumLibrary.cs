@@ -100,8 +100,6 @@ public enum MenuToastState {
 
 
 public enum GameModeState {
-    // main menu
-    MainMenu,
     // when loading game
     Initialisation,
     // in game
@@ -111,9 +109,7 @@ public enum GameModeState {
     // losing screen
     Lost,
     // reseting game
-    Restart,
-    // goes back to the menu
-    Returning,
+    Restart
 }
 
 // #######################################################

@@ -29,7 +29,7 @@ public class CustomerManager : MonoBehaviour
 
     // ===========================
 
-    public GameModeState GameStatus = GameModeState.MainMenu;
+    public GameModeState GameStatus = GameModeState.Initialisation;
 
     public CustomerObject currentCustomer;
 
@@ -65,23 +65,12 @@ public class CustomerManager : MonoBehaviour
             // mark it was completed to stop others trying to do things
             this.currentOrderComplete = true;
 
-            // had errors?
-            if(orderErrorCount > 0){
-                // log it
-                // Debug.Log($"EW THAT WAS YUCK! ({orderErrorCount} mistakes)\n");
-                // let the customer complain
-                this.currentCustomer.HandleYuckyOrder( orderErrorCount );
-            }
-
             // update the coffee machine about it
             this.CoffeeMachine.ProcessOrderTransaction( orderErrorCount );
         }
     } 
 
     // ===========================
-
-    public Milk GetCurrentOrderMilk(){ return this.currentCustomer.order.milk; }
-    public Sweetener GetCurrentOrderSweetener(){ return this.currentCustomer.order.sweetener; }
 
     // ========================================================
     // ========================================================
@@ -127,9 +116,6 @@ public class CustomerManager : MonoBehaviour
         switch (this.GameStatus) {
             default:
                 break;
-            case GameModeState.MainMenu:
-                this.GameState_OnMainMenu();
-                break;
             case GameModeState.Initialisation:
                 this.GameState_OnInitialisation();
                 break;
@@ -145,13 +131,9 @@ public class CustomerManager : MonoBehaviour
             case GameModeState.Restart:
                 this.GameState_OnRestart();
                 break;
-            case GameModeState.Returning:
-                this.GameState_OnReturning();
-                break;
         }
     }
     public void PreGameEndEvent(){
-        // TODO: use the streak highscore from the CoffeeMachine
         // this.CoffeeMachine.StreakHighScore
         this.MassBanishment();
         this.MassPolymorph();
@@ -164,11 +146,6 @@ public class CustomerManager : MonoBehaviour
     // ========================================================
     // ========================================================
 
-    public void GameState_OnMainMenu(){
-        this.canMakeOrder = false;
-        this.GameStatus = GameModeState.Initialisation; // skip
-        // ....
-    }
     public void GameState_OnInitialisation(){
         this.canMakeOrder = false;
 
@@ -246,23 +223,6 @@ public class CustomerManager : MonoBehaviour
         this.ResetKeySnoozeTime = 0.0f;
 
         this.GameStatus = GameModeState.Playing;
-    }
-
-    public void GameState_OnReturning(){
-        this.canMakeOrder = false;
-
-        this.CoffeeMachine.ResetMachine();
-        this.winMenu.RelaxMenu();
-        this.lossMenu.RelaxMenu();
-
-        // undo any order tests
-        this.currentOrderComplete = false;
-
-        this.MassBanishment();
-
-        this.ResetKeySnoozeTime = 0.0f;
-
-        this.GameStatus = GameModeState.MainMenu; // uhhhh idk skip to menu?
     }
 
     // ========================================================

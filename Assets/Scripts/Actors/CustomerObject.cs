@@ -262,13 +262,6 @@ public class CustomerObject : MonoBehaviour
     // ========================================================
     // ========================================================
 
-    public void HandleYuckyOrder( int orderErrorCount ){
-        // TODO : how yucky was it? do we talk about it?
-    }
-
-    // ========================================================
-    // ========================================================
-
     // Start is called before the first frame update
     void Start()
     {
