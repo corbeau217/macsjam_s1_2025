@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Bank : MonoBehaviour
 {
-    public WholeNumberDisplayer TotalDisplayController;
+    // public WholeNumberDisplayer TotalDisplayController;
+    public WholeNumberCharDisplayer TotalDisplayController;
 
     public int Total = 0;
 

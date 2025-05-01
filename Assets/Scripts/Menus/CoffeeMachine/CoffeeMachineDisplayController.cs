@@ -9,7 +9,7 @@ public class CoffeeMachineDisplayController : MonoBehaviour
     // public PressureGaugeMistakeCounter ErrorDisplay;
     public WholeNumberDisplayer StreakCounter;
     public PressureGaugeController PressureGauge;
-    public WholeNumberDisplayer WallHighscore;
+    public WholeNumberCharDisplayer WallHighscore;
 
     public int MistakesForEmploymentTermination = 100;
 
