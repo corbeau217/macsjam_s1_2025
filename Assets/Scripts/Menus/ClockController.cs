@@ -18,6 +18,7 @@ public class ClockController : MonoBehaviour
 
     public int GetHours(){ return ((((int)(this.ClockTime * this.TimeScale)) / 60) / 60) % 24; }
     public int GetMinutes(){ return (((int)(this.ClockTime * this.TimeScale)) / 60) % 60; }
+    public float GetDayFraction(){ return (((this.ClockTime * this.TimeScale) / 3600.0f) % 24.0f)/24.0f; }
 
     // left to right
     public int[] GetExpectedDisplayDigitValues(){

@@ -44,16 +44,31 @@ TagManager:
   - name: Background
     uniqueID: 3853064151
     locked: 0
+  - name: OutsideWindow
+    uniqueID: 596056061
+    locked: 0
+  - name: CafeStructureLayer0
+    uniqueID: 1501759573
+    locked: 0
   - name: CafeStructureLayer1
+    uniqueID: 430405139
+    locked: 0
+  - name: CafeStructureLayer2
+    uniqueID: 1083729135
+    locked: 0
+  - name: BackgroundClutterLayer1
+    uniqueID: 1734168457
+    locked: 0
+  - name: CafeStructureLayer3
     uniqueID: 2924771479
     locked: 0
-  - name: BackgroundClutter
+  - name: BackgroundClutterLayer2
     uniqueID: 1352373491
     locked: 0
   - name: Customers
     uniqueID: 3058988203
     locked: 0
-  - name: CafeStructureLayer2
+  - name: CafeStructureLayer4
     uniqueID: 1272423521
     locked: 0
   - name: CafeCounterLayer1
