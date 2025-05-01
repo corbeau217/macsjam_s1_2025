@@ -6,6 +6,7 @@ public class CoffeeCupController : MonoBehaviour
 {
     public Sprite[] CupArtworks;
     public SpriteRenderer CupRenderer;
+    public bool OverrideShowCup = false;
 
     public void RandomiseCup(){
         int selectionIndex = Random.Range(0, this.CupArtworks.Length);

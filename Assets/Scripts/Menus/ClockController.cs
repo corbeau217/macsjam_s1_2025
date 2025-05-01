@@ -12,6 +12,8 @@ public class ClockController : MonoBehaviour
 
     public bool ShouldBlinkDivider = true;
 
+    public bool FreezeClock = false;
+
     public void SetTimeInSeconds( float NewTime ){
         this.ClockTime = NewTime;
     }
@@ -57,7 +59,7 @@ public class ClockController : MonoBehaviour
     void Update()
     {
         // update time
-        this.ClockTime += Time.deltaTime;
+        if(!this.FreezeClock){ this.ClockTime += Time.deltaTime; }
         this.UpdateClockFace();
     }
 }
