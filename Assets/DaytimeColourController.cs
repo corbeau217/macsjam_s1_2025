@@ -33,8 +33,8 @@ public class DaytimeColourController : MonoBehaviour
     public Color UsingColor;
 
     public void UpdateDaySegment(){
-        // prepare data
-        this.CurrentDayFraction = this.GameClock.GetDayFraction() % 1.0f;
+        // prepare day fraction, assuming sunrise if we have no clock
+        this.CurrentDayFraction = ((this.GameClock!=null)? this.GameClock.GetDayFraction() : this.SunriseDayFraction ) % 1.0f;
         float segmentRange = 0.0f;
 
         // figure out which segment we're in
