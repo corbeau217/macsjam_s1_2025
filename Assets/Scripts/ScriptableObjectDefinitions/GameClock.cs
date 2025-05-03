@@ -28,10 +28,16 @@ public class GameClock : ScriptableObject
     }
 
     public void tick(){
-        this.Realtime += Time.deltaTime;
+        if(!this.FreezeClock){ this.Realtime += Time.deltaTime; }
+    }
+    public void Freeze(){
+        this.FreezeClock = true;
+    }
+    public void Unfreeze(){
+        this.FreezeClock = false;
     }
 
-    public void StartTheDay(){
+    public void TimewarpToShiftStart(){
         this.Realtime = StartOfTheDay;
         
     }

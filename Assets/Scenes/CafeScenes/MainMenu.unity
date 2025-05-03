@@ -863,7 +863,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ebc1500a86f4c5ba0d8f0000a8ea1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 133781262}
   IncreaseSound: {fileID: 0}
   DigitControllers:
   - {fileID: 348124824}
@@ -1960,7 +1959,7 @@ MonoBehaviour:
   Noon: {r: 0.46257564, g: 0.744335, b: 0.9339623, a: 0}
   Sunset: {r: 0.5307158, g: 0.2206746, b: 0.8207547, a: 0}
   Midnight: {r: 0.08388217, g: 0.13331321, b: 0.2735849, a: 0}
-  GameClock: {fileID: 876484921}
+  clock: {fileID: 0}
   CurrentDayFraction: 0
   SunriseDayFraction: 0.25
   NoonDayFraction: 0.5
@@ -5193,7 +5192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ebc1500a86f4c5ba0d8f0000a8ea1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 855580307}
   IncreaseSound: {fileID: 0}
   DigitControllers:
   - {fileID: 1874702287}
@@ -5441,16 +5439,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac2a88cddb184ebdb8582f08b4bc7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clock: {fileID: 11400000, guid: d9ce3adefeaa1423499ee0fcf1f33cd2, type: 2}
   DigitControllers:
   - {fileID: 1218804912}
   - {fileID: 600122632}
   - {fileID: 179419956}
   - {fileID: 377413645}
   Divider: {fileID: 1303941204}
-  ClockTime: 0
-  TimeScale: 600
   ShouldBlinkDivider: 1
-  FreezeClock: 1
 --- !u!1 &943282777
 GameObject:
   m_ObjectHideFlags: 0
@@ -7004,6 +7000,52 @@ Transform:
   m_Father: {fileID: 195003291}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1289444754
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1289444755}
+  - component: {fileID: 1289444756}
+  m_Layer: 0
+  m_Name: ClockUpdater
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1289444755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289444754}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.6894224, y: -2.4745774, z: 0.116970345}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1324846018}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1289444756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289444754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e867e0b27f34b4691e2e3ecd565654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clock: {fileID: 11400000, guid: d9ce3adefeaa1423499ee0fcf1f33cd2, type: 2}
+  StartFrozen: 1
 --- !u!1 &1303941204
 GameObject:
   m_ObjectHideFlags: 0
@@ -7035,6 +7077,38 @@ Transform:
   - {fileID: 300157249}
   - {fileID: 1674771385}
   m_Father: {fileID: 876484920}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1324846017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1324846018}
+  m_Layer: 0
+  m_Name: Core
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1324846018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324846017}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.6894224, y: 2.4745774, z: -0.116970345}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1289444755}
+  m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1344545177
@@ -9511,16 +9585,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00819b17743654bdf93ea2e87fc60e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CupArtworks:
-  - {fileID: 21300000, guid: 550450aecf4344f5cbe5e2a5092afeba, type: 3}
-  - {fileID: 21300000, guid: d5d8b96462fe74326a49391db4804c62, type: 3}
-  - {fileID: 21300000, guid: 8db40a7a5da3c4cc5a5449643fc618f6, type: 3}
-  - {fileID: 21300000, guid: 2512146d65ec248db97e4df1a76fb019, type: 3}
-  - {fileID: 21300000, guid: b371e918a88e64967bb30bf34420d1ba, type: 3}
-  - {fileID: 21300000, guid: 7468e23f58db1410fa1470b1162854c2, type: 3}
-  - {fileID: 21300000, guid: 5046165f52ffc42b0b0f6738cb3da963, type: 3}
-  - {fileID: 21300000, guid: 95cc4d6eb010b48bb8ffaada188a9143, type: 3}
-  - {fileID: 21300000, guid: 7ece0aba95cb64a71a074e4f3eb2bce1, type: 3}
   CupList: {fileID: 11400000, guid: 5ab7e65bff5ca43d2a46fda9dc5cd84a, type: 2}
   CupRenderer: {fileID: 1078274869}
   OverrideShowCup: 1

@@ -6,10 +6,18 @@ public class ClockUpdater : MonoBehaviour
 {
     public GameClock clock;
 
+    public bool StartFrozen = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        this.clock.StartTheDay();
+        if(this.StartFrozen){
+            this.clock.Freeze();
+        }
+        else {
+            this.clock.Unfreeze();
+        }
+        this.clock.TimewarpToShiftStart();
     }
 
     // Update is called once per frame
