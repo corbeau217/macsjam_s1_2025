@@ -476,7 +476,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 26892024}
   Hotkey: 109
   SelectSound: {fileID: 271518673}
 --- !u!1 &29015743
@@ -2154,7 +2153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 158617666}
   Hotkey: 110
   SelectSound: {fileID: 555146211}
 --- !u!1 &171323111
@@ -3234,7 +3232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe0a8f8f68f14c219cf19708c87dc8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 244177609}
   OrderingSpeechBubble: {fileID: 2102959802}
   MutteringSpeechBubble: {fileID: 645834802}
   OrderingSound: {fileID: 774242751}
@@ -4703,7 +4700,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 356084554}
   Hotkey: 111
   SelectSound: {fileID: 1084870084}
 --- !u!1 &357819397
@@ -5093,7 +5089,6 @@ MonoBehaviour:
   - {fileID: 1330981599}
   - {fileID: 1672218086}
   - {fileID: 842378478}
-  SelfReference: {fileID: 372895610}
 --- !u!1 &379341555
 GameObject:
   m_ObjectHideFlags: 0
@@ -6061,7 +6056,6 @@ MonoBehaviour:
   - {fileID: 1300167184}
   - {fileID: 1210726181}
   - {fileID: 1425198831}
-  SelfReference: {fileID: 436204226}
 --- !u!114 &443483741 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2331292588064403867, guid: 74e342470bdc14599b39282c1b058c7a, type: 3}
@@ -9431,7 +9425,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 694204074}
   Hotkey: 32
   SelectSound: {fileID: 0}
 --- !u!1 &695589073
@@ -9480,7 +9473,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe0a8f8f68f14c219cf19708c87dc8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 695589073}
   OrderingSpeechBubble: {fileID: 1390841705}
   MutteringSpeechBubble: {fileID: 1329249176}
   OrderingSound: {fileID: 949728069}
@@ -10456,7 +10448,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 761877820}
   Hotkey: 112
   SelectSound: {fileID: 671787575}
 --- !u!212 &761877823
@@ -10648,7 +10639,6 @@ MonoBehaviour:
   - {fileID: 1006564449}
   - {fileID: 761877822}
   - {fileID: 2061186363}
-  SelfReference: {fileID: 766828471}
 --- !u!1 &768836625
 GameObject:
   m_ObjectHideFlags: 0
@@ -11342,7 +11332,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe0a8f8f68f14c219cf19708c87dc8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 840344631}
   OrderingSpeechBubble: {fileID: 1565832087}
   MutteringSpeechBubble: {fileID: 140437300}
   OrderingSound: {fileID: 1882034274}
@@ -11472,7 +11461,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 842378474}
   Hotkey: 100
   SelectSound: {fileID: 2038278940}
 --- !u!1 &844078587
@@ -11858,7 +11846,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ebc1500a86f4c5ba0d8f0000a8ea1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 855150578}
   IncreaseSound: {fileID: 1897389709}
   DigitControllers:
   - {fileID: 449513346}
@@ -13452,16 +13439,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac2a88cddb184ebdb8582f08b4bc7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clock: {fileID: 11400000, guid: d9ce3adefeaa1423499ee0fcf1f33cd2, type: 2}
   DigitControllers:
   - {fileID: 1142612192}
   - {fileID: 1183931200}
   - {fileID: 2079922168}
   - {fileID: 187219307}
   Divider: {fileID: 1897518532}
-  ClockTime: 0
-  TimeScale: 600
   ShouldBlinkDivider: 1
-  FreezeClock: 0
 --- !u!1 &996226363
 GameObject:
   m_ObjectHideFlags: 0
@@ -13739,7 +13724,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 1006564447}
   Hotkey: 119
   SelectSound: {fileID: 671787575}
 --- !u!212 &1006564450
@@ -14094,7 +14078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f13de449b764171a9b14264a6a7b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CustomerSprites: {fileID: 0}
+  clock: {fileID: 11400000, guid: d9ce3adefeaa1423499ee0fcf1f33cd2, type: 2}
   CoffeeMachine: {fileID: 340730825}
   OrderGraph: {fileID: 1546764090}
   winMenu: {fileID: 1245718778}
@@ -15873,7 +15857,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ebc1500a86f4c5ba0d8f0000a8ea1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 1143739002}
   IncreaseSound: {fileID: 0}
   DigitControllers:
   - {fileID: 126979824}
@@ -16688,7 +16671,7 @@ MonoBehaviour:
   Noon: {r: 0.46257564, g: 0.744335, b: 0.9339623, a: 0}
   Sunset: {r: 0.5307158, g: 0.2206746, b: 0.8207547, a: 0}
   Midnight: {r: 0.08388217, g: 0.13331321, b: 0.2735849, a: 0}
-  GameClock: {fileID: 982061725}
+  clock: {fileID: 11400000, guid: d9ce3adefeaa1423499ee0fcf1f33cd2, type: 2}
   CurrentDayFraction: 0
   SunriseDayFraction: 0.25
   NoonDayFraction: 0.5
@@ -16880,7 +16863,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 1210726178}
   Hotkey: 114
   SelectSound: {fileID: 1892621779}
 --- !u!1 &1210840364
@@ -17235,7 +17217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 1241598611}
   Hotkey: 99
   SelectSound: {fileID: 671787575}
 --- !u!1 &1245718776
@@ -18052,7 +18033,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 1300167182}
   Hotkey: 115
   SelectSound: {fileID: 1703769999}
 --- !u!212 &1300167185
@@ -18408,7 +18388,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 1330981595}
   Hotkey: 104
   SelectSound: {fileID: 533620527}
 --- !u!1 &1332651021
@@ -19529,7 +19508,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 1425198829}
   Hotkey: 108
   SelectSound: {fileID: 379341557}
 --- !u!212 &1425198832
@@ -20265,7 +20243,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 1484857517}
   Hotkey: 121
   SelectSound: {fileID: 1056388503}
 --- !u!1 &1486638553
@@ -22101,7 +22078,6 @@ MonoBehaviour:
   - {fileID: 1484857521}
   - {fileID: 1935448264}
   - {fileID: 356084558}
-  SelfReference: {fileID: 1596395194}
 --- !u!1 &1597486096
 GameObject:
   m_ObjectHideFlags: 0
@@ -22770,7 +22746,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NodeList:
   - {fileID: 694204078}
-  SelfReference: {fileID: 1669643383}
 --- !u!1 &1672171719
 GameObject:
   m_ObjectHideFlags: 0
@@ -22955,7 +22930,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 1672218082}
   Hotkey: 102
   SelectSound: {fileID: 1809007243}
 --- !u!1 &1683696583
@@ -26112,7 +26086,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 1935448260}
   Hotkey: 97
   SelectSound: {fileID: 1463513228}
 --- !u!1 &1935730344
@@ -27612,7 +27585,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe0a8f8f68f14c219cf19708c87dc8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 2026742142}
   OrderingSpeechBubble: {fileID: 359324885}
   MutteringSpeechBubble: {fileID: 586150989}
   OrderingSound: {fileID: 1913513736}
@@ -28190,7 +28162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b78cb448fb49eca83b900e5b9577d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfReference: {fileID: 2061186361}
   Hotkey: 116
   SelectSound: {fileID: 671787575}
 --- !u!212 &2061186364
@@ -29387,7 +29358,6 @@ MonoBehaviour:
   StoreExit: {fileID: 1704072599}
   customer_behind: {fileID: 8200815298953052576}
   customer_inFront: {fileID: 8200815300112345830}
-  CustomerInstance: {fileID: 6267965525809307086}
   CustomerSprite: {fileID: 2085969688}
   speechBubbleController: {fileID: 695589076}
   target: 0
@@ -29607,7 +29577,6 @@ MonoBehaviour:
   StoreExit: {fileID: 1704072599}
   customer_behind: {fileID: 8200815299806580505}
   customer_inFront: {fileID: 5097297707576881991}
-  CustomerInstance: {fileID: 7029646492103470889}
   CustomerSprite: {fileID: 3995285861929496063}
   speechBubbleController: {fileID: 840344633}
   target: 0
@@ -29640,7 +29609,6 @@ MonoBehaviour:
   StoreExit: {fileID: 1704072599}
   customer_behind: {fileID: 8200815300112345830}
   customer_inFront: {fileID: 8200815298953052576}
-  CustomerInstance: {fileID: 7029646491883217296}
   CustomerSprite: {fileID: 3995285862313255750}
   speechBubbleController: {fileID: 244177611}
   target: 0
@@ -29673,7 +29641,6 @@ MonoBehaviour:
   StoreExit: {fileID: 1704072599}
   customer_behind: {fileID: 5097297707576881991}
   customer_inFront: {fileID: 8200815299806580505}
-  CustomerInstance: {fileID: 7029646491107099759}
   CustomerSprite: {fileID: 3995285860933551801}
   speechBubbleController: {fileID: 2026742145}
   target: 0

@@ -18,7 +18,7 @@ public class DaytimeColourController : MonoBehaviour
     public Color Sunset;
     public Color Midnight;
 
-    public ClockController GameClock;
+    public GameClock clock;
 
     public float CurrentDayFraction = 0.0f;
 
@@ -34,7 +34,7 @@ public class DaytimeColourController : MonoBehaviour
 
     public void UpdateDaySegment(){
         // prepare day fraction, assuming sunrise if we have no clock
-        this.CurrentDayFraction = ((this.GameClock!=null)? this.GameClock.GetDayFraction() : this.SunriseDayFraction ) % 1.0f;
+        this.CurrentDayFraction = ((this.clock!=null)? this.clock.GetDayFraction() : this.SunriseDayFraction ) % 1.0f;
         float segmentRange = 0.0f;
 
         // figure out which segment we're in

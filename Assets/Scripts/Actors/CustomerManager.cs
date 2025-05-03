@@ -10,6 +10,8 @@ public class CustomerManager : MonoBehaviour
 
     // ========================================================
     // ========================================================
+    
+    public GameClock clock;
 
     // ===========================
 
@@ -132,6 +134,7 @@ public class CustomerManager : MonoBehaviour
         }
     }
     public void PreGameEndEvent(){
+        this.clock.FreezeClock = true;
         // this.CoffeeMachine.StreakHighScore
         this.MassBanishment();
         this.MassPolymorph();
@@ -145,6 +148,7 @@ public class CustomerManager : MonoBehaviour
     // ========================================================
 
     public void GameState_OnInitialisation(){
+        this.clock.FreezeClock = false;
         this.canMakeOrder = false;
 
         // enforce they start false
