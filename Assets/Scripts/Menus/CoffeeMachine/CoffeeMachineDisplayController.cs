@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class CoffeeMachineDisplayController : MonoBehaviour
 {
+    public PlayerData player;
     // public BlipCounter SuccessBlipCounter;
     // public BlipCounter ErrorBlipCounter;
     // public PressureGaugeMistakeCounter ErrorDisplay;
     public WholeNumberDisplayer StreakCounter;
     public PressureGaugeController PressureGauge;
-    public WholeNumberCharDisplayer WallHighscore;
-    public SpriteRenderer WallHighscoreStrikethrough;
 
     public int MistakesForEmploymentTermination = 100;
 
@@ -18,11 +17,11 @@ public class CoffeeMachineDisplayController : MonoBehaviour
 
     public void HandleBadOrder( int mistakeCount ){
         // find if we need to update our wall note
-        if(this.StreakCounter.CurrentValue > this.WallHighscore.CurrentValue){
+        if(this.StreakCounter.CurrentValue > this.player.streakHighscore){
             // undo any strike outs
-            this.WallHighscoreStrikethrough.enabled = false;
+            this.player.streakHighscoreStrikethrough = false;
             // write our streak on the wall
-            this.WallHighscore.SetValue(this.StreakCounter.CurrentValue);
+            this.player.streakHighscore = this.StreakCounter.CurrentValue;
         }
         // reset everything and log the mistake
         this.StreakCounter.SetValue( 0 );
@@ -31,8 +30,8 @@ public class CoffeeMachineDisplayController : MonoBehaviour
     public void HandleGoodOrder(){
         this.StreakCounter.ModifyValue( 1 );
         // check if we eclipsed the wall counter, and want to strike it out
-        if(this.StreakCounter.CurrentValue > this.WallHighscore.CurrentValue && this.WallHighscoreStrikethrough != null){ 
-            this.WallHighscoreStrikethrough.enabled = true;
+        if(this.StreakCounter.CurrentValue > this.player.streakHighscore){ 
+            this.player.streakHighscoreStrikethrough = true;
         }
     }
 
@@ -70,8 +69,6 @@ public class CoffeeMachineDisplayController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // undo any strike outs
-        if(this.WallHighscoreStrikethrough != null) { this.WallHighscoreStrikethrough.enabled = false; }
         // reset the streak counter
         this.StreakCounter.SetValue( 0 );
         // ...

@@ -4000,6 +4000,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 651292036}
+  - component: {fileID: 651292037}
   m_Layer: 0
   m_Name: StreakHighscore
   m_TagString: Untagged
@@ -4026,6 +4027,21 @@ Transform:
   m_Father: {fileID: 1864225486}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.83}
+--- !u!114 &651292037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651292035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e05f436c417a408288b379b739cc1a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 11400000, guid: 78b75dba47ce24b78b77591b2df16494, type: 2}
+  numberDisplayObject: {fileID: 310658888}
+  strikethroughSprite: {fileID: 1196635461}
 --- !u!1 &653389922
 GameObject:
   m_ObjectHideFlags: 0
@@ -5456,10 +5472,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8606696f1f714ceeb4bab34c484629e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   StreakCounter: {fileID: 855580309}
   PressureGauge: {fileID: 1757554605}
-  WallHighscore: {fileID: 310658888}
-  WallHighscoreStrikethrough: {fileID: 1196635461}
   MistakesForEmploymentTermination: 30
 --- !u!1 &874316723
 GameObject:
