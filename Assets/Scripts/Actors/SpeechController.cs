@@ -31,13 +31,16 @@ public class SpeechController : MonoBehaviour
     // sprite option lists \\
     // ==========================================
 
-    public Sprite[] SizeSpriteList;
-    public Sprite[] TypeSpriteList;
-    public Sprite[] MilkSpriteList;
-    public Sprite[] SweetenerSpriteList;
+    public RandomSpriteList SizeOptionsList;
+    public RandomSpriteList TypeOptionsList;
+    public RandomSpriteList MilkOptionsList;
+    public RandomSpriteList SweetenerOptionsList;
 
-    public Sprite[] MutteringEnglishSpriteList;
-    public Sprite[] MutteringFrenchSpriteList;
+    // public Sprite[] MutteringEnglishSpriteList;
+    // public Sprite[] MutteringFrenchSpriteList;
+    // public RandomSpriteList MutteringEnglishList;
+    // public RandomSpriteList MutteringFrenchList;
+    public RandomSpriteList MutteringOptions;
 
     // _________________
     // default options \\
@@ -279,10 +282,6 @@ public class SpeechController : MonoBehaviour
 
     // same as slicing an order but we need it to be re-runnable during the sliced
     public void ReSliceMuttering(){
-        // declare variables
-        Sprite mutteringSpriteSelection = this.PlaceHolderSpeechSprite;
-        Sprite[] mutteringSpriteList = {};
-
         // gather language based data
         switch (this.SpeechStatus) {
             // not muttering
@@ -291,27 +290,15 @@ public class SpeechController : MonoBehaviour
                 break;
             // muttering rolling
             case SpeechMode.MutteringEnglish:
-                // choose from english list
-                mutteringSpriteList = this.MutteringEnglishSpriteList;
-                break;
             case SpeechMode.MutteringFrench:
-                // choose from french list
-                mutteringSpriteList = this.MutteringFrenchSpriteList;
-                break;
+                if(this.MutteringOptions != null){
+                    this.MutteringOptions.GetSpriteFor(this.MutteringElement);
+                }
+                return;
         }
 
-        // do we have options?
-        if( mutteringSpriteList.Length > 0 ){
-            // roll for an option
-            int randomSpriteIndex = Random.Range(0, mutteringSpriteList.Length);
-            // retrieve the option
-            mutteringSpriteSelection = mutteringSpriteList[randomSpriteIndex];
-        }
-        // otherwise using the placeholder still
-        // else {  }
-
-        // update the sprite ready for use
-        this.MutteringElement.sprite = mutteringSpriteSelection;
+        // arrive here when we didnt return already, use placeholder
+        this.MutteringElement.sprite = this.PlaceHolderSpeechSprite;
     }
 
     // ________________
@@ -334,10 +321,10 @@ public class SpeechController : MonoBehaviour
         
         // set the sprites
 
-        this.SizeElement.sprite = this.SizeSpriteList[sizeIndex];
-        this.TypeElement.sprite = this.TypeSpriteList[typeIndex];
-        this.MilkElement.sprite = this.MilkSpriteList[milkIndex];
-        this.SweetenerElement.sprite = this.SweetenerSpriteList[sweetenerIndex];
+        this.SizeElement.sprite = this.SizeOptionsList.GetSpecificSprite( sizeIndex );
+        this.TypeElement.sprite = this.TypeOptionsList.GetSpecificSprite( typeIndex );
+        this.MilkElement.sprite = this.MilkOptionsList.GetSpecificSprite( milkIndex );
+        this.SweetenerElement.sprite = this.SweetenerOptionsList.GetSpecificSprite( sweetenerIndex );
 
         // clear the old order data
         
