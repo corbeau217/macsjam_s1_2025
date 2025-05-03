@@ -11,8 +11,6 @@ public class CustomerManager : MonoBehaviour
     // ========================================================
     // ========================================================
 
-    public RandomSpriteList CustomerSprites;
-
     // ===========================
 
     // handling order status
