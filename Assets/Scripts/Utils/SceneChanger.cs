@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
+    public string DestinationScene;
     public GameClock clock;
     public KeyCode Hotkey;
-    string GameSceneName = "MainGameLoop";
+    public bool WarpToShiftStartOnActivate = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +24,8 @@ public class SceneChanger : MonoBehaviour
 
     public void HandleInput(){
         if(Input.GetKey(this.Hotkey)){
-            this.clock.TimewarpToShiftStart();
-            SceneManager.LoadScene(this.GameSceneName);
+            if(this.WarpToShiftStartOnActivate){ this.clock.TimewarpToShiftStart(); }
+            SceneManager.LoadScene(this.DestinationScene);
         }
     }
 }

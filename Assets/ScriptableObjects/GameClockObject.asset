@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 608d08f9fcfcb47fe9010a370173b39f, type: 3}
   m_Name: GameClockObject
   m_EditorClassIdentifier: 
-  ClockTime: 0
-  TimeScale: 60
+  Realtime: 46.86713
   FreezeClock: 1
