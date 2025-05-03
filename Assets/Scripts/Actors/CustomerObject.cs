@@ -8,7 +8,7 @@ public class CustomerObject : MonoBehaviour
     // ========================================================
     // ========================================================
 
-    public Sprite[] sprite_options;
+    public RandomSpriteList CustomerSprites;
 
     // ========================================================
     // ========================================================
@@ -93,8 +93,7 @@ public class CustomerObject : MonoBehaviour
         this.desiredPersonalSpace = this.initialPersonalSpace;
     }
     
-    public void initialise(Sprite[] inputSprites){
-        this.sprite_options = inputSprites;
+    public void initialise(){
         this.rerollSprite();
         this.rerollOrder();
         this.target = TargetLocation.Ordering;
@@ -109,18 +108,7 @@ public class CustomerObject : MonoBehaviour
         this.order.randomiseCoffeeOrder();
     }
     public void rerollSprite(){
-        // deeply cursed that length is capitalised in c#
-        int newSpriteID = Random.Range( 0, this.sprite_options.Length );
-        // this.CustomerSprite.sprite = this.sprite_options[newSpriteID];
-        this.CustomerSprite.sprite = this.sprite_options[newSpriteID];
-
-        // laziness, just remove this later when sprite is fixed
-        if(newSpriteID == 1){
-            this.CustomerSprite.flipX = true;
-        }
-        else {
-            this.CustomerSprite.flipX = false;
-        }
+        this.CustomerSprite.sprite = CustomerSprites.GetSprite();
     }
     
     public bool wantsToOrder(){

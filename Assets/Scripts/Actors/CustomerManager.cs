@@ -11,7 +11,7 @@ public class CustomerManager : MonoBehaviour
     // ========================================================
     // ========================================================
 
-    public Sprite[] CustomerSpriteOptions;
+    public RandomSpriteList CustomerSprites;
 
     // ===========================
 
@@ -156,7 +156,7 @@ public class CustomerManager : MonoBehaviour
         // prep customers
 
         for (int i = 0; i < this.CustomerList.Length; i++) {
-            this.CustomerList[i].initialise( this.CustomerSpriteOptions );
+            this.CustomerList[i].initialise();
         }
         this.setCurrentCustomer(this.CustomerList[0]);
 

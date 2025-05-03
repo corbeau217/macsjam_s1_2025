@@ -46,8 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91973178eec9492abcaaec0c1a50760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite_options:
-  - {fileID: 21300000, guid: 38989abb3d29d4a8381732ed1bfba6e0, type: 3}
+  CustomerSprites: {fileID: 11400000, guid: 94914b48378d441b2881b32a7a694eab, type: 2}
   StoreEntrance: {fileID: 0}
   OrderingLocation: {fileID: 0}
   StoreExit: {fileID: 0}

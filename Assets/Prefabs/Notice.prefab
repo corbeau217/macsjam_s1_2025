@@ -214,17 +214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4acd511772994217a40b4648f79b7ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NoteShapeOptions:
-  - {fileID: 21300000, guid: 30e5d1cf11e5e4e9ca286e9267b6a8fd, type: 3}
-  - {fileID: 21300000, guid: 773c0f33a6a17450fbef5939d1b38501, type: 3}
-  - {fileID: 21300000, guid: ee80fc6b1d07a4055b1ce402ea9af76c, type: 3}
-  - {fileID: 21300000, guid: 44e5daf613aec4a838ce19b556aa1d55, type: 3}
-  - {fileID: 21300000, guid: b959b7242e68341d28d20a9f55fb10ad, type: 3}
-  - {fileID: 21300000, guid: 77ad68b68ad974d92840f0638fbb41bc, type: 3}
-  NoteContentOptions:
-  - {fileID: 21300000, guid: 17ff0858b01f946a6b2a1fa5bae9599e, type: 3}
-  - {fileID: 21300000, guid: 87f9b411678ae4522a03a5b7a6ab1b27, type: 3}
-  - {fileID: 21300000, guid: 643572d01042741658faa92f37b53eb3, type: 3}
+  NoteShapeList: {fileID: 11400000, guid: c2b213779481543c0a30420188c9e07c, type: 2}
+  NoteContentList: {fileID: 11400000, guid: 2ec68234be75e4c0d8de4a7308feb73d, type: 2}
   NoteShape: {fileID: 7581381117810936544}
   NoteContent: {fileID: 6243164069324254644}
   RandomiseShape: 1

@@ -11683,7 +11683,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2130872651}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &880935670
 GameObject:
@@ -13484,22 +13484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f13de449b764171a9b14264a6a7b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CustomerSpriteOptions:
-  - {fileID: 21300000, guid: 38989abb3d29d4a8381732ed1bfba6e0, type: 3}
-  - {fileID: 21300000, guid: 373a5705d36c64cc0983e4c28ab55b7d, type: 3}
-  - {fileID: 21300000, guid: 31830f0cf02fe45068d7670aff457b5d, type: 3}
-  - {fileID: 21300000, guid: 1346d1d88e4084d7b991534a88d9dcbf, type: 3}
-  - {fileID: 21300000, guid: d2923ba79c2344e66b056b5b22ab0207, type: 3}
-  - {fileID: 21300000, guid: fbef73bf4aa4b49a48e4b245a1cf3f4a, type: 3}
-  - {fileID: 21300000, guid: 7d5f6e426d66d4f1bb35749d8357fdb4, type: 3}
-  - {fileID: 21300000, guid: d31b8aee2b6034d77bdc80da82b63bd5, type: 3}
-  - {fileID: 21300000, guid: 5112d3eccc094473da562fa32044146e, type: 3}
-  - {fileID: 21300000, guid: a8dc86961b77b4be895eb296d9873c09, type: 3}
-  - {fileID: 21300000, guid: 4bacf86d42bb04b3c90ee51e38bccfa7, type: 3}
-  - {fileID: 21300000, guid: 21e242ab231024c5bbc7c2f823452011, type: 3}
-  - {fileID: 21300000, guid: dd5665c0f1a70418fb894d533c448a28, type: 3}
-  - {fileID: 21300000, guid: 7afb5ddb3957d4e8b887b05309b04cdd, type: 3}
-  - {fileID: 21300000, guid: 0a83929e463b342ff9441308df4f8161, type: 3}
+  CustomerSprites: {fileID: 0}
   CoffeeMachine: {fileID: 340730825}
   OrderGraph: {fileID: 1546764090}
   winMenu: {fileID: 1245718778}
@@ -13631,53 +13616,7 @@ Transform:
   - {fileID: 1897389708}
   - {fileID: 1756655189}
   m_Father: {fileID: 2130872651}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1042125616
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1042125618}
-  - component: {fileID: 1042125617}
-  m_Layer: 0
-  m_Name: Bank
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1042125617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1042125616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61b4fc6634fdf4df6a1f3f74da4b6446, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TotalDisplayController: {fileID: 443483741}
-  Total: 0
---- !u!4 &1042125618
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1042125616}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1059949, y: 0.33371085, z: 0.25239047}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2130872651}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1056388501
 GameObject:
@@ -17638,16 +17577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00819b17743654bdf93ea2e87fc60e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CupArtworks:
-  - {fileID: 21300000, guid: 550450aecf4344f5cbe5e2a5092afeba, type: 3}
-  - {fileID: 21300000, guid: d5d8b96462fe74326a49391db4804c62, type: 3}
-  - {fileID: 21300000, guid: 8db40a7a5da3c4cc5a5449643fc618f6, type: 3}
-  - {fileID: 21300000, guid: 2512146d65ec248db97e4df1a76fb019, type: 3}
-  - {fileID: 21300000, guid: b371e918a88e64967bb30bf34420d1ba, type: 3}
-  - {fileID: 21300000, guid: 7468e23f58db1410fa1470b1162854c2, type: 3}
-  - {fileID: 21300000, guid: 5046165f52ffc42b0b0f6738cb3da963, type: 3}
-  - {fileID: 21300000, guid: 95cc4d6eb010b48bb8ffaada188a9143, type: 3}
-  - {fileID: 21300000, guid: 7ece0aba95cb64a71a074e4f3eb2bce1, type: 3}
+  CupList: {fileID: 11400000, guid: 5ab7e65bff5ca43d2a46fda9dc5cd84a, type: 2}
   CupRenderer: {fileID: 2035625322}
   OverrideShowCup: 0
 --- !u!1 &1330981595
@@ -18409,7 +18339,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2524340993076958601, guid: 345c271709f1247d7b0d7ca0467e31c5, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2524340993076958601, guid: 345c271709f1247d7b0d7ca0467e31c5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27845,7 +27775,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 683966523}
-  - {fileID: 1042125618}
   - {fileID: 878675063}
   - {fileID: 1039935371}
   m_Father: {fileID: 0}
@@ -28625,8 +28554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91973178eec9492abcaaec0c1a50760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite_options:
-  - {fileID: 21300000, guid: 38989abb3d29d4a8381732ed1bfba6e0, type: 3}
+  CustomerSprites: {fileID: 11400000, guid: 94914b48378d441b2881b32a7a694eab, type: 2}
   StoreEntrance: {fileID: 284722982}
   OrderingLocation: {fileID: 1417042053}
   StoreExit: {fileID: 1704072599}
@@ -28659,8 +28587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91973178eec9492abcaaec0c1a50760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite_options:
-  - {fileID: 21300000, guid: 38989abb3d29d4a8381732ed1bfba6e0, type: 3}
+  CustomerSprites: {fileID: 11400000, guid: 94914b48378d441b2881b32a7a694eab, type: 2}
   StoreEntrance: {fileID: 284722982}
   OrderingLocation: {fileID: 1417042053}
   StoreExit: {fileID: 1704072599}
@@ -28693,8 +28620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91973178eec9492abcaaec0c1a50760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite_options:
-  - {fileID: 21300000, guid: 38989abb3d29d4a8381732ed1bfba6e0, type: 3}
+  CustomerSprites: {fileID: 11400000, guid: 94914b48378d441b2881b32a7a694eab, type: 2}
   StoreEntrance: {fileID: 284722982}
   OrderingLocation: {fileID: 1417042053}
   StoreExit: {fileID: 1704072599}

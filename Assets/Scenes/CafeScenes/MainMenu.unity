@@ -9521,6 +9521,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5046165f52ffc42b0b0f6738cb3da963, type: 3}
   - {fileID: 21300000, guid: 95cc4d6eb010b48bb8ffaada188a9143, type: 3}
   - {fileID: 21300000, guid: 7ece0aba95cb64a71a074e4f3eb2bce1, type: 3}
+  CupList: {fileID: 11400000, guid: 5ab7e65bff5ca43d2a46fda9dc5cd84a, type: 2}
   CupRenderer: {fileID: 1078274869}
   OverrideShowCup: 1
 --- !u!1 &1971176203

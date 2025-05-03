@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class NoticeBoardNote : MonoBehaviour
 {
-    public Sprite[] NoteShapeOptions;
-    public Sprite[] NoteContentOptions;
+    // public Sprite[] NoteShapeOptions;
+    // public Sprite[] NoteContentOptions;
+    public RandomSpriteList NoteShapeList;
+    public RandomSpriteList NoteContentList;
 
     public SpriteRenderer NoteShape;
     public SpriteRenderer NoteContent;
@@ -13,32 +15,24 @@ public class NoticeBoardNote : MonoBehaviour
     public bool RandomiseShape = true;
     public bool RandomiseContent = false;
 
-    public void TryRandomise(Sprite[] options, SpriteRenderer destination, bool shouldRandomise){
-        if(
-            // want to
-            shouldRandomise &&
-            // they exist
-            destination != null &&
-            options != null &&
-            // have choices
-            options.Length > 0
-        ){
+    public void TryRandomise(RandomSpriteList list, SpriteRenderer destination, bool shouldRandomise){
+        // want to and exist
+        if( shouldRandomise && destination != null && list != null ){
             // roll
-            int index = Random.Range(0, options.Length);
-            destination.sprite = options[index];
+            destination.sprite = list.GetSprite();
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        this.TryRandomise(this.NoteShapeOptions, this.NoteShape, this.RandomiseShape);
-        this.TryRandomise(this.NoteContentOptions, this.NoteContent, this.RandomiseContent);
+        this.TryRandomise(this.NoteShapeList, this.NoteShape, this.RandomiseShape);
+        this.TryRandomise(this.NoteContentList, this.NoteContent, this.RandomiseContent);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        // ...
     }
 }

@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class CoffeeCupController : MonoBehaviour
 {
-    public Sprite[] CupArtworks;
+    // public Sprite[] CupArtworks;
+    public RandomSpriteList CupList;
     public SpriteRenderer CupRenderer;
     public bool OverrideShowCup = false;
 
     public void RandomiseCup(){
-        int selectionIndex = Random.Range(0, this.CupArtworks.Length);
-        this.CupRenderer.sprite = this.CupArtworks[selectionIndex];
+        this.CupRenderer.sprite = this.CupList.GetSprite();
     }
 
     public void ShowCup(){
@@ -26,12 +26,12 @@ public class CoffeeCupController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // ...
+        if(OverrideShowCup) { this.ShowCup(); }
     }
 
     // Update is called once per frame
     void Update()
     {
-        // ...
+        // ... 
     }
 }
