@@ -4553,7 +4553,7 @@ SpriteRenderer:
   m_SortingLayerID: 886111937
   m_SortingLayer: 12
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: b2455f0b222a44aa0b4f5c11d9bfa66d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7d34ac4646238462596ddab64e4d2941, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -18593,6 +18593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clock: {fileID: 11400000, guid: d9ce3adefeaa1423499ee0fcf1f33cd2, type: 2}
+  StartFrozen: 0
 --- !u!1 &1369791701
 GameObject:
   m_ObjectHideFlags: 0
