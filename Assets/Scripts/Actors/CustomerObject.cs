@@ -27,8 +27,6 @@ public class CustomerObject : MonoBehaviour
 
     // ================================================
 
-    // the customer instance to make sure we can access it
-    public GameObject CustomerInstance;
     public SpriteRenderer CustomerSprite;
     public SpeechController speechBubbleController;
     
@@ -80,7 +78,7 @@ public class CustomerObject : MonoBehaviour
         this.isMoving = false;
     }
     public void Banish(){
-        this.CustomerInstance.transform.position = this.InitalisationPosition;
+        this.gameObject.transform.position = this.InitalisationPosition;
     }
 
     public void Reincarnate(){
@@ -118,7 +116,7 @@ public class CustomerObject : MonoBehaviour
     void resetCustomer(){
         this.isMoving = false;
         this.announcedOrder = false;
-        this.CustomerInstance.transform.position = this.StoreEntrance.transform.position;
+        this.gameObject.transform.position = this.StoreEntrance.transform.position;
         this.target = TargetLocation.Ordering;
         this.snoozeOrdering();
         this.rerollSprite();
@@ -133,7 +131,7 @@ public class CustomerObject : MonoBehaviour
     // ========================================================
     // ========================================================
 
-    public Vector3 CurrentLocation(){ return this.CustomerInstance.transform.position; }
+    public Vector3 CurrentLocation(){ return this.gameObject.transform.position; }
     public float DistanceToGameObject(GameObject InputObject){ return Vector3.Distance(this.CurrentLocation(), InputObject.transform.position); }
 
     // ========================================================
@@ -208,13 +206,13 @@ public class CustomerObject : MonoBehaviour
         // check we want to move forward
         if(obstacleDistance > this.desiredPersonalSpace){
             // move towards the destination but 
-            this.CustomerInstance.transform.position = Vector3.MoveTowards(this.CustomerInstance.transform.position, targetObj.transform.position, maximumMovementDistance * Time.deltaTime);
+            this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetObj.transform.position, maximumMovementDistance * Time.deltaTime);
         }
         else {
             // probably should save this when we notice it
-            Vector3 StepBackPosition = this.CustomerInstance.transform.position + this.StepBackVector;
+            Vector3 StepBackPosition = this.gameObject.transform.position + this.StepBackVector;
             // move backwards half speed
-            this.CustomerInstance.transform.position =  Vector3.MoveTowards(this.CustomerInstance.transform.position, StepBackPosition, (this.baseMovementSpeed/2.0f) * Time.deltaTime);
+            this.gameObject.transform.position =  Vector3.MoveTowards(this.gameObject.transform.position, StepBackPosition, (this.baseMovementSpeed/2.0f) * Time.deltaTime);
         }
     }
 
@@ -224,7 +222,7 @@ public class CustomerObject : MonoBehaviour
 
         if(this.isMoving){
             // try to move there
-            this.approachTarget(targetObj, this.customer_inFront.CustomerInstance);
+            this.approachTarget(targetObj, this.customer_inFront.gameObject);
 
             // check for near exit
             if(this.target == TargetLocation.Exit){
