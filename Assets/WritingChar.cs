@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class WritingChar : MonoBehaviour
 {
-    public SpriteRenderer SelfReference;
+    // fetched at the start
+    public SpriteRenderer spriteRenderer;
 
     // 33 to 126 on the ascii table
     public Sprite[] CharSprites;
@@ -39,13 +40,13 @@ public class WritingChar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // ...
+        this.spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // ...
-        this.SelfReference.sprite = this.GetSprite( this.CurrentValue );
+        this.spriteRenderer.sprite = this.GetSprite( this.CurrentValue );
     }
 }

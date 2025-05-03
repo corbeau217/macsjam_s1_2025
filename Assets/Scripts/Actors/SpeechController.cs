@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class SpeechController : MonoBehaviour
 {
-    public GameObject SelfReference;
 
     // _____________
     // sprite group \\
@@ -148,8 +147,8 @@ public class SpeechController : MonoBehaviour
         }
     }
     public void ResetBubblePosition(){
-        this.MutteringSpeechBubble.transform.position = this.SelfReference.transform.position;
-        this.OrderingSpeechBubble.transform.position = this.SelfReference.transform.position;
+        this.MutteringSpeechBubble.transform.position = this.gameObject.transform.position;
+        this.OrderingSpeechBubble.transform.position = this.gameObject.transform.position;
 
     }
 

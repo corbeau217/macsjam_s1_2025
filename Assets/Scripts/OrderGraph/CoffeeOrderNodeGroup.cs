@@ -8,7 +8,6 @@ public class CoffeeOrderNodeGroup : MonoBehaviour
     // ========================================================
 
     public CoffeeOrderNodeController[] NodeList;
-    public GameObject SelfReference;
 
     private KeyCode[] GroupHotkeys;
 
@@ -28,7 +27,7 @@ public class CoffeeOrderNodeGroup : MonoBehaviour
     }
 
     public void SetActiveStatus( bool StatusToSet ){
-        this.SelfReference.SetActive( StatusToSet );
+        this.gameObject.SetActive( StatusToSet );
     }
 
     public KeyCode[] GetGroupHotkeys(){

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WholeNumberDisplayer : MonoBehaviour
 {
-    public GameObject SelfReference;
     public AudioSource IncreaseSound;
 
     // from lowest value to highest value

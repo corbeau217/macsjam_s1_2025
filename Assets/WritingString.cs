@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WritingString : MonoBehaviour
 {
-    public GameObject SelfReference;
     public WritingChar[] CharBlocks;
 
     public string InitialMessage;
