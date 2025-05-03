@@ -17,7 +17,6 @@ public class ClockUpdater : MonoBehaviour
         else {
             this.clock.Unfreeze();
         }
-        this.clock.TimewarpToShiftStart();
     }
 
     // Update is called once per frame

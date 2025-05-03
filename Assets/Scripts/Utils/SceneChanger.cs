@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
+    public GameClock clock;
     public KeyCode Hotkey;
     string GameSceneName = "MainGameLoop";
 
@@ -22,6 +23,7 @@ public class SceneChanger : MonoBehaviour
 
     public void HandleInput(){
         if(Input.GetKey(this.Hotkey)){
+            this.clock.TimewarpToShiftStart();
             SceneManager.LoadScene(this.GameSceneName);
         }
     }

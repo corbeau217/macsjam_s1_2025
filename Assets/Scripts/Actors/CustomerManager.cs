@@ -134,7 +134,7 @@ public class CustomerManager : MonoBehaviour
         }
     }
     public void PreGameEndEvent(){
-        this.clock.FreezeClock = true;
+        this.clock.Freeze();
         // this.CoffeeMachine.StreakHighScore
         this.MassBanishment();
         this.MassPolymorph();
