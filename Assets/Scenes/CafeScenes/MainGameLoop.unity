@@ -6438,6 +6438,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 493528264}
+  - component: {fileID: 493528265}
   m_Layer: 0
   m_Name: Funds
   m_TagString: Untagged
@@ -6464,6 +6465,20 @@ Transform:
   m_Father: {fileID: 1321182279}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -3.7}
+--- !u!114 &493528265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493528263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f68c87efb08a74751984c2bcfea8eba2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 11400000, guid: 78b75dba47ce24b78b77591b2df16494, type: 2}
+  numberDisplayObject: {fileID: 443483741}
 --- !u!1 &495925888
 GameObject:
   m_ObjectHideFlags: 0
@@ -8326,7 +8341,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1734168457
   m_SortingLayer: 6
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 0042735e3a51a4ef58d138e646bb1bdb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12321,7 +12336,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1897389708}
   - {fileID: 1522436571}
   m_Father: {fileID: 1756655189}
   m_RootOrder: 0
@@ -13614,6 +13628,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1897389708}
   - {fileID: 1756655189}
   m_Father: {fileID: 2130872651}
   m_RootOrder: 3
@@ -17353,7 +17368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73650f02926d746bdafa6748d521da59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BankReference: {fileID: 1042125617}
+  player: {fileID: 11400000, guid: 78b75dba47ce24b78b77591b2df16494, type: 2}
   ErrorDisplay: {fileID: 479227481}
   PricesReference: {fileID: 878675062}
 --- !u!1 &1300167182
@@ -20388,7 +20403,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 922196448}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1522436572
 AudioSource:
@@ -22745,7 +22760,7 @@ Transform:
   - {fileID: 1150372486}
   - {fileID: 891785635}
   m_Father: {fileID: 1039935371}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1767973291
 PrefabInstance:
@@ -24372,7 +24387,7 @@ GameObject:
   - component: {fileID: 1897389708}
   - component: {fileID: 1897389709}
   m_Layer: 0
-  m_Name: Good
+  m_Name: GainFunds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24390,7 +24405,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 922196448}
+  m_Father: {fileID: 1039935371}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1897389709
@@ -27954,6 +27969,10 @@ PrefabInstance:
     - target: {fileID: 2331292588064403866, guid: 74e342470bdc14599b39282c1b058c7a, type: 3}
       propertyPath: m_Name
       value: TotalNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 2331292588064403867, guid: 74e342470bdc14599b39282c1b058c7a, type: 3}
+      propertyPath: IncreaseSound
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74e342470bdc14599b39282c1b058c7a, type: 3}

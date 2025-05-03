@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CashRegister : MonoBehaviour
 {   
-    public Bank BankReference;
+    public PlayerData player;
     public PressureGaugeMistakeCounter ErrorDisplay;
     public Prices PricesReference;
 
@@ -12,7 +12,7 @@ public class CashRegister : MonoBehaviour
         this.ErrorDisplay.Set( orderErrorCount );
         if(orderErrorCount == 0){
             int orderValue = this.PricesReference.GetOrderTotal( orderDetails );
-            this.BankReference.ModifyTotal( orderValue );
+            this.player.totalFunds += orderValue;
         }
     }
 

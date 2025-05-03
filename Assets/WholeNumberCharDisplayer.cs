@@ -33,8 +33,8 @@ public class WholeNumberCharDisplayer : MonoBehaviour
         this.CurrentValue = newValue;
     }
     public void ModifyValue(int inputValue){
+        if(this.IncreaseSound!=null && inputValue > 0) { this.IncreaseSound.Play(); }
         this.CurrentValue += inputValue;
-        if(this.IncreaseSound!=null  && inputValue > 0) { this.IncreaseSound.Play(); }
     }
 
     public void UpdateDisplayDigits(){
