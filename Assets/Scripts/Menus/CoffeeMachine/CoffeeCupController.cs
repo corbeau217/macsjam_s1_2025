@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CoffeeCupController : MonoBehaviour
 {
-    // public Sprite[] CupArtworks;
     public RandomSpriteList CupList;
     public SpriteRenderer CupRenderer;
     public bool OverrideShowCup = false;

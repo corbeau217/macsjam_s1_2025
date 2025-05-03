@@ -5,9 +5,6 @@ using UnityEngine;
 public class CoffeeMachineDisplayController : MonoBehaviour
 {
     public PlayerData player;
-    // public BlipCounter SuccessBlipCounter;
-    // public BlipCounter ErrorBlipCounter;
-    // public PressureGaugeMistakeCounter ErrorDisplay;
     public WholeNumberDisplayer StreakCounter;
     public PressureGaugeController PressureGauge;
 

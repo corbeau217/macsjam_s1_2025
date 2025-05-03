@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class NoticeBoardNote : MonoBehaviour
 {
-    // public Sprite[] NoteShapeOptions;
-    // public Sprite[] NoteContentOptions;
     public RandomSpriteList NoteShapeList;
     public RandomSpriteList NoteContentList;
 

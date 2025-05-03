@@ -35,10 +35,6 @@ public class SpeechController : MonoBehaviour
     public RandomSpriteList MilkOptionsList;
     public RandomSpriteList SweetenerOptionsList;
 
-    // public Sprite[] MutteringEnglishSpriteList;
-    // public Sprite[] MutteringFrenchSpriteList;
-    // public RandomSpriteList MutteringEnglishList;
-    // public RandomSpriteList MutteringFrenchList;
     public RandomSpriteList MutteringOptions;
 
     // _________________
